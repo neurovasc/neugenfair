@@ -6,6 +6,7 @@ pages:
     - pip install mkdocs mkdocs-material
     - mkdocs build           # generates HTML in site/
     - mv site public         # rename site/ to public/ for GitLab Pages
+    - ls -R public           # debugging step to list files
   artifacts:
     paths:
       - public
