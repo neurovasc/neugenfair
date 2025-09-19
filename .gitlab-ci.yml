@@ -1,0 +1,13 @@
+image: python:3.12
+
+pages:
+  stage: deploy
+  script:
+    - pip install mkdocs mkdocs-material
+    - mkdocs build           # generates HTML in site/
+    - mv site public         # rename site/ to public/ for GitLab Pages
+  artifacts:
+    paths:
+      - public
+  only:
+    - main

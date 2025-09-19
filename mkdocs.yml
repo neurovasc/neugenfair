@@ -1,0 +1,5 @@
+site_name: neugenfair Documentation
+docs_dir: schemas/docs       # Where your Markdown files are
+site_dir: site               # Where HTML output will go
+theme:
+  name: material

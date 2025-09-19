@@ -18,6 +18,8 @@ pylode = "^3.0.0"
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.0.0"
 linkml = "^1.9.4"
+mkdocs = "^1.6.1"
+mkdocs-material = "^9.6.20"
 
 [build-system]
 requires = ["poetry-core"]
