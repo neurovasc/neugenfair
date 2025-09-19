@@ -1,0 +1,59 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/neugenfair/schema/Individual> a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "A study participant in a genomic/clinical cohort." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:description "Biological sex of the individual." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 1 ;
+            sh:path <https://w3id.org/neugenfair/schema/sex> ],
+        [ sh:datatype xsd:integer ;
+            sh:description "Age of the individual in years." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 2 ;
+            sh:path <https://w3id.org/neugenfair/schema/age> ],
+        [ sh:datatype xsd:string ;
+            sh:description "Unique identifier for the individual." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path <https://w3id.org/neugenfair/schema/id> ] ;
+    sh:targetClass <https://w3id.org/neugenfair/schema/Individual> .
+
+<https://w3id.org/neugenfair/schema/Variant> a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "A genomic variant observed in the study." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:description "Reference allele." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 2 ;
+            sh:path <https://w3id.org/neugenfair/schema/ref> ],
+        [ sh:datatype xsd:string ;
+            sh:description "Chromosome (e.g. '1', 'X', 'MT')." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path <https://w3id.org/neugenfair/schema/chrom> ],
+        [ sh:datatype xsd:string ;
+            sh:description "Alternate allele." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 3 ;
+            sh:path <https://w3id.org/neugenfair/schema/alt> ],
+        [ sh:datatype xsd:integer ;
+            sh:description "1-based position of the variant on the chromosome." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 1 ;
+            sh:path <https://w3id.org/neugenfair/schema/pos> ] ;
+    sh:targetClass <https://w3id.org/neugenfair/schema/Variant> .
+
+

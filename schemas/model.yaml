@@ -1,0 +1,5 @@
+id: https://w3id.org/neugenfair/schema
+name: NeugenFAIRSchema
+imports:
+  - ./model_Individual
+  - ./model_Variant

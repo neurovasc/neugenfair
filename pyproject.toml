@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "neugenfair"
+version = "0.1.0"
+description = "Transform tabular and VCF data into Linked Data using ontologies, SHACL validation, and LinkML."
+authors = ["Alexandrina Bodrug <alexandrina.bodrug@univ-nantes.fr>"]
+license = "GPLv3"
+readme = "README.md"
+packages = [{ include = "neugenfair" }]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+rdflib = "^7.0.0"
+pandas = "^2.0.0"
+pyshacl = "^0.24.0"
+linkml-runtime = "^1.7.0"
+pylode = "^3.0.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0.0"
+linkml = "^1.9.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
