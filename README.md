@@ -4,9 +4,9 @@ ICAN dataset into Linked Data. Previous projects were based on functionnal progr
 Moreover the transformation process was split into VCF --> Linked Data and clinical CSV --> Linked Data. 
 Here the approach tries to be more comprehensive. The focus is real data, with many missing values. The model needs to be
 the driving force of the transformation because for maintenance purpose I cannot keep creating exceptions and exclusion criteria
-in my if loops in the previous repositories. \\
-The previous coding project with similar goals are: [etl4fairdata_AIC](https://gitlab.univ-nantes.fr/bodrug-a/etl4fairdata_AIC) and [etl4sphn_AIC](https://gitlab.univ-nantes.fr/bodrug-a/etl4sphn_aic) \\
-In addition to a model driven approach, this coding project shall satisfy the need for detailed documentation and creation of shacl constraints. This will be achieved by using LinkML. \\
+in my if loops in the previous repositories. \
+The previous coding project with similar goals are: [etl4fairdata_AIC](https://gitlab.univ-nantes.fr/bodrug-a/etl4fairdata_AIC) and [etl4sphn_AIC](https://gitlab.univ-nantes.fr/bodrug-a/etl4sphn_aic) \
+In addition to a model driven approach, this coding project shall satisfy the need for detailed documentation and creation of shacl constraints. This will be achieved by using LinkML. \
 The final Linked Data should be generated both in RDF and JSON-LD, for swift compatibility with the Beacon production implementation (Mongo database).
 
 ## The real dataset: ICAN dataset
@@ -14,6 +14,6 @@ Blah.
 
 ## Schema Documentation
 
-[Markdown documentation link 1](https://bodrug-a.univ-nantes.io/neugenfair) \\
+[Markdown documentation link 1](https://bodrug-a.univ-nantes.io/neugenfair) \
 [Markdown documentation link 2](https://neugenfair-caffb5.univ-nantes.io/)
 
