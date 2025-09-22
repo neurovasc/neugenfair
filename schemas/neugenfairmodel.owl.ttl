@@ -1,0 +1,122 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/neugenfair/schema.owl.ttl> a owl:Ontology ;
+    rdfs:label "NeugenFAIRSchema" ;
+    skos:definition """Merged NeugenFAIR schema
+Schema for the NeugenFAIR tool. Defines Individuals and Variants, supporting FAIR transformation of genomic and clinical data into Linked Data.
+
+Schema for the NeugenFAIR tool. Defines Individuals and Variants, supporting FAIR transformation of genomic and clinical data into Linked Data.
+""" .
+
+<https://w3id.org/neugenfair/schema/Individual> a owl:Class ;
+    rdfs:label "Individual" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/sex> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/id> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/id> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/age> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/id> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/age> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/sex> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/age> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/sex> ] ;
+    skos:definition "A study participant in a genomic/clinical cohort." ;
+    skos:inScheme <https://w3id.org/neugenfair/schema> .
+
+<https://w3id.org/neugenfair/schema/Variant> a owl:Class ;
+    rdfs:label "Variant" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/alt> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/chrom> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/ref> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/chrom> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/ref> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/alt> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/pos> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/pos> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/alt> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/ref> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/pos> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/chrom> ] ;
+    skos:definition "A genomic variant observed in the study." ;
+    skos:inScheme <https://w3id.org/neugenfair/schema> .
+
+<https://w3id.org/neugenfair/schema/age> a owl:DatatypeProperty ;
+    rdfs:label "age" ;
+    skos:definition "Age of the individual in years." ;
+    skos:inScheme <https://w3id.org/neugenfair/schema> .
+
+<https://w3id.org/neugenfair/schema/alt> a owl:DatatypeProperty ;
+    rdfs:label "alt" ;
+    skos:definition "Alternate allele." ;
+    skos:inScheme <https://w3id.org/neugenfair/schema> .
+
+<https://w3id.org/neugenfair/schema/chrom> a owl:DatatypeProperty ;
+    rdfs:label "chrom" ;
+    skos:definition "Chromosome (e.g. '1', 'X', 'MT')." ;
+    skos:inScheme <https://w3id.org/neugenfair/schema> .
+
+<https://w3id.org/neugenfair/schema/id> a owl:DatatypeProperty ;
+    rdfs:label "id" ;
+    skos:definition "Unique identifier for the individual." ;
+    skos:inScheme <https://w3id.org/neugenfair/schema> .
+
+<https://w3id.org/neugenfair/schema/pos> a owl:DatatypeProperty ;
+    rdfs:label "pos" ;
+    skos:definition "1-based position of the variant on the chromosome." ;
+    skos:inScheme <https://w3id.org/neugenfair/schema> .
+
+<https://w3id.org/neugenfair/schema/ref> a owl:DatatypeProperty ;
+    rdfs:label "ref" ;
+    skos:definition "Reference allele." ;
+    skos:inScheme <https://w3id.org/neugenfair/schema> .
+
+<https://w3id.org/neugenfair/schema/sex> a owl:DatatypeProperty ;
+    rdfs:label "sex" ;
+    skos:definition "Biological sex of the individual." ;
+    skos:inScheme <https://w3id.org/neugenfair/schema> .
+
+

@@ -1,12 +1,30 @@
 image: python:3.12
 
-pages:
-  stage: deploy
+stages:
+  - build
+  - deploy
+
+before_script:
+  # Install dependencies
+  - pip install poetry
+  - poetry install
+  - pip install mkdocs mkdocs-material
+
+build_docs:
+  stage: build
   script:
-    - pip install mkdocs mkdocs-material
-    - mkdocs build           # generates HTML in site/
-    - mv site public         # rename site/ to public/ for GitLab Pages
-    - ls -R public           # debugging step to list files
+    # Run your Makefile targets to generate docs
+    - make docs pylode
+    # Prepare public folder for GitLab Pages
+    - rm -rf public
+    - mkdir -p public
+    # Copy LinkML Markdown docs
+    - cp -r schemas/docs/* public/
+    # Copy pyLODE docs into a subfolder, e.g., pylode/
+    - mkdir -p public/pylode
+    - cp -r schemas/pylode/* public/pylode/
+    # Optional: list files for debugging
+    - ls -R public
   artifacts:
     paths:
       - public

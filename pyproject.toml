@@ -20,6 +20,7 @@ pytest = "^8.0.0"
 linkml = "^1.9.4"
 mkdocs = "^1.6.1"
 mkdocs-material = "^9.6.20"
+pylode = "^3.2.1"
 
 [build-system]
 requires = ["poetry-core"]

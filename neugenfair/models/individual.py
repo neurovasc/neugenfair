@@ -1,5 +1,5 @@
 # Auto generated from model_Individual.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-09-19T16:07:06
+# Generation date: 2025-09-22T14:01:00
 # Schema: NeugenFAIRSchema
 #
 # id: https://w3id.org/neugenfair/schema

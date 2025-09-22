@@ -1,0 +1,62 @@
+name: NeugenFAIRSchema
+description: 'Merged NeugenFAIR schema
+
+  Schema for the NeugenFAIR tool. Defines Individuals and Variants, supporting FAIR
+  transformation of genomic and clinical data into Linked Data.
+
+
+  Schema for the NeugenFAIR tool. Defines Individuals and Variants, supporting FAIR
+  transformation of genomic and clinical data into Linked Data.
+
+  '
+id: https://w3id.org/neugenfair/schema
+imports:
+- linkml:types
+prefixes:
+  ex:
+    prefix_prefix: ex
+    prefix_reference: http://example.org/
+  linkml:
+    prefix_prefix: linkml
+    prefix_reference: https://w3id.org/linkml/
+default_prefix: https://w3id.org/neugenfair/schema/
+classes:
+  Individual:
+    name: Individual
+    description: A study participant in a genomic/clinical cohort.
+    attributes:
+      id:
+        name: id
+        description: Unique identifier for the individual.
+        identifier: true
+        range: string
+      sex:
+        name: sex
+        description: Biological sex of the individual.
+        range: string
+        required: false
+      age:
+        name: age
+        description: Age of the individual in years.
+        range: integer
+        required: false
+  Variant:
+    name: Variant
+    description: A genomic variant observed in the study.
+    attributes:
+      chrom:
+        name: chrom
+        description: Chromosome (e.g. '1', 'X', 'MT').
+        range: string
+      pos:
+        name: pos
+        description: 1-based position of the variant on the chromosome.
+        range: integer
+      ref:
+        name: ref
+        description: Reference allele.
+        range: string
+      alt:
+        name: alt
+        description: Alternate allele.
+        range: string

@@ -7,11 +7,11 @@
     sh:description "A study participant in a genomic/clinical cohort." ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:property [ sh:datatype xsd:string ;
-            sh:description "Biological sex of the individual." ;
+            sh:description "Unique identifier for the individual." ;
             sh:maxCount 1 ;
             sh:nodeKind sh:Literal ;
-            sh:order 1 ;
-            sh:path <https://w3id.org/neugenfair/schema/sex> ],
+            sh:order 0 ;
+            sh:path <https://w3id.org/neugenfair/schema/id> ],
         [ sh:datatype xsd:integer ;
             sh:description "Age of the individual in years." ;
             sh:maxCount 1 ;
@@ -19,11 +19,11 @@
             sh:order 2 ;
             sh:path <https://w3id.org/neugenfair/schema/age> ],
         [ sh:datatype xsd:string ;
-            sh:description "Unique identifier for the individual." ;
+            sh:description "Biological sex of the individual." ;
             sh:maxCount 1 ;
             sh:nodeKind sh:Literal ;
-            sh:order 0 ;
-            sh:path <https://w3id.org/neugenfair/schema/id> ] ;
+            sh:order 1 ;
+            sh:path <https://w3id.org/neugenfair/schema/sex> ] ;
     sh:targetClass <https://w3id.org/neugenfair/schema/Individual> .
 
 <https://w3id.org/neugenfair/schema/Variant> a sh:NodeShape ;
@@ -31,17 +31,17 @@
     sh:description "A genomic variant observed in the study." ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:property [ sh:datatype xsd:string ;
-            sh:description "Reference allele." ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 2 ;
-            sh:path <https://w3id.org/neugenfair/schema/ref> ],
-        [ sh:datatype xsd:string ;
             sh:description "Chromosome (e.g. '1', 'X', 'MT')." ;
             sh:maxCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:order 0 ;
             sh:path <https://w3id.org/neugenfair/schema/chrom> ],
+        [ sh:datatype xsd:string ;
+            sh:description "Reference allele." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 2 ;
+            sh:path <https://w3id.org/neugenfair/schema/ref> ],
         [ sh:datatype xsd:string ;
             sh:description "Alternate allele." ;
             sh:maxCount 1 ;
