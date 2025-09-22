@@ -1,11 +1,23 @@
 name: NeugenFAIRSchema
 description: 'Merged NeugenFAIR schema
 
-  Schema for the NeugenFAIR tool. Defines Individuals and Variants, supporting FAIR
+  Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR
   transformation of genomic and clinical data into Linked Data.
 
 
-  Schema for the NeugenFAIR tool. Defines Individuals and Variants, supporting FAIR
+  Schema for the Variant Identifier following several nomenclatures or database convention
+  naming.
+
+
+  Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR
+  transformation of genomic and clinical data into Linked Data.
+
+
+  Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR
+  transformation of genomic and clinical data into Linked Data.
+
+
+  Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR
   transformation of genomic and clinical data into Linked Data.
 
   '
@@ -19,44 +31,140 @@ prefixes:
   linkml:
     prefix_prefix: linkml
     prefix_reference: https://w3id.org/linkml/
+  rdf:
+    prefix_prefix: rdf
+    prefix_reference: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  rdfs:
+    prefix_prefix: rdfs
+    prefix_reference: http://www.w3.org/2000/01/rdf-schema#
+  skos:
+    prefix_prefix: skos
+    prefix_reference: http://www.w3.org/2004/02/skos/core#
+  so:
+    prefix_prefix: so
+    prefix_reference: http://purl.obolibrary.org/obo/SO_
+  faldo:
+    prefix_prefix: faldo
+    prefix_reference: http://biohackathon.org/resource/faldo#
+  geno:
+    prefix_prefix: geno
+    prefix_reference: http://purl.obolibrary.org/obo/GENO_
+  sio:
+    prefix_prefix: sio
+    prefix_reference: http://semanticscience.org/resource/SIO_
+  owl:
+    prefix_prefix: owl
+    prefix_reference: http://www.w3.org/2002/07/owl#
+  aic:
+    prefix_prefix: aic
+    prefix_reference: https://example.org/aiccohortvariants#
+  mondo:
+    prefix_prefix: mondo
+    prefix_reference: http://purl.obolibrary.org/obo/MONDO_
+  hpo:
+    prefix_prefix: hpo
+    prefix_reference: http://purl.obolibrary.org/obo/HP_
+  ncit:
+    prefix_prefix: ncit
+    prefix_reference: http://purl.obolibrary.org/obo/NCIT_
 default_prefix: https://w3id.org/neugenfair/schema/
 classes:
-  Individual:
-    name: Individual
-    description: A study participant in a genomic/clinical cohort.
+  SequenceAlteration:
+    name: SequenceAlteration
+    description: A representation of a sequence alteration (so:0001059).
+    exact_mappings:
+    - geno:0000660
     attributes:
-      id:
-        name: id
-        description: Unique identifier for the individual.
-        identifier: true
+      has_identifier:
+        name: has_identifier
+        description: A unique identifier for the sequence alteration.
+        slot_uri: sio:000674
+        range: VariantIdentifier
+        required: true
+      has_reference_allele:
+        name: has_reference_allele
+        description: Links the sequence alteration to its reference allele.
+        slot_uri: geno:0000385
+        range: ReferenceAllele
+        required: false
+      has_alternate_allele:
+        name: has_alternate_allele
+        description: Links the sequence alteration to its alternate allele.
+        slot_uri: geno:0000382
+        range: AlternateAllele
+        required: false
+      has_location:
+        name: has_location
+        description: Links the sequence alteration to its location.
+        slot_uri: faldo:location
+        range: VariationSite
+        required: false
+    class_uri: so:0001059
+  VariantIdentifier:
+    name: VariantIdentifier
+    description: A unique identifier for a sequence alteration.
+    attributes:
+      hgvsid:
+        name: hgvsid
+        description: HGVSid. identifier
+        slot_uri: sio:000300
         range: string
-      sex:
-        name: sex
-        description: Biological sex of the individual.
+        required: true
+      rsid:
+        name: rsid
+        description: dbsnp rsid.
+        slot_uri: sio:000300
         range: string
         required: false
-      age:
-        name: age
-        description: Age of the individual in years.
-        range: integer
+      other:
+        name: other
+        description: Other identifiers.
+        slot_uri: sio:000300
+        range: string
         required: false
-  Variant:
-    name: Variant
-    description: A genomic variant observed in the study.
+    class_uri: sio:000675
+  VariationSite:
+    name: VariationSite
+    description: Represents the location of a sequence alteration.
     attributes:
-      chrom:
-        name: chrom
-        description: Chromosome (e.g. '1', 'X', 'MT').
-        range: string
-      pos:
-        name: pos
-        description: 1-based position of the variant on the chromosome.
+      begins_at:
+        name: begins_at
+        description: The beginning of the location of the sequence alteration.
+        slot_uri: faldo:begin
         range: integer
-      ref:
-        name: ref
-        description: Reference allele.
+        required: true
+      ends_at:
+        name: ends_at
+        description: The end of the location of the sequence alteration.
+        slot_uri: faldo:end
+        range: integer
+        required: true
+      has_reference:
+        name: has_reference
+        description: The reference sequence (contig, sequence, chromosome).
+        slot_uri: faldo:reference
+        range: integer
+        required: true
+    class_uri: faldo:Region
+  ReferenceAllele:
+    name: ReferenceAllele
+    description: Represents the reference allele (geno:0000036).
+    attributes:
+      value:
+        name: value
+        description: The value of the reference allele.
+        slot_uri: sio:000300
         range: string
-      alt:
-        name: alt
-        description: Alternate allele.
+        required: true
+    class_uri: geno:0000036
+  AlternateAllele:
+    name: AlternateAllele
+    description: Represents the alternate allele (geno:0000002).
+    attributes:
+      value:
+        name: value
+        description: The value of the alternate allele.
+        slot_uri: sio:000300
         range: string
+        required: true
+    class_uri: geno:0000002

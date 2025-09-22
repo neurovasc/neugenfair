@@ -1,59 +1,118 @@
+@prefix faldo: <http://biohackathon.org/resource/faldo#> .
+@prefix geno: <http://purl.obolibrary.org/obo/GENO_> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix sio: <http://semanticscience.org/resource/SIO_> .
+@prefix so: <http://purl.obolibrary.org/obo/SO_> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://w3id.org/neugenfair/schema/Individual> a sh:NodeShape ;
+so:0001059 a sh:NodeShape ;
     sh:closed true ;
-    sh:description "A study participant in a genomic/clinical cohort." ;
+    sh:description "A representation of a sequence alteration (so:0001059)." ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:datatype xsd:string ;
-            sh:description "Unique identifier for the individual." ;
+    sh:property [ sh:class faldo:Region ;
+            sh:description "Links the sequence alteration to its location." ;
             sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 0 ;
-            sh:path <https://w3id.org/neugenfair/schema/id> ],
-        [ sh:datatype xsd:integer ;
-            sh:description "Age of the individual in years." ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 2 ;
-            sh:path <https://w3id.org/neugenfair/schema/age> ],
-        [ sh:datatype xsd:string ;
-            sh:description "Biological sex of the individual." ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 1 ;
-            sh:path <https://w3id.org/neugenfair/schema/sex> ] ;
-    sh:targetClass <https://w3id.org/neugenfair/schema/Individual> .
-
-<https://w3id.org/neugenfair/schema/Variant> a sh:NodeShape ;
-    sh:closed true ;
-    sh:description "A genomic variant observed in the study." ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:datatype xsd:string ;
-            sh:description "Chromosome (e.g. '1', 'X', 'MT')." ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 0 ;
-            sh:path <https://w3id.org/neugenfair/schema/chrom> ],
-        [ sh:datatype xsd:string ;
-            sh:description "Reference allele." ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 2 ;
-            sh:path <https://w3id.org/neugenfair/schema/ref> ],
-        [ sh:datatype xsd:string ;
-            sh:description "Alternate allele." ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
             sh:order 3 ;
-            sh:path <https://w3id.org/neugenfair/schema/alt> ],
+            sh:path faldo:location ],
+        [ sh:class sio:000675 ;
+            sh:description "A unique identifier for the sequence alteration." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 0 ;
+            sh:path sio:000674 ],
+        [ sh:class geno:0000036 ;
+            sh:description "Links the sequence alteration to its reference allele." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 1 ;
+            sh:path geno:0000385 ],
+        [ sh:class geno:0000002 ;
+            sh:description "Links the sequence alteration to its alternate allele." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 2 ;
+            sh:path geno:0000382 ] ;
+    sh:targetClass so:0001059 .
+
+faldo:Region a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "Represents the location of a sequence alteration." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:datatype xsd:integer ;
+            sh:description "The beginning of the location of the sequence alteration." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path faldo:begin ],
         [ sh:datatype xsd:integer ;
-            sh:description "1-based position of the variant on the chromosome." ;
+            sh:description "The reference sequence (contig, sequence, chromosome)." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 2 ;
+            sh:path faldo:reference ],
+        [ sh:datatype xsd:integer ;
+            sh:description "The end of the location of the sequence alteration." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 1 ;
+            sh:path faldo:end ] ;
+    sh:targetClass faldo:Region .
+
+geno:0000002 a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "Represents the alternate allele (geno:0000002)." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:description "The value of the alternate allele." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path sio:000300 ] ;
+    sh:targetClass geno:0000002 .
+
+geno:0000036 a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "Represents the reference allele (geno:0000036)." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:description "The value of the reference allele." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path sio:000300 ] ;
+    sh:targetClass geno:0000036 .
+
+sio:000675 a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "A unique identifier for a sequence alteration." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:description "Other identifiers." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 2 ;
+            sh:path sio:000300 ],
+        [ sh:datatype xsd:string ;
+            sh:description "dbsnp rsid." ;
             sh:maxCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:order 1 ;
-            sh:path <https://w3id.org/neugenfair/schema/pos> ] ;
-    sh:targetClass <https://w3id.org/neugenfair/schema/Variant> .
+            sh:path sio:000300 ],
+        [ sh:datatype xsd:string ;
+            sh:description "HGVSid. identifier" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path sio:000300 ] ;
+    sh:targetClass sio:000675 .
 
 

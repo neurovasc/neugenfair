@@ -22,6 +22,7 @@ Blah.
 
 ## Schema Documentation
 
-[Markdown documentation link 1](https://bodrug-a.univ-nantes.io/neugenfair) \
-[Markdown documentation link 2](https://neugenfair-caffb5.univ-nantes.io/)
+[MkDocs](https://bodrug-a.univ-nantes.io/neugenfair) \
+[pyLODE](https://bodrug-a.univ-nantes.io/neugenfair/pylode) \
+[Alternative link](https://neugenfair-caffb5.univ-nantes.io/)
 

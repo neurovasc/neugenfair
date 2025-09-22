@@ -289,7 +289,7 @@ td {
     ],
     "https://schema.org/description": [
       {
-        "@value": "Merged NeugenFAIR schema\nSchema for the NeugenFAIR tool. Defines Individuals and Variants, supporting FAIR transformation of genomic and clinical data into Linked Data.\n\nSchema for the NeugenFAIR tool. Defines Individuals and Variants, supporting FAIR transformation of genomic and clinical data into Linked Data.\n"
+        "@value": "Merged NeugenFAIR schema\nSchema for the neugenfair tool. Defines classes and attributes, supporting FAIR transformation of genomic and clinical data into Linked Data.\n\nSchema for the Variant Identifier following several nomenclatures or database convention naming.\n\nSchema for the neugenfair tool. Defines classes and attributes, supporting FAIR transformation of genomic and clinical data into Linked Data.\n\nSchema for the neugenfair tool. Defines classes and attributes, supporting FAIR transformation of genomic and clinical data into Linked Data.\n\nSchema for the neugenfair tool. Defines classes and attributes, supporting FAIR transformation of genomic and clinical data into Linked Data.\n"
       }
     ],
     "https://schema.org/name": [
@@ -326,29 +326,32 @@ td {
               <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
             </dt>
             <dd><p>Merged NeugenFAIR schema
-Schema for the NeugenFAIR tool. Defines Individuals and Variants, supporting FAIR transformation of genomic and clinical data into Linked Data.</p>
-<p>Schema for the NeugenFAIR tool. Defines Individuals and Variants, supporting FAIR transformation of genomic and clinical data into Linked Data.</p></dd>
+Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR transformation of genomic and clinical data into Linked Data.</p>
+<p>Schema for the Variant Identifier following several nomenclatures or database convention naming.</p>
+<p>Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR transformation of genomic and clinical data into Linked Data.</p>
+<p>Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR transformation of genomic and clinical data into Linked Data.</p>
+<p>Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR transformation of genomic and clinical data into Linked Data.</p></dd>
           </div>
         </dl>
       </div>
       <div class="section" id="classes">
         <h2>Classes</h2>
-        <div class="property entity" id="Individual">
-          <h3>Individual
+        <div class="property entity" id="SequenceAlteration">
+          <h3>SequenceAlteration
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://w3id.org/neugenfair/schema/Individual</code>
+                <code>https://w3id.org/neugenfair/schema/SequenceAlteration</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>A study participant in a genomic/clinical cohort.</p></td>
+              <td><p>A representation of a sequence alteration (so:0001059).</p></td>
             </tr>
             <tr>
               <th>
@@ -360,7 +363,237 @@ Schema for the NeugenFAIR tool. Defines Individuals and Variants, supporting FAI
                     <span>
                       <span>
                         <span>
-                          <a href="https://w3id.org/neugenfair/schema/sex">sex</a>
+                          <a href="https://w3id.org/neugenfair/schema/has_identifier">has_identifier</a>
+                          <sup class="sup-op" title="OWL Object Property">op</sup>
+                        </span>
+                        <span>
+                          <span class="cardinality">max</span>
+                          <span>1</span>
+                        </span><br>
+                      </span>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <span>
+                        <span>
+                          <a href="https://w3id.org/neugenfair/schema/has_alternate_allele">has_alternate_allele</a>
+                          <sup class="sup-op" title="OWL Object Property">op</sup>
+                        </span>
+                        <span>
+                          <span class="cardinality">max</span>
+                          <span>1</span>
+                        </span><br>
+                      </span>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <span>
+                        <span>
+                          <a href="https://w3id.org/neugenfair/schema/has_reference_allele">has_reference_allele</a>
+                          <sup class="sup-op" title="OWL Object Property">op</sup>
+                        </span>
+                        <span>
+                          <span class="cardinality">max</span>
+                          <span>1</span>
+                        </span><br>
+                      </span>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <span>
+                        <span>
+                          <a href="https://w3id.org/neugenfair/schema/has_identifier">has_identifier</a>
+                          <sup class="sup-op" title="OWL Object Property">op</sup>
+                        </span>
+                        <span>
+                          <span class="cardinality">min</span>
+                          <span>1</span>
+                        </span><br>
+                      </span>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <span>
+                        <span>
+                          <a href="https://w3id.org/neugenfair/schema/has_location">has_location</a>
+                          <sup class="sup-op" title="OWL Object Property">op</sup>
+                        </span>
+                        <span>
+                          <span class="cardinality">max</span>
+                          <span>1</span>
+                        </span><br>
+                      </span>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <span>
+                        <span>
+                          <a href="https://w3id.org/neugenfair/schema/has_location">has_location</a>
+                          <sup class="sup-op" title="OWL Object Property">op</sup>
+                        </span>
+                        <span>
+                          <span class="cardinality">only</span>
+                          <span>
+                            <span>
+                              <a href="https://w3id.org/neugenfair/schema/VariationSite">VariationSite</a>
+                              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                            </span>
+                          </span>
+                        </span><br>
+                      </span>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <span>
+                        <span>
+                          <a href="https://w3id.org/neugenfair/schema/has_location">has_location</a>
+                          <sup class="sup-op" title="OWL Object Property">op</sup>
+                        </span>
+                        <span>
+                          <span class="cardinality">min</span>
+                          <span>0</span>
+                        </span><br>
+                      </span>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <span>
+                        <span>
+                          <a href="https://w3id.org/neugenfair/schema/has_reference_allele">has_reference_allele</a>
+                          <sup class="sup-op" title="OWL Object Property">op</sup>
+                        </span>
+                        <span>
+                          <span class="cardinality">only</span>
+                          <span>
+                            <span>
+                              <a href="https://w3id.org/neugenfair/schema/ReferenceAllele">ReferenceAllele</a>
+                              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                            </span>
+                          </span>
+                        </span><br>
+                      </span>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <span>
+                        <span>
+                          <a href="https://w3id.org/neugenfair/schema/has_reference_allele">has_reference_allele</a>
+                          <sup class="sup-op" title="OWL Object Property">op</sup>
+                        </span>
+                        <span>
+                          <span class="cardinality">min</span>
+                          <span>0</span>
+                        </span><br>
+                      </span>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <span>
+                        <span>
+                          <a href="https://w3id.org/neugenfair/schema/has_alternate_allele">has_alternate_allele</a>
+                          <sup class="sup-op" title="OWL Object Property">op</sup>
+                        </span>
+                        <span>
+                          <span class="cardinality">min</span>
+                          <span>0</span>
+                        </span><br>
+                      </span>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <span>
+                        <span>
+                          <a href="https://w3id.org/neugenfair/schema/has_alternate_allele">has_alternate_allele</a>
+                          <sup class="sup-op" title="OWL Object Property">op</sup>
+                        </span>
+                        <span>
+                          <span class="cardinality">only</span>
+                          <span>
+                            <span>
+                              <a href="https://w3id.org/neugenfair/schema/AlternateAllele">AlternateAllele</a>
+                              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                            </span>
+                          </span>
+                        </span><br>
+                      </span>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <span>
+                        <span>
+                          <a href="https://w3id.org/neugenfair/schema/has_identifier">has_identifier</a>
+                          <sup class="sup-op" title="OWL Object Property">op</sup>
+                        </span>
+                        <span>
+                          <span class="cardinality">only</span>
+                          <span>
+                            <span>
+                              <a href="https://w3id.org/neugenfair/schema/VariantIdentifier">VariantIdentifier</a>
+                              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                            </span>
+                          </span>
+                        </span><br>
+                      </span>
+                    </span>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="AlternateAllele">
+          <h3>AlternateAllele
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/neugenfair/schema/AlternateAllele</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>Represents the alternate allele (geno:0000002).</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/restriction" title="Convenience property for things that subclass owl:Restriction. Defined in Ontology Documentation Profile">Restriction</a>
+              </th>
+              <td>
+                <ul>
+                  <li>
+                    <span>
+                      <span>
+                        <span>
+                          <a href="https://w3id.org/neugenfair/schema/value">value</a>
+                          <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                        </span>
+                        <span>
+                          <span class="cardinality">min</span>
+                          <span>1</span>
+                        </span><br>
+                      </span>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <span>
+                        <span>
+                          <a href="https://w3id.org/neugenfair/schema/value">value</a>
                           <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
                         </span>
                         <span>
@@ -379,7 +612,49 @@ Schema for the NeugenFAIR tool. Defines Individuals and Variants, supporting FAI
                     <span>
                       <span>
                         <span>
-                          <a href="https://w3id.org/neugenfair/schema/id">id</a>
+                          <a href="https://w3id.org/neugenfair/schema/value">value</a>
+                          <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                        </span>
+                        <span>
+                          <span class="cardinality">max</span>
+                          <span>1</span>
+                        </span><br>
+                      </span>
+                    </span>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="ReferenceAllele">
+          <h3>ReferenceAllele
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/neugenfair/schema/ReferenceAllele</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>Represents the reference allele (geno:0000036).</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/restriction" title="Convenience property for things that subclass owl:Restriction. Defined in Ontology Documentation Profile">Restriction</a>
+              </th>
+              <td>
+                <ul>
+                  <li>
+                    <span>
+                      <span>
+                        <span>
+                          <a href="https://w3id.org/neugenfair/schema/value">value</a>
                           <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
                         </span>
                         <span>
@@ -393,7 +668,26 @@ Schema for the NeugenFAIR tool. Defines Individuals and Variants, supporting FAI
                     <span>
                       <span>
                         <span>
-                          <a href="https://w3id.org/neugenfair/schema/id">id</a>
+                          <a href="https://w3id.org/neugenfair/schema/value">value</a>
+                          <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                        </span>
+                        <span>
+                          <span class="cardinality">only</span>
+                          <span>
+                            <span>
+                              <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
+                              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                            </span>
+                          </span>
+                        </span><br>
+                      </span>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <span>
+                        <span>
+                          <a href="https://w3id.org/neugenfair/schema/value">value</a>
                           <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
                         </span>
                         <span>
@@ -403,11 +697,39 @@ Schema for the NeugenFAIR tool. Defines Individuals and Variants, supporting FAI
                       </span>
                     </span>
                   </li>
+                </ul>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="VariantIdentifier">
+          <h3>VariantIdentifier
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/neugenfair/schema/VariantIdentifier</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>A unique identifier for a sequence alteration.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/restriction" title="Convenience property for things that subclass owl:Restriction. Defined in Ontology Documentation Profile">Restriction</a>
+              </th>
+              <td>
+                <ul>
                   <li>
                     <span>
                       <span>
                         <span>
-                          <a href="https://w3id.org/neugenfair/schema/age">age</a>
+                          <a href="https://w3id.org/neugenfair/schema/other">other</a>
                           <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
                         </span>
                         <span>
@@ -421,7 +743,7 @@ Schema for the NeugenFAIR tool. Defines Individuals and Variants, supporting FAI
                     <span>
                       <span>
                         <span>
-                          <a href="https://w3id.org/neugenfair/schema/id">id</a>
+                          <a href="https://w3id.org/neugenfair/schema/other">other</a>
                           <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
                         </span>
                         <span>
@@ -440,14 +762,28 @@ Schema for the NeugenFAIR tool. Defines Individuals and Variants, supporting FAI
                     <span>
                       <span>
                         <span>
-                          <a href="https://w3id.org/neugenfair/schema/age">age</a>
+                          <a href="https://w3id.org/neugenfair/schema/rsid">rsid</a>
+                          <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                        </span>
+                        <span>
+                          <span class="cardinality">max</span>
+                          <span>1</span>
+                        </span><br>
+                      </span>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <span>
+                        <span>
+                          <a href="https://w3id.org/neugenfair/schema/rsid">rsid</a>
                           <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
                         </span>
                         <span>
                           <span class="cardinality">only</span>
                           <span>
                             <span>
-                              <a href="http://www.w3.org/2001/XMLSchema#integer">xsd:integer</a>
+                              <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
                               <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                             </span>
                           </span>
@@ -459,7 +795,21 @@ Schema for the NeugenFAIR tool. Defines Individuals and Variants, supporting FAI
                     <span>
                       <span>
                         <span>
-                          <a href="https://w3id.org/neugenfair/schema/sex">sex</a>
+                          <a href="https://w3id.org/neugenfair/schema/hgvsid">hgvsid</a>
+                          <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                        </span>
+                        <span>
+                          <span class="cardinality">min</span>
+                          <span>1</span>
+                        </span><br>
+                      </span>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <span>
+                        <span>
+                          <a href="https://w3id.org/neugenfair/schema/other">other</a>
                           <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
                         </span>
                         <span>
@@ -473,7 +823,7 @@ Schema for the NeugenFAIR tool. Defines Individuals and Variants, supporting FAI
                     <span>
                       <span>
                         <span>
-                          <a href="https://w3id.org/neugenfair/schema/age">age</a>
+                          <a href="https://w3id.org/neugenfair/schema/hgvsid">hgvsid</a>
                           <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
                         </span>
                         <span>
@@ -487,7 +837,26 @@ Schema for the NeugenFAIR tool. Defines Individuals and Variants, supporting FAI
                     <span>
                       <span>
                         <span>
-                          <a href="https://w3id.org/neugenfair/schema/sex">sex</a>
+                          <a href="https://w3id.org/neugenfair/schema/hgvsid">hgvsid</a>
+                          <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                        </span>
+                        <span>
+                          <span class="cardinality">only</span>
+                          <span>
+                            <span>
+                              <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
+                              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                            </span>
+                          </span>
+                        </span><br>
+                      </span>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <span>
+                        <span>
+                          <a href="https://w3id.org/neugenfair/schema/rsid">rsid</a>
                           <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
                         </span>
                         <span>
@@ -502,22 +871,22 @@ Schema for the NeugenFAIR tool. Defines Individuals and Variants, supporting FAI
             </tr>
           </table>
         </div>
-        <div class="property entity" id="Variant">
-          <h3>Variant
+        <div class="property entity" id="VariationSite">
+          <h3>VariationSite
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://w3id.org/neugenfair/schema/Variant</code>
+                <code>https://w3id.org/neugenfair/schema/VariationSite</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>A genomic variant observed in the study.</p></td>
+              <td><p>Represents the location of a sequence alteration.</p></td>
             </tr>
             <tr>
               <th>
@@ -529,101 +898,7 @@ Schema for the NeugenFAIR tool. Defines Individuals and Variants, supporting FAI
                     <span>
                       <span>
                         <span>
-                          <a href="https://w3id.org/neugenfair/schema/alt">alt</a>
-                          <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-                        </span>
-                        <span>
-                          <span class="cardinality">min</span>
-                          <span>0</span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <span>
-                        <span>
-                          <a href="https://w3id.org/neugenfair/schema/chrom">chrom</a>
-                          <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-                        </span>
-                        <span>
-                          <span class="cardinality">max</span>
-                          <span>1</span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <span>
-                        <span>
-                          <a href="https://w3id.org/neugenfair/schema/ref">ref</a>
-                          <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-                        </span>
-                        <span>
-                          <span class="cardinality">min</span>
-                          <span>0</span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <span>
-                        <span>
-                          <a href="https://w3id.org/neugenfair/schema/chrom">chrom</a>
-                          <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-                        </span>
-                        <span>
-                          <span class="cardinality">only</span>
-                          <span>
-                            <span>
-                              <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
-                              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                            </span>
-                          </span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <span>
-                        <span>
-                          <a href="https://w3id.org/neugenfair/schema/ref">ref</a>
-                          <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-                        </span>
-                        <span>
-                          <span class="cardinality">only</span>
-                          <span>
-                            <span>
-                              <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
-                              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                            </span>
-                          </span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <span>
-                        <span>
-                          <a href="https://w3id.org/neugenfair/schema/alt">alt</a>
-                          <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-                        </span>
-                        <span>
-                          <span class="cardinality">max</span>
-                          <span>1</span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <span>
-                        <span>
-                          <a href="https://w3id.org/neugenfair/schema/pos">pos</a>
+                          <a href="https://w3id.org/neugenfair/schema/has_reference">has_reference</a>
                           <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
                         </span>
                         <span>
@@ -642,28 +917,14 @@ Schema for the NeugenFAIR tool. Defines Individuals and Variants, supporting FAI
                     <span>
                       <span>
                         <span>
-                          <a href="https://w3id.org/neugenfair/schema/pos">pos</a>
-                          <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-                        </span>
-                        <span>
-                          <span class="cardinality">max</span>
-                          <span>1</span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <span>
-                        <span>
-                          <a href="https://w3id.org/neugenfair/schema/alt">alt</a>
+                          <a href="https://w3id.org/neugenfair/schema/begins_at">begins_at</a>
                           <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
                         </span>
                         <span>
                           <span class="cardinality">only</span>
                           <span>
                             <span>
-                              <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
+                              <a href="http://www.w3.org/2001/XMLSchema#integer">xsd:integer</a>
                               <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                             </span>
                           </span>
@@ -675,7 +936,21 @@ Schema for the NeugenFAIR tool. Defines Individuals and Variants, supporting FAI
                     <span>
                       <span>
                         <span>
-                          <a href="https://w3id.org/neugenfair/schema/ref">ref</a>
+                          <a href="https://w3id.org/neugenfair/schema/begins_at">begins_at</a>
+                          <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                        </span>
+                        <span>
+                          <span class="cardinality">min</span>
+                          <span>1</span>
+                        </span><br>
+                      </span>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <span>
+                        <span>
+                          <a href="https://w3id.org/neugenfair/schema/ends_at">ends_at</a>
                           <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
                         </span>
                         <span>
@@ -689,12 +964,12 @@ Schema for the NeugenFAIR tool. Defines Individuals and Variants, supporting FAI
                     <span>
                       <span>
                         <span>
-                          <a href="https://w3id.org/neugenfair/schema/pos">pos</a>
+                          <a href="https://w3id.org/neugenfair/schema/begins_at">begins_at</a>
                           <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
                         </span>
                         <span>
-                          <span class="cardinality">min</span>
-                          <span>0</span>
+                          <span class="cardinality">max</span>
+                          <span>1</span>
                         </span><br>
                       </span>
                     </span>
@@ -703,154 +978,285 @@ Schema for the NeugenFAIR tool. Defines Individuals and Variants, supporting FAI
                     <span>
                       <span>
                         <span>
-                          <a href="https://w3id.org/neugenfair/schema/chrom">chrom</a>
+                          <a href="https://w3id.org/neugenfair/schema/ends_at">ends_at</a>
+                          <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                        </span>
+                        <span>
+                          <span class="cardinality">only</span>
+                          <span>
+                            <span>
+                              <a href="http://www.w3.org/2001/XMLSchema#integer">xsd:integer</a>
+                              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                            </span>
+                          </span>
+                        </span><br>
+                      </span>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <span>
+                        <span>
+                          <a href="https://w3id.org/neugenfair/schema/has_reference">has_reference</a>
                           <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
                         </span>
                         <span>
                           <span class="cardinality">min</span>
-                          <span>0</span>
+                          <span>1</span>
+                        </span><br>
+                      </span>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <span>
+                        <span>
+                          <a href="https://w3id.org/neugenfair/schema/has_reference">has_reference</a>
+                          <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                        </span>
+                        <span>
+                          <span class="cardinality">max</span>
+                          <span>1</span>
+                        </span><br>
+                      </span>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <span>
+                        <span>
+                          <a href="https://w3id.org/neugenfair/schema/ends_at">ends_at</a>
+                          <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                        </span>
+                        <span>
+                          <span class="cardinality">min</span>
+                          <span>1</span>
                         </span><br>
                       </span>
                     </span>
                   </li>
                 </ul>
               </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="section" id="objectproperties">
+        <h2>Object Properties</h2>
+        <div class="property entity" id="has_alternate_allele">
+          <h3>has_alternate_allele
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/neugenfair/schema/has_alternate_allele</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>Links the sequence alteration to its alternate allele.</p></td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="has_identifier">
+          <h3>has_identifier
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/neugenfair/schema/has_identifier</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>A unique identifier for the sequence alteration.</p></td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="has_location">
+          <h3>has_location
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/neugenfair/schema/has_location</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>Links the sequence alteration to its location.</p></td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="has_reference_allele">
+          <h3>has_reference_allele
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/neugenfair/schema/has_reference_allele</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>Links the sequence alteration to its reference allele.</p></td>
             </tr>
           </table>
         </div>
       </div>
       <div class="section" id="datatypeproperties">
         <h2>Datatype Properties</h2>
-        <div class="property entity" id="age">
-          <h3>age
+        <div class="property entity" id="begins_at">
+          <h3>begins_at
             <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://w3id.org/neugenfair/schema/age</code>
+                <code>https://w3id.org/neugenfair/schema/begins_at</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Age of the individual in years.</p></td>
+              <td><p>The beginning of the location of the sequence alteration.</p></td>
             </tr>
           </table>
         </div>
-        <div class="property entity" id="alt">
-          <h3>alt
+        <div class="property entity" id="ends_at">
+          <h3>ends_at
             <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://w3id.org/neugenfair/schema/alt</code>
+                <code>https://w3id.org/neugenfair/schema/ends_at</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Alternate allele.</p></td>
+              <td><p>The end of the location of the sequence alteration.</p></td>
             </tr>
           </table>
         </div>
-        <div class="property entity" id="chrom">
-          <h3>chrom
+        <div class="property entity" id="has_reference">
+          <h3>has_reference
             <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://w3id.org/neugenfair/schema/chrom</code>
+                <code>https://w3id.org/neugenfair/schema/has_reference</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Chromosome (e.g. '1', 'X', 'MT').</p></td>
+              <td><p>The reference sequence (contig, sequence, chromosome).</p></td>
             </tr>
           </table>
         </div>
-        <div class="property entity" id="id">
-          <h3>id
+        <div class="property entity" id="hgvsid">
+          <h3>hgvsid
             <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://w3id.org/neugenfair/schema/id</code>
+                <code>https://w3id.org/neugenfair/schema/hgvsid</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Unique identifier for the individual.</p></td>
+              <td><p>HGVSid. identifier</p></td>
             </tr>
           </table>
         </div>
-        <div class="property entity" id="pos">
-          <h3>pos
+        <div class="property entity" id="other">
+          <h3>other
             <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://w3id.org/neugenfair/schema/pos</code>
+                <code>https://w3id.org/neugenfair/schema/other</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>1-based position of the variant on the chromosome.</p></td>
+              <td><p>Other identifiers.</p></td>
             </tr>
           </table>
         </div>
-        <div class="property entity" id="ref">
-          <h3>ref
+        <div class="property entity" id="rsid">
+          <h3>rsid
             <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://w3id.org/neugenfair/schema/ref</code>
+                <code>https://w3id.org/neugenfair/schema/rsid</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Reference allele.</p></td>
+              <td><p>dbsnp rsid.</p></td>
             </tr>
           </table>
         </div>
-        <div class="property entity" id="sex">
-          <h3>sex
+        <div class="property entity" id="value">
+          <h3>value
             <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://w3id.org/neugenfair/schema/sex</code>
+                <code>https://w3id.org/neugenfair/schema/value</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Biological sex of the individual.</p></td>
+              <td>
+                <ul>
+                  <li><p>The value of the alternate allele.</p></li>
+                  <li><p>The value of the reference allele.</p></li>
+                </ul>
+              </td>
             </tr>
           </table>
         </div>
@@ -858,6 +1264,14 @@ Schema for the NeugenFAIR tool. Defines Individuals and Variants, supporting FAI
       <div id="namespaces">
         <h2>Namespaces</h2>
         <dl>
+          <dt id="faldo">faldo</dt>
+          <dd>
+            <code>http://biohackathon.org/resource/faldo#</code>
+          </dd>
+          <dt id="geno">geno</dt>
+          <dd>
+            <code>http://purl.obolibrary.org/obo/GENO_</code>
+          </dd>
           <dt id="ns1">ns1</dt>
           <dd>
             <code>https://w3id.org/neugenfair/</code>
@@ -874,9 +1288,17 @@ Schema for the NeugenFAIR tool. Defines Individuals and Variants, supporting FAI
           <dd>
             <code>http://www.w3.org/2000/01/rdf-schema#</code>
           </dd>
+          <dt id="sio">sio</dt>
+          <dd>
+            <code>http://semanticscience.org/resource/SIO_</code>
+          </dd>
           <dt id="skos">skos</dt>
           <dd>
             <code>http://www.w3.org/2004/02/skos/core#</code>
+          </dd>
+          <dt id="so">so</dt>
+          <dd>
+            <code>http://purl.obolibrary.org/obo/SO_</code>
           </dd>
           <dt id="xsd">xsd</dt>
           <dd>
@@ -892,6 +1314,12 @@ Schema for the NeugenFAIR tool. Defines Individuals and Variants, supporting FAI
               <sup class="sup-c" title="OWL/RDFS Class">c</sup>
             </td>
             <td>Classes</td>
+          </tr>
+          <tr>
+            <td>
+              <sup class="sup-op" title="OWL Object Property">op</sup>
+            </td>
+            <td>Object Properties</td>
           </tr>
           <tr>
             <td>
@@ -929,10 +1357,38 @@ Schema for the NeugenFAIR tool. Defines Individuals and Variants, supporting FAI
           </h4>
           <ul class="second">
             <li>
-              <a href="#Individual">Individual</a>
+              <a href="#SequenceAlteration">SequenceAlteration</a>
             </li>
             <li>
-              <a href="#Variant">Variant</a>
+              <a href="#AlternateAllele">AlternateAllele</a>
+            </li>
+            <li>
+              <a href="#ReferenceAllele">ReferenceAllele</a>
+            </li>
+            <li>
+              <a href="#VariantIdentifier">VariantIdentifier</a>
+            </li>
+            <li>
+              <a href="#VariationSite">VariationSite</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h4>
+            <a href="#objectproperties">Object Properties</a>
+          </h4>
+          <ul class="second">
+            <li>
+              <a href="#has_alternate_allele">has_alternate_allele</a>
+            </li>
+            <li>
+              <a href="#has_identifier">has_identifier</a>
+            </li>
+            <li>
+              <a href="#has_location">has_location</a>
+            </li>
+            <li>
+              <a href="#has_reference_allele">has_reference_allele</a>
             </li>
           </ul>
         </li>
@@ -942,25 +1398,25 @@ Schema for the NeugenFAIR tool. Defines Individuals and Variants, supporting FAI
           </h4>
           <ul class="second">
             <li>
-              <a href="#age">age</a>
+              <a href="#begins_at">begins_at</a>
             </li>
             <li>
-              <a href="#alt">alt</a>
+              <a href="#ends_at">ends_at</a>
             </li>
             <li>
-              <a href="#chrom">chrom</a>
+              <a href="#has_reference">has_reference</a>
             </li>
             <li>
-              <a href="#id">id</a>
+              <a href="#hgvsid">hgvsid</a>
             </li>
             <li>
-              <a href="#pos">pos</a>
+              <a href="#other">other</a>
             </li>
             <li>
-              <a href="#ref">ref</a>
+              <a href="#rsid">rsid</a>
             </li>
             <li>
-              <a href="#sex">sex</a>
+              <a href="#value">value</a>
             </li>
           </ul>
         </li>
@@ -969,6 +1425,12 @@ Schema for the NeugenFAIR tool. Defines Individuals and Variants, supporting FAI
             <a href="#namespaces">Namespaces</a>
           </h4>
           <ul class="second">
+            <li>
+              <a href="#faldo">faldo</a>
+            </li>
+            <li>
+              <a href="#geno">geno</a>
+            </li>
             <li>
               <a href="#ns1">ns1</a>
             </li>
@@ -982,7 +1444,13 @@ Schema for the NeugenFAIR tool. Defines Individuals and Variants, supporting FAI
               <a href="#rdfs">rdfs</a>
             </li>
             <li>
+              <a href="#sio">sio</a>
+            </li>
+            <li>
               <a href="#skos">skos</a>
+            </li>
+            <li>
+              <a href="#so">so</a>
             </li>
             <li>
               <a href="#xsd">xsd</a>

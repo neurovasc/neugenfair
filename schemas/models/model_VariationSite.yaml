@@ -1,0 +1,49 @@
+id: https://w3id.org/neugenfair/schema
+name: neugenfairschema
+description: >
+  Schema for the neugenfair tool. Defines classes and attributes,
+  supporting FAIR transformation of genomic and clinical data into Linked Data.
+
+prefixes:
+  ex: http://example.org/
+  linkml: https://w3id.org/linkml/
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  skos: http://www.w3.org/2004/02/skos/core#
+  so: http://purl.obolibrary.org/obo/SO_
+  faldo: http://biohackathon.org/resource/faldo#
+  geno: http://purl.obolibrary.org/obo/GENO_
+  sio: http://semanticscience.org/resource/SIO_
+  owl: http://www.w3.org/2002/07/owl#
+  aic: https://example.org/aiccohortvariants#
+  mondo: http://purl.obolibrary.org/obo/MONDO_
+  hpo: http://purl.obolibrary.org/obo/HP_
+  ncit: http://purl.obolibrary.org/obo/NCIT_
+
+
+imports:
+  - linkml:types
+
+classes:
+  # Location/Position of the sequence alteration  
+  VariationSite:
+    class_uri: faldo:Region
+    description: "Represents the location of a sequence alteration."
+    attributes:
+      begins_at:
+        description: "The beginning of the location of the sequence alteration."
+        required: true
+        range: integer
+        slot_uri: faldo:begin
+      ends_at:
+        description: "The end of the location of the sequence alteration."
+        required: true
+        range: integer
+        slot_uri: faldo:end
+      has_reference:
+        description: "The reference sequence (contig, sequence, chromosome)."
+        required: true
+        range: integer
+        slot_uri: faldo:reference
+
+

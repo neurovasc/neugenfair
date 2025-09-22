@@ -1,8 +1,15 @@
+import sys
 from linkml_runtime.loaders import yaml_loader
 from linkml_runtime.linkml_model.meta import SchemaDefinition
 from linkml_runtime.dumpers import yaml_dumper
 
-schemas = ["schemas/models/model_Individual.yaml", "schemas/models/model_Variant.yaml"]
+schemas = ["schemas/models/model_SequenceAlteration.yaml", 
+           "schemas/models/model_VariantIdentifier.yaml", 
+           "schemas/models/model_VariationSite.yaml",
+           "schemas/models/model_ReferenceAllele.yaml",
+           "schemas/models/model_AlternateAllele.yaml"]
+# Output file from CLI, or default
+outyaml = sys.argv[1] if len(sys.argv) > 1 else "schemas/neugenfairmodel.yaml"
 
 # Start with an empty merged schema
 merged_schema = SchemaDefinition(

@@ -1,0 +1,55 @@
+id: https://w3id.org/neugenfair/schema
+name: neugenfairschema
+description: >
+  Schema for the neugenfair tool. Defines classes and attributes,
+  supporting FAIR transformation of genomic and clinical data into Linked Data.
+
+prefixes:
+  ex: http://example.org/
+  linkml: https://w3id.org/linkml/
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  skos: http://www.w3.org/2004/02/skos/core#
+  so: http://purl.obolibrary.org/obo/SO_
+  faldo: http://biohackathon.org/resource/faldo#
+  geno: http://purl.obolibrary.org/obo/GENO_
+  sio: http://semanticscience.org/resource/SIO_
+  owl: http://www.w3.org/2002/07/owl#
+  aic: https://example.org/aiccohortvariants#
+  mondo: http://purl.obolibrary.org/obo/MONDO_
+  hpo: http://purl.obolibrary.org/obo/HP_
+  ncit: http://purl.obolibrary.org/obo/NCIT_
+
+
+imports:
+  - linkml:types
+
+classes:
+  # Sequence Alteration / Variation
+  SequenceAlteration:
+    description: "A representation of a sequence alteration (so:0001059)."
+    class_uri: so:0001059
+    exact_mappings:
+      - geno:0000660
+    attributes:
+      has_identifier:
+        description: "A unique identifier for the sequence alteration."
+        required: true
+        range: VariantIdentifier
+        slot_uri: sio:000674
+      has_reference_allele:
+        description: "Links the sequence alteration to its reference allele."
+        required: false
+        range: ReferenceAllele  # Updated to reference the new class
+        slot_uri: geno:0000385
+      has_alternate_allele:
+        description: "Links the sequence alteration to its alternate allele."
+        required: false
+        range: AlternateAllele  # Updated to reference the new class
+        slot_uri: geno:0000382
+      has_location:
+        description: "Links the sequence alteration to its location."
+        required: false
+        range: VariationSite
+        slot_uri: faldo:location
+

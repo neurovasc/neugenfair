@@ -1,9 +1,15 @@
 # NeugenFAIRSchema
 
 Merged NeugenFAIR schema
-Schema for the NeugenFAIR tool. Defines Individuals and Variants, supporting FAIR transformation of genomic and clinical data into Linked Data.
+Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR transformation of genomic and clinical data into Linked Data.
 
-Schema for the NeugenFAIR tool. Defines Individuals and Variants, supporting FAIR transformation of genomic and clinical data into Linked Data.
+Schema for the Variant Identifier following several nomenclatures or database convention naming.
+
+Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR transformation of genomic and clinical data into Linked Data.
+
+Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR transformation of genomic and clinical data into Linked Data.
+
+Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR transformation of genomic and clinical data into Linked Data.
 
 
 URI: https://w3id.org/neugenfair/schema
@@ -16,8 +22,11 @@ Name: NeugenFAIRSchema
 
 | Class | Description |
 | --- | --- |
-| [Individual](Individual.md) | A study participant in a genomic/clinical cohort |
-| [Variant](Variant.md) | A genomic variant observed in the study |
+| [AlternateAllele](AlternateAllele.md) | Represents the alternate allele (geno:0000002) |
+| [ReferenceAllele](ReferenceAllele.md) | Represents the reference allele (geno:0000036) |
+| [SequenceAlteration](SequenceAlteration.md) | A representation of a sequence alteration (so:0001059) |
+| [VariantIdentifier](VariantIdentifier.md) | A unique identifier for a sequence alteration |
+| [VariationSite](VariationSite.md) | Represents the location of a sequence alteration |
 
 
 
@@ -25,13 +34,17 @@ Name: NeugenFAIRSchema
 
 | Slot | Description |
 | --- | --- |
-| [age](age.md) | Age of the individual in years |
-| [alt](alt.md) | Alternate allele |
-| [chrom](chrom.md) | Chromosome (e |
-| [id](id.md) | Unique identifier for the individual |
-| [pos](pos.md) | 1-based position of the variant on the chromosome |
-| [ref](ref.md) | Reference allele |
-| [sex](sex.md) | Biological sex of the individual |
+| [begins_at](begins_at.md) | The beginning of the location of the sequence alteration |
+| [ends_at](ends_at.md) | The end of the location of the sequence alteration |
+| [has_alternate_allele](has_alternate_allele.md) | Links the sequence alteration to its alternate allele |
+| [has_identifier](has_identifier.md) | A unique identifier for the sequence alteration |
+| [has_location](has_location.md) | Links the sequence alteration to its location |
+| [has_reference](has_reference.md) | The reference sequence (contig, sequence, chromosome) |
+| [has_reference_allele](has_reference_allele.md) | Links the sequence alteration to its reference allele |
+| [hgvsid](hgvsid.md) | HGVSid |
+| [other](other.md) | Other identifiers |
+| [rsid](rsid.md) | dbsnp rsid |
+| [value](value.md) | The value of the reference allele |
 
 
 ## Enumerations
