@@ -1,5 +1,14 @@
-name: NeugenFAIRSchema
-description: 'Merged NeugenFAIR schema
+name: neugenfairSchema
+description: 'neugenfair schema data model for representing phenoclinical genomic
+  data in the ICAN dataset
+
+  Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR
+  transformation of genomic and clinical data into Linked Data.
+
+
+  Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR
+  transformation of genomic and clinical data into Linked Data.
+
 
   Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR
   transformation of genomic and clinical data into Linked Data.
@@ -7,14 +16,6 @@ description: 'Merged NeugenFAIR schema
 
   Schema for the Variant Identifier following several nomenclatures or database convention
   naming.
-
-
-  Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR
-  transformation of genomic and clinical data into Linked Data.
-
-
-  Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR
-  transformation of genomic and clinical data into Linked Data.
 
 
   Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR
@@ -69,6 +70,28 @@ prefixes:
     prefix_reference: http://purl.obolibrary.org/obo/NCIT_
 default_prefix: https://w3id.org/neugenfair/schema/
 classes:
+  AlternateAllele:
+    name: AlternateAllele
+    description: Represents the alternate allele (geno:0000002).
+    attributes:
+      value:
+        name: value
+        description: The value of the alternate allele.
+        slot_uri: sio:000300
+        range: string
+        required: true
+    class_uri: geno:0000002
+  ReferenceAllele:
+    name: ReferenceAllele
+    description: Represents the reference allele (geno:0000036).
+    attributes:
+      value:
+        name: value
+        description: The value of the reference allele.
+        slot_uri: sio:000300
+        range: string
+        required: true
+    class_uri: geno:0000036
   SequenceAlteration:
     name: SequenceAlteration
     description: A representation of a sequence alteration (so:0001059).
@@ -146,25 +169,3 @@ classes:
         range: integer
         required: true
     class_uri: faldo:Region
-  ReferenceAllele:
-    name: ReferenceAllele
-    description: Represents the reference allele (geno:0000036).
-    attributes:
-      value:
-        name: value
-        description: The value of the reference allele.
-        slot_uri: sio:000300
-        range: string
-        required: true
-    class_uri: geno:0000036
-  AlternateAllele:
-    name: AlternateAllele
-    description: Represents the alternate allele (geno:0000002).
-    attributes:
-      value:
-        name: value
-        description: The value of the alternate allele.
-        slot_uri: sio:000300
-        range: string
-        required: true
-    class_uri: geno:0000002

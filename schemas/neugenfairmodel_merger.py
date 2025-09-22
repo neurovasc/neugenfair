@@ -3,19 +3,20 @@ from linkml_runtime.loaders import yaml_loader
 from linkml_runtime.linkml_model.meta import SchemaDefinition
 from linkml_runtime.dumpers import yaml_dumper
 
-schemas = ["schemas/models/model_SequenceAlteration.yaml", 
-           "schemas/models/model_VariantIdentifier.yaml", 
-           "schemas/models/model_VariationSite.yaml",
-           "schemas/models/model_ReferenceAllele.yaml",
-           "schemas/models/model_AlternateAllele.yaml"]
-# Output file from CLI, or default
-outyaml = sys.argv[1] if len(sys.argv) > 1 else "schemas/neugenfairmodel.yaml"
+if len(sys.argv) < 3:
+    print("Usage: python neugenfairmodel_merger.py <input1.yaml> <input2.yaml> ... <output.yaml>")
+    sys.exit(1)
+
+# All arguments except the last are input files
+schemas = sys.argv[1:-1]
+# Last argument is the output file
+outyaml = sys.argv[-1]
 
 # Start with an empty merged schema
 merged_schema = SchemaDefinition(
     id="https://w3id.org/neugenfair/schema",
-    name="NeugenFAIRSchema",
-    description="Merged NeugenFAIR schema"
+    name="neugenfairSchema",
+    description="neugenfair schema data model for representing phenoclinical genomic data in the ICAN dataset"
 )
 
 for f in schemas:
@@ -49,5 +50,5 @@ for f in schemas:
             merged_schema.description = s.description
 
 # Save merged schema
-yaml_dumper.dump(merged_schema, "schemas/neugenfairmodel.yaml")
-print("Merged schema written to schemas/neugenfairmodel.yaml")
+yaml_dumper.dump(merged_schema, outyaml)
+print(f"Merged schema written to {outyaml}")

@@ -26,7 +26,7 @@ all: mergemodels dataclasses shacl docs pylode
 # But for linkML and pyLODE, it's better to have everything in a single file
 mergemodels:
 	@echo "Merging schema files into $(MODEL_YAML)"
-	poetry run python3 schemas/neugenfairmodel_merger.py $(MODEL_YAML)
+	poetry run python3 schemas/neugenfairmodel_merger.py $(MODEL_SCHEMAS) $(MODEL_YAML)
 
 # Generate Python dataclasses with LinkML Python generator
 dataclasses: 	
