@@ -10,16 +10,18 @@ description: 'neugenfair schema data model for representing phenoclinical genomi
   transformation of genomic and clinical data into Linked Data.
 
 
-  Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR
-  transformation of genomic and clinical data into Linked Data.
+  Region class schema for the neugenfair tool. Defines Region where the SeqeunceAlteration
+  occured as defined in FALDO ontology.
 
 
-  Schema for the Variant Identifier following several nomenclatures or database convention
-  naming.
+  SequenceAlteration class schema for the neugenfair tool. Defines SequenceAlteration
+  and the relations to other adjacent concepts.
 
 
-  Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR
-  transformation of genomic and clinical data into Linked Data.
+  VariantIdentifier class. The identifiers can following several nomenclatures or
+  database convention naming (HGVSid, dbsnp, rsid). On SequenceAlteration can have
+  several identifiers. One identifier can refer to several SequenceAlterations (complex
+  alterations e.g. copy number variation).
 
   '
 id: https://w3id.org/neugenfair/schema
@@ -69,6 +71,109 @@ prefixes:
     prefix_prefix: ncit
     prefix_reference: http://purl.obolibrary.org/obo/NCIT_
 default_prefix: https://w3id.org/neugenfair/schema/
+enums:
+  Nomenclature:
+    name: Nomenclature
+    description: The nomenclature or database system used for the identifier.
+    permissible_values:
+      HGVS:
+        text: HGVS
+      dbSNP:
+        text: dbSNP
+      rsID:
+        text: rsID
+      ClinVar:
+        text: ClinVar
+      COSMIC:
+        text: COSMIC
+      Ensembl:
+        text: Ensembl
+      HUGO:
+        text: HUGO
+      Other:
+        text: Other
+slots:
+  begins_at:
+    name: begins_at
+    description: The beginning of the location of the sequence alteration.
+    mappings:
+    - faldo:begin
+    domain: Region
+    slot_uri: faldo:begin
+    range: integer
+    required: true
+  ends_at:
+    name: ends_at
+    description: The end of the location of the sequence alteration.
+    mappings:
+    - faldo:end
+    domain: Region
+    slot_uri: faldo:end
+    range: integer
+    required: true
+  has_reference:
+    name: has_reference
+    description: The reference sequence (contig, sequence, chromosome).
+    mappings:
+    - faldo:reference
+    domain: Region
+    slot_uri: faldo:reference
+    range: string
+    required: true
+  has_identifier:
+    name: has_identifier
+    description: Relation between a SequenceAlteration and its VariantIdentifier
+    mappings:
+    - sio:0000671
+    domain: SequenceAlteration
+    slot_uri: sio:0000671
+    range: VariantIdentifier
+    required: true
+  has_reference_part:
+    name: has_reference_part
+    description: Links the SequenceAlteration to its ReferenceAllele.
+    exact_mappings:
+    - geno:0000385
+    domain: SequenceAlteration
+    slot_uri: geno:0000385
+    range: ReferenceAllele
+    required: false
+  has_alternate_part:
+    name: has_alternate_part
+    description: Links the SequenceAlteration to its AlternateAllele.
+    exact_mappings:
+    - geno:0000382
+    domain: SequenceAlteration
+    slot_uri: geno:0000382
+    range: AlternateAllele
+    required: false
+  location:
+    name: location
+    description: Links the SequenceAlteration to its (genomic) Region.
+    exact_mappings:
+    - faldo:location
+    domain: SequenceAlteration
+    slot_uri: faldo:location
+    range: Region
+    required: false
+  has_value:
+    name: has_value
+    description: The value of the identifier.
+    mappings:
+    - sio:000300
+    domain: VariantIdentifier
+    slot_uri: sio:000300
+    range: string
+    required: true
+  has_source:
+    name: has_source
+    description: The nomenclature or database of the identifier (e.g. HGVS, dbSNP).
+    mappings:
+    - sio:000253
+    domain: VariantIdentifier
+    slot_uri: sio:000253
+    range: Nomenclature
+    required: true
 classes:
   AlternateAllele:
     name: AlternateAllele
@@ -92,80 +197,39 @@ classes:
         range: string
         required: true
     class_uri: geno:0000036
+  Region:
+    name: Region
+    description: (genomic) Region of a SequenceAlteration.
+    attributes:
+      begins_at:
+        name: begins_at
+      ends_at:
+        name: ends_at
+      has_reference:
+        name: has_reference
+    class_uri: faldo:Region
   SequenceAlteration:
     name: SequenceAlteration
-    description: A representation of a sequence alteration (so:0001059).
+    description: A representation of a SequenceAlteration.
     exact_mappings:
     - geno:0000660
     attributes:
       has_identifier:
         name: has_identifier
-        description: A unique identifier for the sequence alteration.
-        slot_uri: sio:000674
-        range: VariantIdentifier
-        required: true
-      has_reference_allele:
-        name: has_reference_allele
-        description: Links the sequence alteration to its reference allele.
-        slot_uri: geno:0000385
-        range: ReferenceAllele
-        required: false
-      has_alternate_allele:
-        name: has_alternate_allele
-        description: Links the sequence alteration to its alternate allele.
-        slot_uri: geno:0000382
-        range: AlternateAllele
-        required: false
-      has_location:
-        name: has_location
-        description: Links the sequence alteration to its location.
-        slot_uri: faldo:location
-        range: VariationSite
-        required: false
+      has_reference_part:
+        name: has_reference_part
+      has_alternate_part:
+        name: has_alternate_part
+      location:
+        name: location
     class_uri: so:0001059
   VariantIdentifier:
     name: VariantIdentifier
-    description: A unique identifier for a sequence alteration.
+    description: A unique identifier for a sequence alteration within a database or
+      nomenclature.
     attributes:
-      hgvsid:
-        name: hgvsid
-        description: HGVSid. identifier
-        slot_uri: sio:000300
-        range: string
-        required: true
-      rsid:
-        name: rsid
-        description: dbsnp rsid.
-        slot_uri: sio:000300
-        range: string
-        required: false
-      other:
-        name: other
-        description: Other identifiers.
-        slot_uri: sio:000300
-        range: string
-        required: false
+      has_value:
+        name: has_value
+      has_source:
+        name: has_source
     class_uri: sio:000675
-  VariationSite:
-    name: VariationSite
-    description: Represents the location of a sequence alteration.
-    attributes:
-      begins_at:
-        name: begins_at
-        description: The beginning of the location of the sequence alteration.
-        slot_uri: faldo:begin
-        range: integer
-        required: true
-      ends_at:
-        name: ends_at
-        description: The end of the location of the sequence alteration.
-        slot_uri: faldo:end
-        range: integer
-        required: true
-      has_reference:
-        name: has_reference
-        description: The reference sequence (contig, sequence, chromosome).
-        slot_uri: faldo:reference
-        range: integer
-        required: true
-    class_uri: faldo:Region

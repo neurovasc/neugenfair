@@ -22,7 +22,7 @@ Alias: has_location
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [SequenceAlteration](SequenceAlteration.md) | A representation of a sequence alteration (so:0001059) |  no  |
+| [SequenceAlteration](SequenceAlteration.md) | A representation of a sequence alteration |  no  |
 
 
 
@@ -57,6 +57,7 @@ Alias: has_location
 | ---  | ---  |
 | self | faldo:location |
 | native | https://w3id.org/neugenfair/schema/has_location |
+| exact | faldo:location |
 
 
 
@@ -68,10 +69,11 @@ Alias: has_location
 name: has_location
 description: Links the sequence alteration to its location.
 from_schema: https://w3id.org/neugenfair/schema
+exact_mappings:
+- faldo:location
 rank: 1000
 slot_uri: faldo:location
 alias: has_location
-owner: SequenceAlteration
 domain_of:
 - SequenceAlteration
 range: VariationSite

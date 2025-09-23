@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../has_alternate_allele/">
+        <link rel="prev" href="../has_alternate_part/">
       
       
         <link rel="next" href="../has_location/">
@@ -199,7 +199,7 @@
   
   
   <span class="md-ellipsis">
-    NeugenFAIRSchema
+    neugenfairSchema
     
   </span>
   
@@ -546,6 +546,28 @@
   
   
     <li class="md-nav__item">
+      <a href="../Nomenclature/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Enum: Nomenclature
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Objectidentifier/" class="md-nav__link">
         
   
@@ -574,6 +596,28 @@
   
   <span class="md-ellipsis">
     Class: ReferenceAllele
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Region/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Class: Region
     
   </span>
   
@@ -829,6 +873,28 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../has_alternate_part/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slot: has_alternate_part
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -1022,12 +1088,122 @@
   
   
     <li class="md-nav__item">
+      <a href="../has_reference_part/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slot: has_reference_part
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../has_source/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slot: has_source
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../has_value/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slot: has_value
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../hgvsid/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     Slot: hgvsid
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../location/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slot: location
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../neugenfairSchema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    neugenfairSchema
     
   </span>
   
@@ -1206,8 +1382,8 @@
 
 
 <h1 id="slot-has_identifier">Slot: has_identifier</h1>
-<p><em>A unique identifier for the sequence alteration.</em></p>
-<p>URI: <a href="http://semanticscience.org/resource/SIO_000674">sio:000674</a>
+<p><em>Relation between a SequenceAlteration and its VariantIdentifier</em></p>
+<p>URI: <a href="http://semanticscience.org/resource/SIO_0000671">sio:0000671</a>
 Alias: has_identifier</p>
 <!-- no inheritance hierarchy -->
 
@@ -1223,7 +1399,7 @@ Alias: has_identifier</p>
 <tbody>
 <tr>
 <td><a href="../SequenceAlteration/">SequenceAlteration</a></td>
-<td>A representation of a sequence alteration (so:0001059)</td>
+<td>A representation of a SequenceAlteration</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -1253,11 +1429,15 @@ Alias: has_identifier</p>
 <tbody>
 <tr>
 <td>self</td>
-<td>sio:000674</td>
+<td>sio:0000671</td>
 </tr>
 <tr>
 <td>native</td>
 <td>https://w3id.org/neugenfair/schema/has_identifier</td>
+</tr>
+<tr>
+<td>undefined</td>
+<td>sio:0000671</td>
 </tr>
 </tbody>
 </table>
@@ -1265,12 +1445,14 @@ Alias: has_identifier</p>
 <details>
 
 <pre><code class="language-yaml">name: has_identifier
-description: A unique identifier for the sequence alteration.
+description: Relation between a SequenceAlteration and its VariantIdentifier
 from_schema: https://w3id.org/neugenfair/schema
+mappings:
+- sio:0000671
 rank: 1000
-slot_uri: sio:000674
+domain: SequenceAlteration
+slot_uri: sio:0000671
 alias: has_identifier
-owner: SequenceAlteration
 domain_of:
 - SequenceAlteration
 range: VariantIdentifier

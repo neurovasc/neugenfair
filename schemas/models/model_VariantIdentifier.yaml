@@ -1,49 +1,59 @@
 id: https://w3id.org/neugenfair/schema
 name: neugenfairschema
 description: >
-  Schema for the Variant Identifier following several nomenclatures
-  or database convention naming.
+  VariantIdentifier class. The identifiers can following several nomenclatures
+  or database convention naming (HGVSid, dbsnp, rsid). On SequenceAlteration can have
+  several identifiers. One identifier can refer to several SequenceAlterations (complex
+  alterations e.g. copy number variation).
 
 prefixes:
   ex: http://example.org/
   linkml: https://w3id.org/linkml/
-  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
-  rdfs: http://www.w3.org/2000/01/rdf-schema#
-  skos: http://www.w3.org/2004/02/skos/core#
-  so: http://purl.obolibrary.org/obo/SO_
-  faldo: http://biohackathon.org/resource/faldo#
-  geno: http://purl.obolibrary.org/obo/GENO_
   sio: http://semanticscience.org/resource/SIO_
-  owl: http://www.w3.org/2002/07/owl#
-  aic: https://example.org/aiccohortvariants#
-  mondo: http://purl.obolibrary.org/obo/MONDO_
-  hpo: http://purl.obolibrary.org/obo/HP_
-  ncit: http://purl.obolibrary.org/obo/NCIT_
 
 
 imports:
   - linkml:types
 
+slots: 
+  has_value:
+    description: "The value of the identifier."
+    required: true
+    range: string
+    slot_uri: sio:000300
+    mappings:
+      - sio:000300
+    domain: VariantIdentifier
+    
+  has_source:
+    description: "The nomenclature or database of the identifier (e.g. HGVS, dbSNP)."
+    required: true
+    range: Nomenclature
+    slot_uri: sio:000253
+    mappings:
+      - sio:000253
+    domain: VariantIdentifier
+
 classes:
-  # Variant Identifier
   VariantIdentifier:
     class_uri: sio:000675
-    description: "A unique identifier for a sequence alteration."
+    description: "A unique identifier for a sequence alteration within a database or nomenclature."
     attributes:
-      hgvsid:
-        description: "HGVSid. identifier"
-        required: true
-        range: string
-        slot_uri: sio:000300
-      rsid:
-        description: "dbsnp rsid."
-        required: false
-        range: string
-        slot_uri: sio:000300
-      other:
-        description: "Other identifiers."
-        required: false
-        range: string
-        slot_uri: sio:000300
+      - has_value
+      - has_source
+
+enums:
+  Nomenclature:
+    description: "The nomenclature or database system used for the identifier."
+    permissible_values:
+      - HGVS
+      - dbSNP
+      - rsID
+      - ClinVar
+      - COSMIC
+      - Ensembl
+      - HUGO
+      - Other
+
 
 

@@ -1,20 +1,20 @@
-# NeugenFAIRSchema
+# neugenfairSchema
 
-Merged NeugenFAIR schema
-Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR transformation of genomic and clinical data into Linked Data.
-
-Schema for the Variant Identifier following several nomenclatures or database convention naming.
-
+neugenfair schema data model for representing phenoclinical genomic data in the ICAN dataset
 Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR transformation of genomic and clinical data into Linked Data.
 
 Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR transformation of genomic and clinical data into Linked Data.
 
-Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR transformation of genomic and clinical data into Linked Data.
+Region class schema for the neugenfair tool. Defines Region where the SeqeunceAlteration occured as defined in FALDO ontology.
+
+SequenceAlteration class schema for the neugenfair tool. Defines SequenceAlteration and the relations to other adjacent concepts.
+
+VariantIdentifier class. The identifiers can following several nomenclatures or database convention naming (HGVSid, dbsnp, rsid). On SequenceAlteration can have several identifiers. One identifier can refer to several SequenceAlterations (complex alterations e.g. copy number variation).
 
 
 URI: https://w3id.org/neugenfair/schema
 
-Name: NeugenFAIRSchema
+Name: neugenfairSchema
 
 
 
@@ -24,9 +24,9 @@ Name: NeugenFAIRSchema
 | --- | --- |
 | [AlternateAllele](AlternateAllele.md) | Represents the alternate allele (geno:0000002) |
 | [ReferenceAllele](ReferenceAllele.md) | Represents the reference allele (geno:0000036) |
-| [SequenceAlteration](SequenceAlteration.md) | A representation of a sequence alteration (so:0001059) |
-| [VariantIdentifier](VariantIdentifier.md) | A unique identifier for a sequence alteration |
-| [VariationSite](VariationSite.md) | Represents the location of a sequence alteration |
+| [Region](Region.md) | (genomic) Region of a SequenceAlteration |
+| [SequenceAlteration](SequenceAlteration.md) | A representation of a SequenceAlteration |
+| [VariantIdentifier](VariantIdentifier.md) | A unique identifier for a sequence alteration within a database or nomenclatu... |
 
 
 
@@ -36,21 +36,21 @@ Name: NeugenFAIRSchema
 | --- | --- |
 | [begins_at](begins_at.md) | The beginning of the location of the sequence alteration |
 | [ends_at](ends_at.md) | The end of the location of the sequence alteration |
-| [has_alternate_allele](has_alternate_allele.md) | Links the sequence alteration to its alternate allele |
-| [has_identifier](has_identifier.md) | A unique identifier for the sequence alteration |
-| [has_location](has_location.md) | Links the sequence alteration to its location |
+| [has_alternate_part](has_alternate_part.md) | Links the SequenceAlteration to its AlternateAllele |
+| [has_identifier](has_identifier.md) | Relation between a SequenceAlteration and its VariantIdentifier |
 | [has_reference](has_reference.md) | The reference sequence (contig, sequence, chromosome) |
-| [has_reference_allele](has_reference_allele.md) | Links the sequence alteration to its reference allele |
-| [hgvsid](hgvsid.md) | HGVSid |
-| [other](other.md) | Other identifiers |
-| [rsid](rsid.md) | dbsnp rsid |
-| [value](value.md) | The value of the reference allele |
+| [has_reference_part](has_reference_part.md) | Links the SequenceAlteration to its ReferenceAllele |
+| [has_source](has_source.md) | The nomenclature or database of the identifier (e |
+| [has_value](has_value.md) | The value of the identifier |
+| [location](location.md) | Links the SequenceAlteration to its (genomic) Region |
+| [value](value.md) | The value of the alternate allele |
 
 
 ## Enumerations
 
 | Enumeration | Description |
 | --- | --- |
+| [Nomenclature](Nomenclature.md) | The nomenclature or database system used for the identifier |
 
 
 ## Types

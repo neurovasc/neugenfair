@@ -22,7 +22,7 @@ Alias: has_reference
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [VariationSite](VariationSite.md) | Represents the location of a sequence alteration |  no  |
+| [Region](Region.md) | (genomic) Region of a SequenceAlteration |  no  |
 
 
 
@@ -31,7 +31,7 @@ Alias: has_reference
 
 ## Properties
 
-* Range: [Integer](Integer.md)
+* Range: [String](String.md)
 
 * Required: True
 
@@ -59,6 +59,7 @@ Alias: has_reference
 | ---  | ---  |
 | self | faldo:reference |
 | native | https://w3id.org/neugenfair/schema/has_reference |
+| undefined | faldo:reference |
 
 
 
@@ -70,13 +71,15 @@ Alias: has_reference
 name: has_reference
 description: The reference sequence (contig, sequence, chromosome).
 from_schema: https://w3id.org/neugenfair/schema
+mappings:
+- faldo:reference
 rank: 1000
+domain: Region
 slot_uri: faldo:reference
 alias: has_reference
-owner: VariationSite
 domain_of:
-- VariationSite
-range: integer
+- Region
+range: string
 required: true
 
 ```

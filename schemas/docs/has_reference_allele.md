@@ -22,7 +22,7 @@ Alias: has_reference_allele
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [SequenceAlteration](SequenceAlteration.md) | A representation of a sequence alteration (so:0001059) |  no  |
+| [SequenceAlteration](SequenceAlteration.md) | A representation of a sequence alteration |  no  |
 
 
 
@@ -57,6 +57,7 @@ Alias: has_reference_allele
 | ---  | ---  |
 | self | geno:0000385 |
 | native | https://w3id.org/neugenfair/schema/has_reference_allele |
+| exact | geno:0000385 |
 
 
 
@@ -68,10 +69,11 @@ Alias: has_reference_allele
 name: has_reference_allele
 description: Links the sequence alteration to its reference allele.
 from_schema: https://w3id.org/neugenfair/schema
+exact_mappings:
+- geno:0000385
 rank: 1000
 slot_uri: geno:0000385
 alias: has_reference_allele
-owner: SequenceAlteration
 domain_of:
 - SequenceAlteration
 range: ReferenceAllele

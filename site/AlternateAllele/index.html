@@ -199,7 +199,7 @@
   
   
   <span class="md-ellipsis">
-    NeugenFAIRSchema
+    neugenfairSchema
     
   </span>
   
@@ -269,15 +269,6 @@
   <a href="#slots" class="md-nav__link">
     <span class="md-ellipsis">
       Slots
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#usages" class="md-nav__link">
-    <span class="md-ellipsis">
-      Usages
     </span>
   </a>
   
@@ -672,6 +663,28 @@
   
   
     <li class="md-nav__item">
+      <a href="../Nomenclature/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Enum: Nomenclature
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Objectidentifier/" class="md-nav__link">
         
   
@@ -700,6 +713,28 @@
   
   <span class="md-ellipsis">
     Class: ReferenceAllele
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Region/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Class: Region
     
   </span>
   
@@ -958,6 +993,28 @@
   
   
     <li class="md-nav__item">
+      <a href="../has_alternate_part/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slot: has_alternate_part
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../has_identifier/" class="md-nav__link">
         
   
@@ -1046,12 +1103,122 @@
   
   
     <li class="md-nav__item">
+      <a href="../has_reference_part/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slot: has_reference_part
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../has_source/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slot: has_source
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../has_value/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slot: has_value
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../hgvsid/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     Slot: hgvsid
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../location/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slot: location
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../neugenfairSchema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    neugenfairSchema
     
   </span>
   
@@ -1157,15 +1324,6 @@
   <a href="#slots" class="md-nav__link">
     <span class="md-ellipsis">
       Slots
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#usages" class="md-nav__link">
-    <span class="md-ellipsis">
-      Usages
     </span>
   </a>
   
@@ -1284,25 +1442,6 @@
 </tr>
 </tbody>
 </table>
-<h2 id="usages">Usages</h2>
-<table>
-<thead>
-<tr>
-<th>used by</th>
-<th>used in</th>
-<th>type</th>
-<th>used</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="../SequenceAlteration/">SequenceAlteration</a></td>
-<td><a href="../has_alternate_allele/">has_alternate_allele</a></td>
-<td>range</td>
-<td><a href="./">AlternateAllele</a></td>
-</tr>
-</tbody>
-</table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
@@ -1341,10 +1480,11 @@ attributes:
     name: value
     description: The value of the alternate allele.
     from_schema: https://w3id.org/neugenfair/schema
+    rank: 1000
     slot_uri: sio:000300
     domain_of:
-    - ReferenceAllele
     - AlternateAllele
+    - ReferenceAllele
     range: string
     required: true
 class_uri: geno:0000002
@@ -1364,12 +1504,13 @@ attributes:
     name: value
     description: The value of the alternate allele.
     from_schema: https://w3id.org/neugenfair/schema
+    rank: 1000
     slot_uri: sio:000300
     alias: value
     owner: AlternateAllele
     domain_of:
-    - ReferenceAllele
     - AlternateAllele
+    - ReferenceAllele
     range: string
     required: true
 class_uri: geno:0000002

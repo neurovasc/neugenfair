@@ -22,7 +22,7 @@ Alias: begins_at
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [VariationSite](VariationSite.md) | Represents the location of a sequence alteration |  no  |
+| [Region](Region.md) | (genomic) Region of a SequenceAlteration |  no  |
 
 
 
@@ -59,6 +59,7 @@ Alias: begins_at
 | ---  | ---  |
 | self | faldo:begin |
 | native | https://w3id.org/neugenfair/schema/begins_at |
+| undefined | faldo:begin |
 
 
 
@@ -70,12 +71,14 @@ Alias: begins_at
 name: begins_at
 description: The beginning of the location of the sequence alteration.
 from_schema: https://w3id.org/neugenfair/schema
+mappings:
+- faldo:begin
 rank: 1000
+domain: Region
 slot_uri: faldo:begin
 alias: begins_at
-owner: VariationSite
 domain_of:
-- VariationSite
+- Region
 range: integer
 required: true
 

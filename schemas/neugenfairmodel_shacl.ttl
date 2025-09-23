@@ -6,62 +6,19 @@
 @prefix so: <http://purl.obolibrary.org/obo/SO_> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-so:0001059 a sh:NodeShape ;
-    sh:closed true ;
-    sh:description "A representation of a sequence alteration (so:0001059)." ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class faldo:Region ;
-            sh:description "Links the sequence alteration to its location." ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:BlankNodeOrIRI ;
-            sh:order 3 ;
-            sh:path faldo:location ],
-        [ sh:class sio:000675 ;
-            sh:description "A unique identifier for the sequence alteration." ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:BlankNodeOrIRI ;
-            sh:order 0 ;
-            sh:path sio:000674 ],
-        [ sh:class geno:0000036 ;
-            sh:description "Links the sequence alteration to its reference allele." ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:BlankNodeOrIRI ;
-            sh:order 1 ;
-            sh:path geno:0000385 ],
-        [ sh:class geno:0000002 ;
-            sh:description "Links the sequence alteration to its alternate allele." ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:BlankNodeOrIRI ;
-            sh:order 2 ;
-            sh:path geno:0000382 ] ;
-    sh:targetClass so:0001059 .
-
 faldo:Region a sh:NodeShape ;
     sh:closed true ;
-    sh:description "Represents the location of a sequence alteration." ;
+    sh:description "(genomic) Region of a SequenceAlteration." ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:datatype xsd:integer ;
-            sh:description "The beginning of the location of the sequence alteration." ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 0 ;
-            sh:path faldo:begin ],
-        [ sh:datatype xsd:integer ;
-            sh:description "The reference sequence (contig, sequence, chromosome)." ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 2 ;
-            sh:path faldo:reference ],
-        [ sh:datatype xsd:integer ;
-            sh:description "The end of the location of the sequence alteration." ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:Literal ;
+    sh:property [ sh:maxCount 1 ;
             sh:order 1 ;
-            sh:path faldo:end ] ;
+            sh:path <https://w3id.org/neugenfair/schema/ends_at> ],
+        [ sh:maxCount 1 ;
+            sh:order 2 ;
+            sh:path <https://w3id.org/neugenfair/schema/has_reference> ],
+        [ sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path <https://w3id.org/neugenfair/schema/begins_at> ] ;
     sh:targetClass faldo:Region .
 
 geno:0000002 a sh:NodeShape ;
@@ -90,29 +47,34 @@ geno:0000036 a sh:NodeShape ;
             sh:path sio:000300 ] ;
     sh:targetClass geno:0000036 .
 
+so:0001059 a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "A representation of a SequenceAlteration." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:maxCount 1 ;
+            sh:order 2 ;
+            sh:path <https://w3id.org/neugenfair/schema/has_alternate_part> ],
+        [ sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path <https://w3id.org/neugenfair/schema/has_reference_part> ],
+        [ sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path <https://w3id.org/neugenfair/schema/has_identifier> ],
+        [ sh:maxCount 1 ;
+            sh:order 3 ;
+            sh:path <https://w3id.org/neugenfair/schema/location> ] ;
+    sh:targetClass so:0001059 .
+
 sio:000675 a sh:NodeShape ;
     sh:closed true ;
-    sh:description "A unique identifier for a sequence alteration." ;
+    sh:description "A unique identifier for a sequence alteration within a database or nomenclature." ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:datatype xsd:string ;
-            sh:description "Other identifiers." ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 2 ;
-            sh:path sio:000300 ],
-        [ sh:datatype xsd:string ;
-            sh:description "dbsnp rsid." ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
+    sh:property [ sh:maxCount 1 ;
             sh:order 1 ;
-            sh:path sio:000300 ],
-        [ sh:datatype xsd:string ;
-            sh:description "HGVSid. identifier" ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:Literal ;
+            sh:path <https://w3id.org/neugenfair/schema/has_source> ],
+        [ sh:maxCount 1 ;
             sh:order 0 ;
-            sh:path sio:000300 ] ;
+            sh:path <https://w3id.org/neugenfair/schema/has_value> ] ;
     sh:targetClass sio:000675 .
 
 

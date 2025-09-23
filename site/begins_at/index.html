@@ -199,7 +199,7 @@
   
   
   <span class="md-ellipsis">
-    NeugenFAIRSchema
+    neugenfairSchema
     
   </span>
   
@@ -546,6 +546,28 @@
   
   
     <li class="md-nav__item">
+      <a href="../Nomenclature/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Enum: Nomenclature
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Objectidentifier/" class="md-nav__link">
         
   
@@ -574,6 +596,28 @@
   
   <span class="md-ellipsis">
     Class: ReferenceAllele
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Region/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Class: Region
     
   </span>
   
@@ -934,6 +978,28 @@
   
   
     <li class="md-nav__item">
+      <a href="../has_alternate_part/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slot: has_alternate_part
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../has_identifier/" class="md-nav__link">
         
   
@@ -1022,12 +1088,122 @@
   
   
     <li class="md-nav__item">
+      <a href="../has_reference_part/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slot: has_reference_part
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../has_source/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slot: has_source
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../has_value/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slot: has_value
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../hgvsid/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     Slot: hgvsid
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../location/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slot: location
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../neugenfairSchema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    neugenfairSchema
     
   </span>
   
@@ -1222,8 +1398,8 @@ Alias: begins_at</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../VariationSite/">VariationSite</a></td>
-<td>Represents the location of a sequence alteration</td>
+<td><a href="../Region/">Region</a></td>
+<td>(genomic) Region of a SequenceAlteration</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -1259,6 +1435,10 @@ Alias: begins_at</p>
 <td>native</td>
 <td>https://w3id.org/neugenfair/schema/begins_at</td>
 </tr>
+<tr>
+<td>undefined</td>
+<td>faldo:begin</td>
+</tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
@@ -1267,12 +1447,14 @@ Alias: begins_at</p>
 <pre><code class="language-yaml">name: begins_at
 description: The beginning of the location of the sequence alteration.
 from_schema: https://w3id.org/neugenfair/schema
+mappings:
+- faldo:begin
 rank: 1000
+domain: Region
 slot_uri: faldo:begin
 alias: begins_at
-owner: VariationSite
 domain_of:
-- VariationSite
+- Region
 range: integer
 required: true
 

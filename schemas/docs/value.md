@@ -57,8 +57,8 @@ Alias: value
 name: value
 alias: value
 domain_of:
-- ReferenceAllele
 - AlternateAllele
+- ReferenceAllele
 
 ```
 </details>

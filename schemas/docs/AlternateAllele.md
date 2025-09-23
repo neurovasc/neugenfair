@@ -40,13 +40,6 @@ URI: [geno:0000002](http://purl.obolibrary.org/obo/GENO_0000002)
 
 
 
-## Usages
-
-| used by | used in | type | used |
-| ---  | --- | --- | --- |
-| [SequenceAlteration](SequenceAlteration.md) | [has_alternate_allele](has_alternate_allele.md) | range | [AlternateAllele](AlternateAllele.md) |
-
-
 
 
 
@@ -95,10 +88,11 @@ attributes:
     name: value
     description: The value of the alternate allele.
     from_schema: https://w3id.org/neugenfair/schema
+    rank: 1000
     slot_uri: sio:000300
     domain_of:
-    - ReferenceAllele
     - AlternateAllele
+    - ReferenceAllele
     range: string
     required: true
 class_uri: geno:0000002
@@ -118,12 +112,13 @@ attributes:
     name: value
     description: The value of the alternate allele.
     from_schema: https://w3id.org/neugenfair/schema
+    rank: 1000
     slot_uri: sio:000300
     alias: value
     owner: AlternateAllele
     domain_of:
-    - ReferenceAllele
     - AlternateAllele
+    - ReferenceAllele
     range: string
     required: true
 class_uri: geno:0000002

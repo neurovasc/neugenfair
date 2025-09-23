@@ -3,7 +3,7 @@
 # Class: VariantIdentifier 
 
 
-_A unique identifier for a sequence alteration._
+_A unique identifier for a sequence alteration within a database or nomenclature._
 
 
 
@@ -19,11 +19,9 @@ URI: [sio:000675](http://semanticscience.org/resource/SIO_000675)
  classDiagram
     class VariantIdentifier
     click VariantIdentifier href "../VariantIdentifier/"
-      VariantIdentifier : hgvsid
+      VariantIdentifier : has_source
         
-      VariantIdentifier : other
-        
-      VariantIdentifier : rsid
+      VariantIdentifier : has_value
         
       
 ```
@@ -38,19 +36,11 @@ URI: [sio:000675](http://semanticscience.org/resource/SIO_000675)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [hgvsid](hgvsid.md) | 1 <br/> [String](String.md) | HGVSid | direct |
-| [rsid](rsid.md) | 0..1 <br/> [String](String.md) | dbsnp rsid | direct |
-| [other](other.md) | 0..1 <br/> [String](String.md) | Other identifiers | direct |
+| [has_value](has_value.md) | 0..1 <br/> [String](String.md) |  | direct |
+| [has_source](has_source.md) | 0..1 <br/> [String](String.md) |  | direct |
 
 
 
-
-
-## Usages
-
-| used by | used in | type | used |
-| ---  | --- | --- | --- |
-| [SequenceAlteration](SequenceAlteration.md) | [has_identifier](has_identifier.md) | range | [VariantIdentifier](VariantIdentifier.md) |
 
 
 
@@ -94,39 +84,19 @@ URI: [sio:000675](http://semanticscience.org/resource/SIO_000675)
 <details>
 ```yaml
 name: VariantIdentifier
-description: A unique identifier for a sequence alteration.
+description: A unique identifier for a sequence alteration within a database or nomenclature.
 from_schema: https://w3id.org/neugenfair/schema
 attributes:
-  hgvsid:
-    name: hgvsid
-    description: HGVSid. identifier
+  has_value:
+    name: has_value
     from_schema: https://w3id.org/neugenfair/schema
-    rank: 1000
-    slot_uri: sio:000300
     domain_of:
     - VariantIdentifier
-    range: string
-    required: true
-  rsid:
-    name: rsid
-    description: dbsnp rsid.
+  has_source:
+    name: has_source
     from_schema: https://w3id.org/neugenfair/schema
-    rank: 1000
-    slot_uri: sio:000300
     domain_of:
     - VariantIdentifier
-    range: string
-    required: false
-  other:
-    name: other
-    description: Other identifiers.
-    from_schema: https://w3id.org/neugenfair/schema
-    rank: 1000
-    slot_uri: sio:000300
-    domain_of:
-    - VariantIdentifier
-    range: string
-    required: false
 class_uri: sio:000675
 
 ```
@@ -137,45 +107,23 @@ class_uri: sio:000675
 <details>
 ```yaml
 name: VariantIdentifier
-description: A unique identifier for a sequence alteration.
+description: A unique identifier for a sequence alteration within a database or nomenclature.
 from_schema: https://w3id.org/neugenfair/schema
 attributes:
-  hgvsid:
-    name: hgvsid
-    description: HGVSid. identifier
+  has_value:
+    name: has_value
     from_schema: https://w3id.org/neugenfair/schema
-    rank: 1000
-    slot_uri: sio:000300
-    alias: hgvsid
+    alias: has_value
     owner: VariantIdentifier
     domain_of:
     - VariantIdentifier
-    range: string
-    required: true
-  rsid:
-    name: rsid
-    description: dbsnp rsid.
+  has_source:
+    name: has_source
     from_schema: https://w3id.org/neugenfair/schema
-    rank: 1000
-    slot_uri: sio:000300
-    alias: rsid
+    alias: has_source
     owner: VariantIdentifier
     domain_of:
     - VariantIdentifier
-    range: string
-    required: false
-  other:
-    name: other
-    description: Other identifiers.
-    from_schema: https://w3id.org/neugenfair/schema
-    rank: 1000
-    slot_uri: sio:000300
-    alias: other
-    owner: VariantIdentifier
-    domain_of:
-    - VariantIdentifier
-    range: string
-    required: false
 class_uri: sio:000675
 
 ```

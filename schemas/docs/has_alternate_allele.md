@@ -22,7 +22,7 @@ Alias: has_alternate_allele
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [SequenceAlteration](SequenceAlteration.md) | A representation of a sequence alteration (so:0001059) |  no  |
+| [SequenceAlteration](SequenceAlteration.md) | A representation of a sequence alteration |  no  |
 
 
 
@@ -57,6 +57,7 @@ Alias: has_alternate_allele
 | ---  | ---  |
 | self | geno:0000382 |
 | native | https://w3id.org/neugenfair/schema/has_alternate_allele |
+| exact | geno:0000382 |
 
 
 
@@ -68,10 +69,11 @@ Alias: has_alternate_allele
 name: has_alternate_allele
 description: Links the sequence alteration to its alternate allele.
 from_schema: https://w3id.org/neugenfair/schema
+exact_mappings:
+- geno:0000382
 rank: 1000
 slot_uri: geno:0000382
 alias: has_alternate_allele
-owner: SequenceAlteration
 domain_of:
 - SequenceAlteration
 range: AlternateAllele

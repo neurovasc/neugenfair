@@ -29,12 +29,12 @@ mergemodels:
 	poetry run python3 schemas/neugenfairmodel_merger.py $(MODEL_SCHEMAS) $(MODEL_YAML)
 
 # Generate Python dataclasses with LinkML Python generator
-dataclasses: 	
+dataclasses: 
 	@echo "Generating Python models → $(MODELS_DIR)"
 	poetry run linkml generate python $(MODEL_YAML) > $(MODELS_PYTHON)
 
 # Generate SHACL constraints with LinkML SHACL generator
-shacl:
+shacl: 
 	@echo "Generating SHACL constraints → $(SHACL_FILE)"
 	poetry run linkml generate shacl $(MODEL_YAML) > $(SHACL_FILE)
 

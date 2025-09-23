@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              NeugenFAIRSchema
+              neugenfairSchema
             
           </span>
         </div>
@@ -206,7 +206,7 @@
   
   
   <span class="md-ellipsis">
-    NeugenFAIRSchema
+    neugenfairSchema
     
   </span>
   
@@ -219,7 +219,7 @@
   
   
   <span class="md-ellipsis">
-    NeugenFAIRSchema
+    neugenfairSchema
     
   </span>
   
@@ -631,6 +631,28 @@
   
   
     <li class="md-nav__item">
+      <a href="Nomenclature/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Enum: Nomenclature
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="Objectidentifier/" class="md-nav__link">
         
   
@@ -659,6 +681,28 @@
   
   <span class="md-ellipsis">
     Class: ReferenceAllele
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Region/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Class: Region
     
   </span>
   
@@ -917,6 +961,28 @@
   
   
     <li class="md-nav__item">
+      <a href="has_alternate_part/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slot: has_alternate_part
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="has_identifier/" class="md-nav__link">
         
   
@@ -1005,12 +1071,122 @@
   
   
     <li class="md-nav__item">
+      <a href="has_reference_part/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slot: has_reference_part
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="has_source/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slot: has_source
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="has_value/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slot: has_value
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="hgvsid/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     Slot: hgvsid
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="location/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slot: location
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="neugenfairSchema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    neugenfairSchema
     
   </span>
   
@@ -1173,15 +1349,15 @@
 
 
 
-<h1 id="neugenfairschema">NeugenFAIRSchema</h1>
-<p>Merged NeugenFAIR schema
+<h1 id="neugenfairschema">neugenfairSchema</h1>
+<p>neugenfair schema data model for representing phenoclinical genomic data in the ICAN dataset
 Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR transformation of genomic and clinical data into Linked Data.</p>
-<p>Schema for the Variant Identifier following several nomenclatures or database convention naming.</p>
 <p>Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR transformation of genomic and clinical data into Linked Data.</p>
-<p>Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR transformation of genomic and clinical data into Linked Data.</p>
-<p>Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR transformation of genomic and clinical data into Linked Data.</p>
+<p>Region class schema for the neugenfair tool. Defines Region where the SeqeunceAlteration occured as defined in FALDO ontology.</p>
+<p>SequenceAlteration class schema for the neugenfair tool. Defines SequenceAlteration and the relations to other adjacent concepts.</p>
+<p>VariantIdentifier class. The identifiers can following several nomenclatures or database convention naming (HGVSid, dbsnp, rsid). On SequenceAlteration can have several identifiers. One identifier can refer to several SequenceAlterations (complex alterations e.g. copy number variation).</p>
 <p>URI: https://w3id.org/neugenfair/schema</p>
-<p>Name: NeugenFAIRSchema</p>
+<p>Name: neugenfairSchema</p>
 <h2 id="classes">Classes</h2>
 <table>
 <thead>
@@ -1200,16 +1376,16 @@ Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR 
 <td>Represents the reference allele (geno:0000036)</td>
 </tr>
 <tr>
+<td><a href="Region/">Region</a></td>
+<td>(genomic) Region of a SequenceAlteration</td>
+</tr>
+<tr>
 <td><a href="SequenceAlteration/">SequenceAlteration</a></td>
-<td>A representation of a sequence alteration (so:0001059)</td>
+<td>A representation of a SequenceAlteration</td>
 </tr>
 <tr>
 <td><a href="VariantIdentifier/">VariantIdentifier</a></td>
-<td>A unique identifier for a sequence alteration</td>
-</tr>
-<tr>
-<td><a href="VariationSite/">VariationSite</a></td>
-<td>Represents the location of a sequence alteration</td>
+<td>A unique identifier for a sequence alteration within a database or nomenclatu...</td>
 </tr>
 </tbody>
 </table>
@@ -1231,40 +1407,36 @@ Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR 
 <td>The end of the location of the sequence alteration</td>
 </tr>
 <tr>
-<td><a href="has_alternate_allele/">has_alternate_allele</a></td>
-<td>Links the sequence alteration to its alternate allele</td>
+<td><a href="has_alternate_part/">has_alternate_part</a></td>
+<td>Links the SequenceAlteration to its AlternateAllele</td>
 </tr>
 <tr>
 <td><a href="has_identifier/">has_identifier</a></td>
-<td>A unique identifier for the sequence alteration</td>
-</tr>
-<tr>
-<td><a href="has_location/">has_location</a></td>
-<td>Links the sequence alteration to its location</td>
+<td>Relation between a SequenceAlteration and its VariantIdentifier</td>
 </tr>
 <tr>
 <td><a href="has_reference/">has_reference</a></td>
 <td>The reference sequence (contig, sequence, chromosome)</td>
 </tr>
 <tr>
-<td><a href="has_reference_allele/">has_reference_allele</a></td>
-<td>Links the sequence alteration to its reference allele</td>
+<td><a href="has_reference_part/">has_reference_part</a></td>
+<td>Links the SequenceAlteration to its ReferenceAllele</td>
 </tr>
 <tr>
-<td><a href="hgvsid/">hgvsid</a></td>
-<td>HGVSid</td>
+<td><a href="has_source/">has_source</a></td>
+<td>The nomenclature or database of the identifier (e</td>
 </tr>
 <tr>
-<td><a href="other/">other</a></td>
-<td>Other identifiers</td>
+<td><a href="has_value/">has_value</a></td>
+<td>The value of the identifier</td>
 </tr>
 <tr>
-<td><a href="rsid/">rsid</a></td>
-<td>dbsnp rsid</td>
+<td><a href="location/">location</a></td>
+<td>Links the SequenceAlteration to its (genomic) Region</td>
 </tr>
 <tr>
 <td><a href="value/">value</a></td>
-<td>The value of the reference allele</td>
+<td>The value of the alternate allele</td>
 </tr>
 </tbody>
 </table>
@@ -1278,8 +1450,8 @@ Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR 
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
+<td><a href="Nomenclature/">Nomenclature</a></td>
+<td>The nomenclature or database system used for the identifier</td>
 </tr>
 </tbody>
 </table>

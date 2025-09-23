@@ -199,7 +199,7 @@
   
   
   <span class="md-ellipsis">
-    NeugenFAIRSchema
+    neugenfairSchema
     
   </span>
   
@@ -546,6 +546,28 @@
   
   
     <li class="md-nav__item">
+      <a href="../Nomenclature/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Enum: Nomenclature
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Objectidentifier/" class="md-nav__link">
         
   
@@ -574,6 +596,28 @@
   
   <span class="md-ellipsis">
     Class: ReferenceAllele
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Region/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Class: Region
     
   </span>
   
@@ -781,15 +825,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#usages" class="md-nav__link">
-    <span class="md-ellipsis">
-      Usages
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#identifier-and-mapping-information" class="md-nav__link">
     <span class="md-ellipsis">
       Identifier and Mapping Information
@@ -958,6 +993,28 @@
   
   
     <li class="md-nav__item">
+      <a href="../has_alternate_part/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slot: has_alternate_part
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../has_identifier/" class="md-nav__link">
         
   
@@ -1046,12 +1103,122 @@
   
   
     <li class="md-nav__item">
+      <a href="../has_reference_part/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slot: has_reference_part
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../has_source/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slot: has_source
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../has_value/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slot: has_value
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../hgvsid/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     Slot: hgvsid
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../location/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slot: location
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../neugenfairSchema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    neugenfairSchema
     
   </span>
   
@@ -1163,15 +1330,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#usages" class="md-nav__link">
-    <span class="md-ellipsis">
-      Usages
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#identifier-and-mapping-information" class="md-nav__link">
     <span class="md-ellipsis">
       Identifier and Mapping Information
@@ -1254,16 +1412,14 @@
 
 
 <h1 id="class-variantidentifier">Class: VariantIdentifier</h1>
-<p><em>A unique identifier for a sequence alteration.</em></p>
+<p><em>A unique identifier for a sequence alteration within a database or nomenclature.</em></p>
 <p>URI: <a href="http://semanticscience.org/resource/SIO_000675">sio:000675</a></p>
 <pre><code class="language-mermaid"> classDiagram
     class VariantIdentifier
     click VariantIdentifier href &quot;../VariantIdentifier/&quot;
-      VariantIdentifier : hgvsid
+      VariantIdentifier : has_source
 
-      VariantIdentifier : other
-
-      VariantIdentifier : rsid
+      VariantIdentifier : has_value
 
 
 </code></pre>
@@ -1281,41 +1437,16 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../hgvsid/">hgvsid</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
-<td>HGVSid</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../rsid/">rsid</a></td>
+<td><a href="../has_value/">has_value</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>dbsnp rsid</td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../other/">other</a></td>
+<td><a href="../has_source/">has_source</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Other identifiers</td>
+<td></td>
 <td>direct</td>
-</tr>
-</tbody>
-</table>
-<h2 id="usages">Usages</h2>
-<table>
-<thead>
-<tr>
-<th>used by</th>
-<th>used in</th>
-<th>type</th>
-<th>used</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="../SequenceAlteration/">SequenceAlteration</a></td>
-<td><a href="../has_identifier/">has_identifier</a></td>
-<td>range</td>
-<td><a href="./">VariantIdentifier</a></td>
 </tr>
 </tbody>
 </table>
@@ -1350,39 +1481,19 @@
 <details>
 
 <pre><code class="language-yaml">name: VariantIdentifier
-description: A unique identifier for a sequence alteration.
+description: A unique identifier for a sequence alteration within a database or nomenclature.
 from_schema: https://w3id.org/neugenfair/schema
 attributes:
-  hgvsid:
-    name: hgvsid
-    description: HGVSid. identifier
+  has_value:
+    name: has_value
     from_schema: https://w3id.org/neugenfair/schema
-    rank: 1000
-    slot_uri: sio:000300
     domain_of:
     - VariantIdentifier
-    range: string
-    required: true
-  rsid:
-    name: rsid
-    description: dbsnp rsid.
+  has_source:
+    name: has_source
     from_schema: https://w3id.org/neugenfair/schema
-    rank: 1000
-    slot_uri: sio:000300
     domain_of:
     - VariantIdentifier
-    range: string
-    required: false
-  other:
-    name: other
-    description: Other identifiers.
-    from_schema: https://w3id.org/neugenfair/schema
-    rank: 1000
-    slot_uri: sio:000300
-    domain_of:
-    - VariantIdentifier
-    range: string
-    required: false
 class_uri: sio:000675
 
 </code></pre>
@@ -1393,45 +1504,23 @@ class_uri: sio:000675
 <details>
 
 <pre><code class="language-yaml">name: VariantIdentifier
-description: A unique identifier for a sequence alteration.
+description: A unique identifier for a sequence alteration within a database or nomenclature.
 from_schema: https://w3id.org/neugenfair/schema
 attributes:
-  hgvsid:
-    name: hgvsid
-    description: HGVSid. identifier
+  has_value:
+    name: has_value
     from_schema: https://w3id.org/neugenfair/schema
-    rank: 1000
-    slot_uri: sio:000300
-    alias: hgvsid
+    alias: has_value
     owner: VariantIdentifier
     domain_of:
     - VariantIdentifier
-    range: string
-    required: true
-  rsid:
-    name: rsid
-    description: dbsnp rsid.
+  has_source:
+    name: has_source
     from_schema: https://w3id.org/neugenfair/schema
-    rank: 1000
-    slot_uri: sio:000300
-    alias: rsid
+    alias: has_source
     owner: VariantIdentifier
     domain_of:
     - VariantIdentifier
-    range: string
-    required: false
-  other:
-    name: other
-    description: Other identifiers.
-    from_schema: https://w3id.org/neugenfair/schema
-    rank: 1000
-    slot_uri: sio:000300
-    alias: other
-    owner: VariantIdentifier
-    domain_of:
-    - VariantIdentifier
-    range: string
-    required: false
 class_uri: sio:000675
 
 </code></pre>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>NeugenFAIRSchema</title>
+    <title>neugenfairSchema</title>
     <style>
         #pylode {
             position: fixed;
@@ -289,12 +289,12 @@ td {
     ],
     "https://schema.org/description": [
       {
-        "@value": "Merged NeugenFAIR schema\nSchema for the neugenfair tool. Defines classes and attributes, supporting FAIR transformation of genomic and clinical data into Linked Data.\n\nSchema for the Variant Identifier following several nomenclatures or database convention naming.\n\nSchema for the neugenfair tool. Defines classes and attributes, supporting FAIR transformation of genomic and clinical data into Linked Data.\n\nSchema for the neugenfair tool. Defines classes and attributes, supporting FAIR transformation of genomic and clinical data into Linked Data.\n\nSchema for the neugenfair tool. Defines classes and attributes, supporting FAIR transformation of genomic and clinical data into Linked Data.\n"
+        "@value": "neugenfair schema data model for representing phenoclinical genomic data in the ICAN dataset\nSchema for the neugenfair tool. Defines classes and attributes, supporting FAIR transformation of genomic and clinical data into Linked Data.\n\nSchema for the neugenfair tool. Defines classes and attributes, supporting FAIR transformation of genomic and clinical data into Linked Data.\n\nRegion class schema for the neugenfair tool. Defines Region where the SeqeunceAlteration occured as defined in FALDO ontology.\n\nSequenceAlteration class schema for the neugenfair tool. Defines SequenceAlteration and the relations to other adjacent concepts.\n\nVariantIdentifier class. The identifiers can following several nomenclatures or database convention naming (HGVSid, dbsnp, rsid). On SequenceAlteration can have several identifiers. One identifier can refer to several SequenceAlterations (complex alterations e.g. copy number variation).\n"
       }
     ],
     "https://schema.org/name": [
       {
-        "@value": "NeugenFAIRSchema"
+        "@value": "neugenfairSchema"
       }
     ]
   }
@@ -304,7 +304,7 @@ td {
   <body>
     <div id="content">
       <div class="section" id="metadata">
-        <h1>NeugenFAIRSchema</h1>
+        <h1>neugenfairSchema</h1>
         <h2>Metadata</h2>
         <dl>
           <div>
@@ -319,239 +319,23 @@ td {
             <dt>
               <a class="hover_property" href="http://purl.org/dc/terms/title" title="A name given to the resource. Defined in DCMI Metadata Terms">Title</a>
             </dt>
-            <dd><p>NeugenFAIRSchema</p></dd>
+            <dd><p>neugenfairSchema</p></dd>
           </div>
           <div>
             <dt>
               <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
             </dt>
-            <dd><p>Merged NeugenFAIR schema
+            <dd><p>neugenfair schema data model for representing phenoclinical genomic data in the ICAN dataset
 Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR transformation of genomic and clinical data into Linked Data.</p>
-<p>Schema for the Variant Identifier following several nomenclatures or database convention naming.</p>
 <p>Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR transformation of genomic and clinical data into Linked Data.</p>
-<p>Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR transformation of genomic and clinical data into Linked Data.</p>
-<p>Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR transformation of genomic and clinical data into Linked Data.</p></dd>
+<p>Region class schema for the neugenfair tool. Defines Region where the SeqeunceAlteration occured as defined in FALDO ontology.</p>
+<p>SequenceAlteration class schema for the neugenfair tool. Defines SequenceAlteration and the relations to other adjacent concepts.</p>
+<p>VariantIdentifier class. The identifiers can following several nomenclatures or database convention naming (HGVSid, dbsnp, rsid). On SequenceAlteration can have several identifiers. One identifier can refer to several SequenceAlterations (complex alterations e.g. copy number variation).</p></dd>
           </div>
         </dl>
       </div>
       <div class="section" id="classes">
         <h2>Classes</h2>
-        <div class="property entity" id="SequenceAlteration">
-          <h3>SequenceAlteration
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>https://w3id.org/neugenfair/schema/SequenceAlteration</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
-              </th>
-              <td><p>A representation of a sequence alteration (so:0001059).</p></td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="https://w3id.org/profile/ontdoc/restriction" title="Convenience property for things that subclass owl:Restriction. Defined in Ontology Documentation Profile">Restriction</a>
-              </th>
-              <td>
-                <ul>
-                  <li>
-                    <span>
-                      <span>
-                        <span>
-                          <a href="https://w3id.org/neugenfair/schema/has_identifier">has_identifier</a>
-                          <sup class="sup-op" title="OWL Object Property">op</sup>
-                        </span>
-                        <span>
-                          <span class="cardinality">max</span>
-                          <span>1</span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <span>
-                        <span>
-                          <a href="https://w3id.org/neugenfair/schema/has_alternate_allele">has_alternate_allele</a>
-                          <sup class="sup-op" title="OWL Object Property">op</sup>
-                        </span>
-                        <span>
-                          <span class="cardinality">max</span>
-                          <span>1</span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <span>
-                        <span>
-                          <a href="https://w3id.org/neugenfair/schema/has_reference_allele">has_reference_allele</a>
-                          <sup class="sup-op" title="OWL Object Property">op</sup>
-                        </span>
-                        <span>
-                          <span class="cardinality">max</span>
-                          <span>1</span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <span>
-                        <span>
-                          <a href="https://w3id.org/neugenfair/schema/has_identifier">has_identifier</a>
-                          <sup class="sup-op" title="OWL Object Property">op</sup>
-                        </span>
-                        <span>
-                          <span class="cardinality">min</span>
-                          <span>1</span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <span>
-                        <span>
-                          <a href="https://w3id.org/neugenfair/schema/has_location">has_location</a>
-                          <sup class="sup-op" title="OWL Object Property">op</sup>
-                        </span>
-                        <span>
-                          <span class="cardinality">max</span>
-                          <span>1</span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <span>
-                        <span>
-                          <a href="https://w3id.org/neugenfair/schema/has_location">has_location</a>
-                          <sup class="sup-op" title="OWL Object Property">op</sup>
-                        </span>
-                        <span>
-                          <span class="cardinality">only</span>
-                          <span>
-                            <span>
-                              <a href="https://w3id.org/neugenfair/schema/VariationSite">VariationSite</a>
-                              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                            </span>
-                          </span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <span>
-                        <span>
-                          <a href="https://w3id.org/neugenfair/schema/has_location">has_location</a>
-                          <sup class="sup-op" title="OWL Object Property">op</sup>
-                        </span>
-                        <span>
-                          <span class="cardinality">min</span>
-                          <span>0</span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <span>
-                        <span>
-                          <a href="https://w3id.org/neugenfair/schema/has_reference_allele">has_reference_allele</a>
-                          <sup class="sup-op" title="OWL Object Property">op</sup>
-                        </span>
-                        <span>
-                          <span class="cardinality">only</span>
-                          <span>
-                            <span>
-                              <a href="https://w3id.org/neugenfair/schema/ReferenceAllele">ReferenceAllele</a>
-                              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                            </span>
-                          </span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <span>
-                        <span>
-                          <a href="https://w3id.org/neugenfair/schema/has_reference_allele">has_reference_allele</a>
-                          <sup class="sup-op" title="OWL Object Property">op</sup>
-                        </span>
-                        <span>
-                          <span class="cardinality">min</span>
-                          <span>0</span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <span>
-                        <span>
-                          <a href="https://w3id.org/neugenfair/schema/has_alternate_allele">has_alternate_allele</a>
-                          <sup class="sup-op" title="OWL Object Property">op</sup>
-                        </span>
-                        <span>
-                          <span class="cardinality">min</span>
-                          <span>0</span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <span>
-                        <span>
-                          <a href="https://w3id.org/neugenfair/schema/has_alternate_allele">has_alternate_allele</a>
-                          <sup class="sup-op" title="OWL Object Property">op</sup>
-                        </span>
-                        <span>
-                          <span class="cardinality">only</span>
-                          <span>
-                            <span>
-                              <a href="https://w3id.org/neugenfair/schema/AlternateAllele">AlternateAllele</a>
-                              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                            </span>
-                          </span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <span>
-                        <span>
-                          <a href="https://w3id.org/neugenfair/schema/has_identifier">has_identifier</a>
-                          <sup class="sup-op" title="OWL Object Property">op</sup>
-                        </span>
-                        <span>
-                          <span class="cardinality">only</span>
-                          <span>
-                            <span>
-                              <a href="https://w3id.org/neugenfair/schema/VariantIdentifier">VariantIdentifier</a>
-                              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                            </span>
-                          </span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
-                </ul>
-              </td>
-            </tr>
-          </table>
-        </div>
         <div class="property entity" id="AlternateAllele">
           <h3>AlternateAllele
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
@@ -571,24 +355,21 @@ Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR 
             </tr>
             <tr>
               <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inRangeOf" title="Inverse of rdfs:range. Defined in Ontology Documentation Profile">In Range Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="https://w3id.org/neugenfair/schema/has_alternate_part">has_alternate_part</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
                 <a class="hover_property" href="https://w3id.org/profile/ontdoc/restriction" title="Convenience property for things that subclass owl:Restriction. Defined in Ontology Documentation Profile">Restriction</a>
               </th>
               <td>
                 <ul>
-                  <li>
-                    <span>
-                      <span>
-                        <span>
-                          <a href="https://w3id.org/neugenfair/schema/value">value</a>
-                          <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-                        </span>
-                        <span>
-                          <span class="cardinality">min</span>
-                          <span>1</span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
                   <li>
                     <span>
                       <span>
@@ -604,6 +385,20 @@ Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR 
                               <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                             </span>
                           </span>
+                        </span><br>
+                      </span>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <span>
+                        <span>
+                          <a href="https://w3id.org/neugenfair/schema/value">value</a>
+                          <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                        </span>
+                        <span>
+                          <span class="cardinality">min</span>
+                          <span>1</span>
                         </span><br>
                       </span>
                     </span>
@@ -646,24 +441,21 @@ Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR 
             </tr>
             <tr>
               <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inRangeOf" title="Inverse of rdfs:range. Defined in Ontology Documentation Profile">In Range Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="https://w3id.org/neugenfair/schema/has_reference_part">has_reference_part</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
                 <a class="hover_property" href="https://w3id.org/profile/ontdoc/restriction" title="Convenience property for things that subclass owl:Restriction. Defined in Ontology Documentation Profile">Restriction</a>
               </th>
               <td>
                 <ul>
-                  <li>
-                    <span>
-                      <span>
-                        <span>
-                          <a href="https://w3id.org/neugenfair/schema/value">value</a>
-                          <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-                        </span>
-                        <span>
-                          <span class="cardinality">min</span>
-                          <span>1</span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
                   <li>
                     <span>
                       <span>
@@ -691,6 +483,20 @@ Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR 
                           <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
                         </span>
                         <span>
+                          <span class="cardinality">min</span>
+                          <span>1</span>
+                        </span><br>
+                      </span>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <span>
+                        <span>
+                          <a href="https://w3id.org/neugenfair/schema/value">value</a>
+                          <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                        </span>
+                        <span>
                           <span class="cardinality">max</span>
                           <span>1</span>
                         </span><br>
@@ -698,6 +504,198 @@ Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR 
                     </span>
                   </li>
                 </ul>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="COSMIC">
+          <h3>COSMIC
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/neugenfair/schema/:Nomenclature#COSMIC</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="https://w3id.org/neugenfair/schema/:Nomenclature">https://w3id.org/neugenfair/schema/:Nomenclature</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="ClinVar">
+          <h3>ClinVar
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/neugenfair/schema/:Nomenclature#ClinVar</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="https://w3id.org/neugenfair/schema/:Nomenclature">https://w3id.org/neugenfair/schema/:Nomenclature</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="Ensembl">
+          <h3>Ensembl
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/neugenfair/schema/:Nomenclature#Ensembl</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="https://w3id.org/neugenfair/schema/:Nomenclature">https://w3id.org/neugenfair/schema/:Nomenclature</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="HGVS">
+          <h3>HGVS
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/neugenfair/schema/:Nomenclature#HGVS</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="https://w3id.org/neugenfair/schema/:Nomenclature">https://w3id.org/neugenfair/schema/:Nomenclature</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="HUGO">
+          <h3>HUGO
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/neugenfair/schema/:Nomenclature#HUGO</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="https://w3id.org/neugenfair/schema/:Nomenclature">https://w3id.org/neugenfair/schema/:Nomenclature</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="Other">
+          <h3>Other
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/neugenfair/schema/:Nomenclature#Other</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="https://w3id.org/neugenfair/schema/:Nomenclature">https://w3id.org/neugenfair/schema/:Nomenclature</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="dbSNP">
+          <h3>dbSNP
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/neugenfair/schema/:Nomenclature#dbSNP</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="https://w3id.org/neugenfair/schema/:Nomenclature">https://w3id.org/neugenfair/schema/:Nomenclature</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="rsID">
+          <h3>rsID
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/neugenfair/schema/:Nomenclature#rsID</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="https://w3id.org/neugenfair/schema/:Nomenclature">https://w3id.org/neugenfair/schema/:Nomenclature</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
               </td>
             </tr>
           </table>
@@ -717,7 +715,39 @@ Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR 
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>A unique identifier for a sequence alteration.</p></td>
+              <td><p>A unique identifier for a sequence alteration within a database or nomenclature.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inDomainOf" title="Inverse of rdfs:domain. Defined in Ontology Documentation Profile">In Domain Of</a>
+              </th>
+              <td>
+                <ul>
+                  <li>
+                    <span>
+                      <a href="https://w3id.org/neugenfair/schema/has_source">has_source</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="https://w3id.org/neugenfair/schema/has_value">has_value</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inRangeOf" title="Inverse of rdfs:range. Defined in Ontology Documentation Profile">In Range Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="https://w3id.org/neugenfair/schema/has_identifier">has_identifier</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
+              </td>
             </tr>
             <tr>
               <th>
@@ -729,28 +759,14 @@ Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR 
                     <span>
                       <span>
                         <span>
-                          <a href="https://w3id.org/neugenfair/schema/other">other</a>
-                          <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-                        </span>
-                        <span>
-                          <span class="cardinality">min</span>
-                          <span>0</span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <span>
-                        <span>
-                          <a href="https://w3id.org/neugenfair/schema/other">other</a>
-                          <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                          <a href="https://w3id.org/neugenfair/schema/has_source">has_source</a>
+                          <sup class="sup-op" title="OWL Object Property">op</sup>
                         </span>
                         <span>
                           <span class="cardinality">only</span>
                           <span>
                             <span>
-                              <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
+                              <a href="http://www.w3.org/2002/07/owl#Thing">Thing</a>
                               <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                             </span>
                           </span>
@@ -762,8 +778,27 @@ Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR 
                     <span>
                       <span>
                         <span>
-                          <a href="https://w3id.org/neugenfair/schema/rsid">rsid</a>
-                          <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                          <a href="https://w3id.org/neugenfair/schema/has_value">has_value</a>
+                          <sup class="sup-op" title="OWL Object Property">op</sup>
+                        </span>
+                        <span>
+                          <span class="cardinality">only</span>
+                          <span>
+                            <span>
+                              <a href="http://www.w3.org/2002/07/owl#Thing">Thing</a>
+                              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                            </span>
+                          </span>
+                        </span><br>
+                      </span>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <span>
+                        <span>
+                          <a href="https://w3id.org/neugenfair/schema/has_source">has_source</a>
+                          <sup class="sup-op" title="OWL Object Property">op</sup>
                         </span>
                         <span>
                           <span class="cardinality">max</span>
@@ -776,41 +811,8 @@ Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR 
                     <span>
                       <span>
                         <span>
-                          <a href="https://w3id.org/neugenfair/schema/rsid">rsid</a>
-                          <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-                        </span>
-                        <span>
-                          <span class="cardinality">only</span>
-                          <span>
-                            <span>
-                              <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
-                              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                            </span>
-                          </span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <span>
-                        <span>
-                          <a href="https://w3id.org/neugenfair/schema/hgvsid">hgvsid</a>
-                          <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-                        </span>
-                        <span>
-                          <span class="cardinality">min</span>
-                          <span>1</span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <span>
-                        <span>
-                          <a href="https://w3id.org/neugenfair/schema/other">other</a>
-                          <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                          <a href="https://w3id.org/neugenfair/schema/has_value">has_value</a>
+                          <sup class="sup-op" title="OWL Object Property">op</sup>
                         </span>
                         <span>
                           <span class="cardinality">max</span>
@@ -823,11 +825,11 @@ Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR 
                     <span>
                       <span>
                         <span>
-                          <a href="https://w3id.org/neugenfair/schema/hgvsid">hgvsid</a>
-                          <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                          <a href="https://w3id.org/neugenfair/schema/has_value">has_value</a>
+                          <sup class="sup-op" title="OWL Object Property">op</sup>
                         </span>
                         <span>
-                          <span class="cardinality">max</span>
+                          <span class="cardinality">min</span>
                           <span>1</span>
                         </span><br>
                       </span>
@@ -837,31 +839,12 @@ Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR 
                     <span>
                       <span>
                         <span>
-                          <a href="https://w3id.org/neugenfair/schema/hgvsid">hgvsid</a>
-                          <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-                        </span>
-                        <span>
-                          <span class="cardinality">only</span>
-                          <span>
-                            <span>
-                              <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
-                              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                            </span>
-                          </span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <span>
-                        <span>
-                          <a href="https://w3id.org/neugenfair/schema/rsid">rsid</a>
-                          <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                          <a href="https://w3id.org/neugenfair/schema/has_source">has_source</a>
+                          <sup class="sup-op" title="OWL Object Property">op</sup>
                         </span>
                         <span>
                           <span class="cardinality">min</span>
-                          <span>0</span>
+                          <span>1</span>
                         </span><br>
                       </span>
                     </span>
@@ -871,22 +854,60 @@ Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR 
             </tr>
           </table>
         </div>
-        <div class="property entity" id="VariationSite">
-          <h3>VariationSite
+        <div class="property entity" id="Region">
+          <h3>Region
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://w3id.org/neugenfair/schema/VariationSite</code>
+                <code>https://w3id.org/neugenfair/schema/Region</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Represents the location of a sequence alteration.</p></td>
+              <td><p>(genomic) Region of a SequenceAlteration.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inDomainOf" title="Inverse of rdfs:domain. Defined in Ontology Documentation Profile">In Domain Of</a>
+              </th>
+              <td>
+                <ul>
+                  <li>
+                    <span>
+                      <a href="https://w3id.org/neugenfair/schema/begins_at">begins_at</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="https://w3id.org/neugenfair/schema/ends_at">ends_at</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="https://w3id.org/neugenfair/schema/has_reference">has_reference</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inRangeOf" title="Inverse of rdfs:range. Defined in Ontology Documentation Profile">In Range Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="https://w3id.org/neugenfair/schema/location">location</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
+              </td>
             </tr>
             <tr>
               <th>
@@ -899,45 +920,7 @@ Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR 
                       <span>
                         <span>
                           <a href="https://w3id.org/neugenfair/schema/has_reference">has_reference</a>
-                          <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-                        </span>
-                        <span>
-                          <span class="cardinality">only</span>
-                          <span>
-                            <span>
-                              <a href="http://www.w3.org/2001/XMLSchema#integer">xsd:integer</a>
-                              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                            </span>
-                          </span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <span>
-                        <span>
-                          <a href="https://w3id.org/neugenfair/schema/begins_at">begins_at</a>
-                          <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-                        </span>
-                        <span>
-                          <span class="cardinality">only</span>
-                          <span>
-                            <span>
-                              <a href="http://www.w3.org/2001/XMLSchema#integer">xsd:integer</a>
-                              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                            </span>
-                          </span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <span>
-                        <span>
-                          <a href="https://w3id.org/neugenfair/schema/begins_at">begins_at</a>
-                          <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                          <sup class="sup-op" title="OWL Object Property">op</sup>
                         </span>
                         <span>
                           <span class="cardinality">min</span>
@@ -950,42 +933,14 @@ Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR 
                     <span>
                       <span>
                         <span>
-                          <a href="https://w3id.org/neugenfair/schema/ends_at">ends_at</a>
-                          <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-                        </span>
-                        <span>
-                          <span class="cardinality">max</span>
-                          <span>1</span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <span>
-                        <span>
                           <a href="https://w3id.org/neugenfair/schema/begins_at">begins_at</a>
-                          <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-                        </span>
-                        <span>
-                          <span class="cardinality">max</span>
-                          <span>1</span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <span>
-                        <span>
-                          <a href="https://w3id.org/neugenfair/schema/ends_at">ends_at</a>
-                          <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                          <sup class="sup-op" title="OWL Object Property">op</sup>
                         </span>
                         <span>
                           <span class="cardinality">only</span>
                           <span>
                             <span>
-                              <a href="http://www.w3.org/2001/XMLSchema#integer">xsd:integer</a>
+                              <a href="http://www.w3.org/2002/07/owl#Thing">Thing</a>
                               <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                             </span>
                           </span>
@@ -998,7 +953,40 @@ Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR 
                       <span>
                         <span>
                           <a href="https://w3id.org/neugenfair/schema/has_reference">has_reference</a>
-                          <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                          <sup class="sup-op" title="OWL Object Property">op</sup>
+                        </span>
+                        <span>
+                          <span class="cardinality">max</span>
+                          <span>1</span>
+                        </span><br>
+                      </span>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <span>
+                        <span>
+                          <a href="https://w3id.org/neugenfair/schema/has_reference">has_reference</a>
+                          <sup class="sup-op" title="OWL Object Property">op</sup>
+                        </span>
+                        <span>
+                          <span class="cardinality">only</span>
+                          <span>
+                            <span>
+                              <a href="http://www.w3.org/2002/07/owl#Thing">Thing</a>
+                              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                            </span>
+                          </span>
+                        </span><br>
+                      </span>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <span>
+                        <span>
+                          <a href="https://w3id.org/neugenfair/schema/begins_at">begins_at</a>
+                          <sup class="sup-op" title="OWL Object Property">op</sup>
                         </span>
                         <span>
                           <span class="cardinality">min</span>
@@ -1011,8 +999,27 @@ Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR 
                     <span>
                       <span>
                         <span>
-                          <a href="https://w3id.org/neugenfair/schema/has_reference">has_reference</a>
-                          <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                          <a href="https://w3id.org/neugenfair/schema/ends_at">ends_at</a>
+                          <sup class="sup-op" title="OWL Object Property">op</sup>
+                        </span>
+                        <span>
+                          <span class="cardinality">only</span>
+                          <span>
+                            <span>
+                              <a href="http://www.w3.org/2002/07/owl#Thing">Thing</a>
+                              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                            </span>
+                          </span>
+                        </span><br>
+                      </span>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <span>
+                        <span>
+                          <a href="https://w3id.org/neugenfair/schema/ends_at">ends_at</a>
+                          <sup class="sup-op" title="OWL Object Property">op</sup>
                         </span>
                         <span>
                           <span class="cardinality">max</span>
@@ -1026,13 +1033,357 @@ Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR 
                       <span>
                         <span>
                           <a href="https://w3id.org/neugenfair/schema/ends_at">ends_at</a>
-                          <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                          <sup class="sup-op" title="OWL Object Property">op</sup>
                         </span>
                         <span>
                           <span class="cardinality">min</span>
                           <span>1</span>
                         </span><br>
                       </span>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <span>
+                        <span>
+                          <a href="https://w3id.org/neugenfair/schema/begins_at">begins_at</a>
+                          <sup class="sup-op" title="OWL Object Property">op</sup>
+                        </span>
+                        <span>
+                          <span class="cardinality">max</span>
+                          <span>1</span>
+                        </span><br>
+                      </span>
+                    </span>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="SequenceAlteration">
+          <h3>SequenceAlteration
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/neugenfair/schema/SequenceAlteration</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>A representation of a SequenceAlteration.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inDomainOf" title="Inverse of rdfs:domain. Defined in Ontology Documentation Profile">In Domain Of</a>
+              </th>
+              <td>
+                <ul>
+                  <li>
+                    <span>
+                      <a href="https://w3id.org/neugenfair/schema/has_alternate_part">has_alternate_part</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="https://w3id.org/neugenfair/schema/has_identifier">has_identifier</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="https://w3id.org/neugenfair/schema/has_reference_part">has_reference_part</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="https://w3id.org/neugenfair/schema/location">location</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/restriction" title="Convenience property for things that subclass owl:Restriction. Defined in Ontology Documentation Profile">Restriction</a>
+              </th>
+              <td>
+                <ul>
+                  <li>
+                    <span>
+                      <span>
+                        <span>
+                          <a href="https://w3id.org/neugenfair/schema/has_identifier">has_identifier</a>
+                          <sup class="sup-op" title="OWL Object Property">op</sup>
+                        </span>
+                        <span>
+                          <span class="cardinality">min</span>
+                          <span>1</span>
+                        </span><br>
+                      </span>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <span>
+                        <span>
+                          <a href="https://w3id.org/neugenfair/schema/has_identifier">has_identifier</a>
+                          <sup class="sup-op" title="OWL Object Property">op</sup>
+                        </span>
+                        <span>
+                          <span class="cardinality">max</span>
+                          <span>1</span>
+                        </span><br>
+                      </span>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <span>
+                        <span>
+                          <a href="https://w3id.org/neugenfair/schema/has_alternate_part">has_alternate_part</a>
+                          <sup class="sup-op" title="OWL Object Property">op</sup>
+                        </span>
+                        <span>
+                          <span class="cardinality">only</span>
+                          <span>
+                            <span>
+                              <a href="http://www.w3.org/2002/07/owl#Thing">Thing</a>
+                              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                            </span>
+                          </span>
+                        </span><br>
+                      </span>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <span>
+                        <span>
+                          <a href="https://w3id.org/neugenfair/schema/location">location</a>
+                          <sup class="sup-op" title="OWL Object Property">op</sup>
+                        </span>
+                        <span>
+                          <span class="cardinality">min</span>
+                          <span>0</span>
+                        </span><br>
+                      </span>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <span>
+                        <span>
+                          <a href="https://w3id.org/neugenfair/schema/has_reference_part">has_reference_part</a>
+                          <sup class="sup-op" title="OWL Object Property">op</sup>
+                        </span>
+                        <span>
+                          <span class="cardinality">max</span>
+                          <span>1</span>
+                        </span><br>
+                      </span>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <span>
+                        <span>
+                          <a href="https://w3id.org/neugenfair/schema/has_reference_part">has_reference_part</a>
+                          <sup class="sup-op" title="OWL Object Property">op</sup>
+                        </span>
+                        <span>
+                          <span class="cardinality">min</span>
+                          <span>0</span>
+                        </span><br>
+                      </span>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <span>
+                        <span>
+                          <a href="https://w3id.org/neugenfair/schema/has_alternate_part">has_alternate_part</a>
+                          <sup class="sup-op" title="OWL Object Property">op</sup>
+                        </span>
+                        <span>
+                          <span class="cardinality">max</span>
+                          <span>1</span>
+                        </span><br>
+                      </span>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <span>
+                        <span>
+                          <a href="https://w3id.org/neugenfair/schema/location">location</a>
+                          <sup class="sup-op" title="OWL Object Property">op</sup>
+                        </span>
+                        <span>
+                          <span class="cardinality">max</span>
+                          <span>1</span>
+                        </span><br>
+                      </span>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <span>
+                        <span>
+                          <a href="https://w3id.org/neugenfair/schema/has_identifier">has_identifier</a>
+                          <sup class="sup-op" title="OWL Object Property">op</sup>
+                        </span>
+                        <span>
+                          <span class="cardinality">only</span>
+                          <span>
+                            <span>
+                              <a href="http://www.w3.org/2002/07/owl#Thing">Thing</a>
+                              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                            </span>
+                          </span>
+                        </span><br>
+                      </span>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <span>
+                        <span>
+                          <a href="https://w3id.org/neugenfair/schema/has_alternate_part">has_alternate_part</a>
+                          <sup class="sup-op" title="OWL Object Property">op</sup>
+                        </span>
+                        <span>
+                          <span class="cardinality">min</span>
+                          <span>0</span>
+                        </span><br>
+                      </span>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <span>
+                        <span>
+                          <a href="https://w3id.org/neugenfair/schema/has_reference_part">has_reference_part</a>
+                          <sup class="sup-op" title="OWL Object Property">op</sup>
+                        </span>
+                        <span>
+                          <span class="cardinality">only</span>
+                          <span>
+                            <span>
+                              <a href="http://www.w3.org/2002/07/owl#Thing">Thing</a>
+                              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                            </span>
+                          </span>
+                        </span><br>
+                      </span>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <span>
+                        <span>
+                          <a href="https://w3id.org/neugenfair/schema/location">location</a>
+                          <sup class="sup-op" title="OWL Object Property">op</sup>
+                        </span>
+                        <span>
+                          <span class="cardinality">only</span>
+                          <span>
+                            <span>
+                              <a href="http://www.w3.org/2002/07/owl#Thing">Thing</a>
+                              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                            </span>
+                          </span>
+                        </span><br>
+                      </span>
+                    </span>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id=":Nomenclature">
+          <h3>:nomenclature
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/neugenfair/schema/:Nomenclature</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inRangeOf" title="Inverse of rdfs:range. Defined in Ontology Documentation Profile">In Range Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="https://w3id.org/neugenfair/schema/has_source">has_source</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="Inverse of RDFS' subClassOf. Defined in Ontology Documentation Profile">Super Class Of</a>
+              </th>
+              <td>
+                <ul>
+                  <li>
+                    <span>
+                      <a href="https://w3id.org/neugenfair/schema/:Nomenclature#COSMIC">COSMIC</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="https://w3id.org/neugenfair/schema/:Nomenclature#ClinVar">ClinVar</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="https://w3id.org/neugenfair/schema/:Nomenclature#Ensembl">Ensembl</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="https://w3id.org/neugenfair/schema/:Nomenclature#HGVS">HGVS</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="https://w3id.org/neugenfair/schema/:Nomenclature#HUGO">HUGO</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="https://w3id.org/neugenfair/schema/:Nomenclature#Other">Other</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="https://w3id.org/neugenfair/schema/:Nomenclature#dbSNP">dbSNP</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="https://w3id.org/neugenfair/schema/:Nomenclature#rsID">rsID</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
                   </li>
                 </ul>
@@ -1043,22 +1394,120 @@ Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR 
       </div>
       <div class="section" id="objectproperties">
         <h2>Object Properties</h2>
-        <div class="property entity" id="has_alternate_allele">
-          <h3>has_alternate_allele
+        <div class="property entity" id="begins_at">
+          <h3>begins_at
             <sup class="sup-op" title="OWL Object Property">op</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://w3id.org/neugenfair/schema/has_alternate_allele</code>
+                <code>https://w3id.org/neugenfair/schema/begins_at</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Links the sequence alteration to its alternate allele.</p></td>
+              <td><p>The beginning of the location of the sequence alteration.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="https://w3id.org/neugenfair/schema/Region">Region</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <a href="http://www.w3.org/2001/XMLSchema#integer">xsd:integer</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="ends_at">
+          <h3>ends_at
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/neugenfair/schema/ends_at</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>The end of the location of the sequence alteration.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="https://w3id.org/neugenfair/schema/Region">Region</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <a href="http://www.w3.org/2001/XMLSchema#integer">xsd:integer</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="has_alternate_part">
+          <h3>has_alternate_part
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/neugenfair/schema/has_alternate_part</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>Links the SequenceAlteration to its AlternateAllele.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="https://w3id.org/neugenfair/schema/SequenceAlteration">SequenceAlteration</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <span>
+                  <a href="https://w3id.org/neugenfair/schema/AlternateAllele">AlternateAllele</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
             </tr>
           </table>
         </div>
@@ -1077,45 +1526,228 @@ Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR 
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>A unique identifier for the sequence alteration.</p></td>
+              <td><p>Relation between a SequenceAlteration and its VariantIdentifier</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="https://w3id.org/neugenfair/schema/SequenceAlteration">SequenceAlteration</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <span>
+                  <a href="https://w3id.org/neugenfair/schema/VariantIdentifier">VariantIdentifier</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
             </tr>
           </table>
         </div>
-        <div class="property entity" id="has_location">
-          <h3>has_location
+        <div class="property entity" id="has_reference">
+          <h3>has_reference
             <sup class="sup-op" title="OWL Object Property">op</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://w3id.org/neugenfair/schema/has_location</code>
+                <code>https://w3id.org/neugenfair/schema/has_reference</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Links the sequence alteration to its location.</p></td>
+              <td><p>The reference sequence (contig, sequence, chromosome).</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="https://w3id.org/neugenfair/schema/Region">Region</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
+              </td>
             </tr>
           </table>
         </div>
-        <div class="property entity" id="has_reference_allele">
-          <h3>has_reference_allele
+        <div class="property entity" id="has_reference_part">
+          <h3>has_reference_part
             <sup class="sup-op" title="OWL Object Property">op</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://w3id.org/neugenfair/schema/has_reference_allele</code>
+                <code>https://w3id.org/neugenfair/schema/has_reference_part</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Links the sequence alteration to its reference allele.</p></td>
+              <td><p>Links the SequenceAlteration to its ReferenceAllele.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="https://w3id.org/neugenfair/schema/SequenceAlteration">SequenceAlteration</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <span>
+                  <a href="https://w3id.org/neugenfair/schema/ReferenceAllele">ReferenceAllele</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="has_source">
+          <h3>has_source
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/neugenfair/schema/has_source</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>The nomenclature or database of the identifier (e.g. HGVS, dbSNP).</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="https://w3id.org/neugenfair/schema/VariantIdentifier">VariantIdentifier</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <span>
+                  <a href="https://w3id.org/neugenfair/schema/:Nomenclature">https://w3id.org/neugenfair/schema/:Nomenclature</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="has_value">
+          <h3>has_value
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/neugenfair/schema/has_value</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>The value of the identifier.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="https://w3id.org/neugenfair/schema/VariantIdentifier">VariantIdentifier</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="location">
+          <h3>location
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/neugenfair/schema/location</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>Links the SequenceAlteration to its (genomic) Region.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="https://w3id.org/neugenfair/schema/SequenceAlteration">SequenceAlteration</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <span>
+                  <a href="https://w3id.org/neugenfair/schema/Region">Region</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
             </tr>
           </table>
         </div>
@@ -1139,6 +1771,25 @@ Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR 
               </th>
               <td><p>The beginning of the location of the sequence alteration.</p></td>
             </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="https://w3id.org/neugenfair/schema/Region">Region</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <a href="http://www.w3.org/2001/XMLSchema#integer">xsd:integer</a>
+              </td>
+            </tr>
           </table>
         </div>
         <div class="property entity" id="ends_at">
@@ -1157,6 +1808,25 @@ Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR 
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
               <td><p>The end of the location of the sequence alteration.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="https://w3id.org/neugenfair/schema/Region">Region</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <a href="http://www.w3.org/2001/XMLSchema#integer">xsd:integer</a>
+              </td>
             </tr>
           </table>
         </div>
@@ -1177,62 +1847,62 @@ Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR 
               </th>
               <td><p>The reference sequence (contig, sequence, chromosome).</p></td>
             </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="https://w3id.org/neugenfair/schema/Region">Region</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
+              </td>
+            </tr>
           </table>
         </div>
-        <div class="property entity" id="hgvsid">
-          <h3>hgvsid
+        <div class="property entity" id="has_value">
+          <h3>has_value
             <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://w3id.org/neugenfair/schema/hgvsid</code>
+                <code>https://w3id.org/neugenfair/schema/has_value</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>HGVSid. identifier</p></td>
+              <td><p>The value of the identifier.</p></td>
             </tr>
-          </table>
-        </div>
-        <div class="property entity" id="other">
-          <h3>other
-            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-          </h3>
-          <table>
             <tr>
-              <th>IRI</th>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
               <td>
-                <code>https://w3id.org/neugenfair/schema/other</code>
+                <span>
+                  <a href="https://w3id.org/neugenfair/schema/VariantIdentifier">VariantIdentifier</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
               </td>
             </tr>
             <tr>
               <th>
-                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
               </th>
-              <td><p>Other identifiers.</p></td>
-            </tr>
-          </table>
-        </div>
-        <div class="property entity" id="rsid">
-          <h3>rsid
-            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
               <td>
-                <code>https://w3id.org/neugenfair/schema/rsid</code>
+                <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
               </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
-              </th>
-              <td><p>dbsnp rsid.</p></td>
             </tr>
           </table>
         </div>
@@ -1271,6 +1941,10 @@ Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR 
           <dt id="geno">geno</dt>
           <dd>
             <code>http://purl.obolibrary.org/obo/GENO_</code>
+          </dd>
+          <dt id="linkml">linkml</dt>
+          <dd>
+            <code>https://w3id.org/linkml/</code>
           </dd>
           <dt id="ns1">ns1</dt>
           <dd>
@@ -1357,19 +2031,46 @@ Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR 
           </h4>
           <ul class="second">
             <li>
-              <a href="#SequenceAlteration">SequenceAlteration</a>
-            </li>
-            <li>
               <a href="#AlternateAllele">AlternateAllele</a>
             </li>
             <li>
               <a href="#ReferenceAllele">ReferenceAllele</a>
             </li>
             <li>
+              <a href="#COSMIC">COSMIC</a>
+            </li>
+            <li>
+              <a href="#ClinVar">ClinVar</a>
+            </li>
+            <li>
+              <a href="#Ensembl">Ensembl</a>
+            </li>
+            <li>
+              <a href="#HGVS">HGVS</a>
+            </li>
+            <li>
+              <a href="#HUGO">HUGO</a>
+            </li>
+            <li>
+              <a href="#Other">Other</a>
+            </li>
+            <li>
+              <a href="#dbSNP">dbSNP</a>
+            </li>
+            <li>
+              <a href="#rsID">rsID</a>
+            </li>
+            <li>
               <a href="#VariantIdentifier">VariantIdentifier</a>
             </li>
             <li>
-              <a href="#VariationSite">VariationSite</a>
+              <a href="#Region">Region</a>
+            </li>
+            <li>
+              <a href="#SequenceAlteration">SequenceAlteration</a>
+            </li>
+            <li>
+              <a href="#:Nomenclature">:nomenclature</a>
             </li>
           </ul>
         </li>
@@ -1379,16 +2080,31 @@ Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR 
           </h4>
           <ul class="second">
             <li>
-              <a href="#has_alternate_allele">has_alternate_allele</a>
+              <a href="#begins_at">begins_at</a>
+            </li>
+            <li>
+              <a href="#ends_at">ends_at</a>
+            </li>
+            <li>
+              <a href="#has_alternate_part">has_alternate_part</a>
             </li>
             <li>
               <a href="#has_identifier">has_identifier</a>
             </li>
             <li>
-              <a href="#has_location">has_location</a>
+              <a href="#has_reference">has_reference</a>
             </li>
             <li>
-              <a href="#has_reference_allele">has_reference_allele</a>
+              <a href="#has_reference_part">has_reference_part</a>
+            </li>
+            <li>
+              <a href="#has_source">has_source</a>
+            </li>
+            <li>
+              <a href="#has_value">has_value</a>
+            </li>
+            <li>
+              <a href="#location">location</a>
             </li>
           </ul>
         </li>
@@ -1407,13 +2123,7 @@ Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR 
               <a href="#has_reference">has_reference</a>
             </li>
             <li>
-              <a href="#hgvsid">hgvsid</a>
-            </li>
-            <li>
-              <a href="#other">other</a>
-            </li>
-            <li>
-              <a href="#rsid">rsid</a>
+              <a href="#has_value">has_value</a>
             </li>
             <li>
               <a href="#value">value</a>
@@ -1430,6 +2140,9 @@ Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR 
             </li>
             <li>
               <a href="#geno">geno</a>
+            </li>
+            <li>
+              <a href="#linkml">linkml</a>
             </li>
             <li>
               <a href="#ns1">ns1</a>

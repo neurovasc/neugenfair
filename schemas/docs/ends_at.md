@@ -22,7 +22,7 @@ Alias: ends_at
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [VariationSite](VariationSite.md) | Represents the location of a sequence alteration |  no  |
+| [Region](Region.md) | (genomic) Region of a SequenceAlteration |  no  |
 
 
 
@@ -59,6 +59,7 @@ Alias: ends_at
 | ---  | ---  |
 | self | faldo:end |
 | native | https://w3id.org/neugenfair/schema/ends_at |
+| undefined | faldo:end |
 
 
 
@@ -70,12 +71,14 @@ Alias: ends_at
 name: ends_at
 description: The end of the location of the sequence alteration.
 from_schema: https://w3id.org/neugenfair/schema
+mappings:
+- faldo:end
 rank: 1000
+domain: Region
 slot_uri: faldo:end
 alias: ends_at
-owner: VariationSite
 domain_of:
-- VariationSite
+- Region
 range: integer
 required: true
 

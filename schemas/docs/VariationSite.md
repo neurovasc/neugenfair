@@ -46,13 +46,6 @@ URI: [faldo:Region](http://biohackathon.org/resource/faldo#Region)
 
 
 
-## Usages
-
-| used by | used in | type | used |
-| ---  | --- | --- | --- |
-| [SequenceAlteration](SequenceAlteration.md) | [has_location](has_location.md) | range | [VariationSite](VariationSite.md) |
-
-
 
 
 

@@ -3,13 +3,13 @@
 # Slot: has_identifier 
 
 
-_A unique identifier for the sequence alteration._
+_Relation between a SequenceAlteration and its VariantIdentifier_
 
 
 
 
 
-URI: [sio:000674](http://semanticscience.org/resource/SIO_000674)
+URI: [sio:0000671](http://semanticscience.org/resource/SIO_0000671)
 Alias: has_identifier
 
 <!-- no inheritance hierarchy -->
@@ -22,7 +22,7 @@ Alias: has_identifier
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [SequenceAlteration](SequenceAlteration.md) | A representation of a sequence alteration (so:0001059) |  no  |
+| [SequenceAlteration](SequenceAlteration.md) | A representation of a SequenceAlteration |  no  |
 
 
 
@@ -57,8 +57,9 @@ Alias: has_identifier
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | sio:000674 |
+| self | sio:0000671 |
 | native | https://w3id.org/neugenfair/schema/has_identifier |
+| undefined | sio:0000671 |
 
 
 
@@ -68,12 +69,14 @@ Alias: has_identifier
 <details>
 ```yaml
 name: has_identifier
-description: A unique identifier for the sequence alteration.
+description: Relation between a SequenceAlteration and its VariantIdentifier
 from_schema: https://w3id.org/neugenfair/schema
+mappings:
+- sio:0000671
 rank: 1000
-slot_uri: sio:000674
+domain: SequenceAlteration
+slot_uri: sio:0000671
 alias: has_identifier
-owner: SequenceAlteration
 domain_of:
 - SequenceAlteration
 range: VariantIdentifier

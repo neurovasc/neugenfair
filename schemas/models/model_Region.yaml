@@ -1,0 +1,53 @@
+id: https://w3id.org/neugenfair/schema
+name: neugenfairschema
+description: >
+  Region class schema for the neugenfair tool. Defines Region where the SeqeunceAlteration occured
+  as defined in FALDO ontology.
+
+prefixes:
+  ex: http://example.org/
+  linkml: https://w3id.org/linkml/
+  faldo: http://biohackathon.org/resource/faldo#
+
+imports:
+  - linkml:types
+
+slots:
+  begins_at:
+    description: "The beginning of the location of the sequence alteration."
+    required: true
+    range: integer
+    slot_uri: faldo:begin
+    mappings:
+      - faldo:begin
+    domain: Region
+    
+  ends_at:
+    description: "The end of the location of the sequence alteration."
+    required: true
+    range: integer
+    slot_uri: faldo:end
+    mappings:
+      - faldo:end
+    domain: Region
+
+  has_reference:
+    description: "The reference sequence (contig, sequence, chromosome)."
+    required: true
+    range: string
+    slot_uri: faldo:reference
+    mappings:
+      - faldo:reference
+    domain: Region
+
+classes:
+  # Location/Position of the sequence alteration  
+  Region:
+    class_uri: faldo:Region
+    description: "(genomic) Region of a SequenceAlteration."
+    attributes:
+      - begins_at
+      - ends_at
+      - has_reference
+
+
