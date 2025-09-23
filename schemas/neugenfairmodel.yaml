@@ -136,8 +136,8 @@ slots:
     domain: AssemblySequence
     slot_uri: owl:sameAs
     range: string
-  relation_one:
-    name: relation_one
+  position:
+    name: position
     description: Exact (genomic) Position of a SequenceAlteration.
     exact_mappings:
     - geno:0000903
@@ -240,10 +240,30 @@ classes:
     attributes:
       has_value:
         name: has_value
+        description: Sequence name
+        exact_mappings:
+        - sio:000300
+        domain: AssemblySequence
+        slot_uri: sio:000300
+        range: string
+        required: true
       label:
         name: label
+        description: A human-readable relatable name for the sequence (e.g. chr1).
+        exact_mappings:
+        - rdfs:label
+        domain: AssemblySequence
+        slot_uri: rdfs:label
+        range: string
       same_as:
         name: same_as
+        description: Link to an external reference for the sequence (e.g. a URI from
+          a genome browser or database).
+        exact_mappings:
+        - owl:sameAs
+        domain: AssemblySequence
+        slot_uri: owl:sameAs
+        range: string
     class_uri: so:0000353
   Position:
     name: Position
@@ -253,6 +273,13 @@ classes:
     attributes:
       position:
         name: position
+        description: Exact (genomic) Position of a SequenceAlteration.
+        exact_mappings:
+        - geno:0000903
+        domain: Position
+        slot_uri: faldo:position
+        range: integer
+        required: true
     class_uri: faldo:ExactPosition
   ReferenceAllele:
     name: ReferenceAllele
@@ -271,10 +298,31 @@ classes:
     attributes:
       begins_at:
         name: begins_at
+        description: The beginning of the location of the sequence alteration.
+        exact_mappings:
+        - faldo:begin
+        domain: Region
+        slot_uri: faldo:begin
+        range: Position
+        required: true
       ends_at:
         name: ends_at
+        description: The end of the location of the sequence alteration.
+        exact_mappings:
+        - faldo:end
+        domain: Region
+        slot_uri: faldo:end
+        range: Position
+        required: true
       has_reference:
         name: has_reference
+        description: The reference sequence (contig, sequence, chromosome).
+        exact_mappings:
+        - faldo:reference
+        domain: Region
+        slot_uri: faldo:reference
+        range: AssemblySequence
+        required: true
     class_uri: faldo:Region
   SequenceAlteration:
     name: SequenceAlteration
@@ -298,6 +346,20 @@ classes:
     attributes:
       has_value:
         name: has_value
+        description: The value of the identifier.
+        mappings:
+        - sio:000300
+        domain: VariantIdentifier
+        slot_uri: sio:000300
+        range: string
+        required: true
       has_source:
         name: has_source
+        description: The nomenclature or database of the identifier (e.g. HGVS, dbSNP).
+        mappings:
+        - sio:000253
+        domain: VariantIdentifier
+        slot_uri: sio:000253
+        range: Nomenclature
+        required: true
     class_uri: sio:000675

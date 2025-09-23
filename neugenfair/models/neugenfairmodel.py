@@ -1,5 +1,5 @@
 # Auto generated from neugenfairmodel.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-09-23T13:15:10
+# Generation date: 2025-09-23T13:30:01
 # Schema: neugenfairSchema
 #
 # id: https://w3id.org/neugenfair/schema
@@ -135,12 +135,14 @@ class AssemblySequence(YAMLRoot):
     class_name: ClassVar[str] = "AssemblySequence"
     class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neugenfair/schema/AssemblySequence")
 
-    has_value: Optional[str] = None
+    has_value: str = None
     label: Optional[str] = None
     same_as: Optional[str] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
-        if self.has_value is not None and not isinstance(self.has_value, str):
+        if self._is_empty(self.has_value):
+            self.MissingRequiredField("has_value")
+        if not isinstance(self.has_value, str):
             self.has_value = str(self.has_value)
 
         if self.label is not None and not isinstance(self.label, str):
@@ -164,11 +166,13 @@ class Position(YAMLRoot):
     class_name: ClassVar[str] = "Position"
     class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neugenfair/schema/Position")
 
-    position: Optional[str] = None
+    position: int = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
-        if self.position is not None and not isinstance(self.position, str):
-            self.position = str(self.position)
+        if self._is_empty(self.position):
+            self.MissingRequiredField("position")
+        if not isinstance(self.position, int):
+            self.position = int(self.position)
 
         super().__post_init__(**kwargs)
 
@@ -208,19 +212,25 @@ class Region(YAMLRoot):
     class_name: ClassVar[str] = "Region"
     class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neugenfair/schema/Region")
 
-    begins_at: Optional[str] = None
-    ends_at: Optional[str] = None
-    has_reference: Optional[str] = None
+    begins_at: Union[dict, Position] = None
+    ends_at: Union[dict, Position] = None
+    has_reference: Union[dict, AssemblySequence] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
-        if self.begins_at is not None and not isinstance(self.begins_at, str):
-            self.begins_at = str(self.begins_at)
+        if self._is_empty(self.begins_at):
+            self.MissingRequiredField("begins_at")
+        if not isinstance(self.begins_at, Position):
+            self.begins_at = Position(**as_dict(self.begins_at))
 
-        if self.ends_at is not None and not isinstance(self.ends_at, str):
-            self.ends_at = str(self.ends_at)
+        if self._is_empty(self.ends_at):
+            self.MissingRequiredField("ends_at")
+        if not isinstance(self.ends_at, Position):
+            self.ends_at = Position(**as_dict(self.ends_at))
 
-        if self.has_reference is not None and not isinstance(self.has_reference, str):
-            self.has_reference = str(self.has_reference)
+        if self._is_empty(self.has_reference):
+            self.MissingRequiredField("has_reference")
+        if not isinstance(self.has_reference, AssemblySequence):
+            self.has_reference = AssemblySequence(**as_dict(self.has_reference))
 
         super().__post_init__(**kwargs)
 
@@ -270,15 +280,19 @@ class VariantIdentifier(YAMLRoot):
     class_name: ClassVar[str] = "VariantIdentifier"
     class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neugenfair/schema/VariantIdentifier")
 
-    has_value: Optional[str] = None
-    has_source: Optional[str] = None
+    has_value: str = None
+    has_source: Union[str, "Nomenclature"] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
-        if self.has_value is not None and not isinstance(self.has_value, str):
+        if self._is_empty(self.has_value):
+            self.MissingRequiredField("has_value")
+        if not isinstance(self.has_value, str):
             self.has_value = str(self.has_value)
 
-        if self.has_source is not None and not isinstance(self.has_source, str):
-            self.has_source = str(self.has_source)
+        if self._is_empty(self.has_source):
+            self.MissingRequiredField("has_source")
+        if not isinstance(self.has_source, Nomenclature):
+            self.has_source = Nomenclature(self.has_source)
 
         super().__post_init__(**kwargs)
 
@@ -331,8 +345,8 @@ slots.label = Slot(uri=RDFS.label, name="label", curie=RDFS.curie('label'),
 slots.same_as = Slot(uri=OWL.sameAs, name="same_as", curie=OWL.curie('sameAs'),
                    model_uri=DEFAULT_.same_as, domain=AssemblySequence, range=Optional[str])
 
-slots.relation_one = Slot(uri=FALDO.position, name="relation_one", curie=FALDO.curie('position'),
-                   model_uri=DEFAULT_.relation_one, domain=Position, range=int)
+slots.position = Slot(uri=FALDO.position, name="position", curie=FALDO.curie('position'),
+                   model_uri=DEFAULT_.position, domain=Position, range=int)
 
 slots.begins_at = Slot(uri=FALDO.begin, name="begins_at", curie=FALDO.curie('begin'),
                    model_uri=DEFAULT_.begins_at, domain=Region, range=Union[dict, Position])
@@ -361,29 +375,29 @@ slots.has_source = Slot(uri=SIO['000253'], name="has_source", curie=SIO.curie('0
 slots.alternateAllele__value = Slot(uri=SIO['000300'], name="alternateAllele__value", curie=SIO.curie('000300'),
                    model_uri=DEFAULT_.alternateAllele__value, domain=None, range=str)
 
-slots.assemblySequence__has_value = Slot(uri=DEFAULT_.has_value, name="assemblySequence__has_value", curie=DEFAULT_.curie('has_value'),
-                   model_uri=DEFAULT_.assemblySequence__has_value, domain=None, range=Optional[str])
+slots.assemblySequence__has_value = Slot(uri=SIO['000300'], name="assemblySequence__has_value", curie=SIO.curie('000300'),
+                   model_uri=DEFAULT_.assemblySequence__has_value, domain=AssemblySequence, range=str)
 
-slots.assemblySequence__label = Slot(uri=DEFAULT_.label, name="assemblySequence__label", curie=DEFAULT_.curie('label'),
-                   model_uri=DEFAULT_.assemblySequence__label, domain=None, range=Optional[str])
+slots.assemblySequence__label = Slot(uri=RDFS.label, name="assemblySequence__label", curie=RDFS.curie('label'),
+                   model_uri=DEFAULT_.assemblySequence__label, domain=AssemblySequence, range=Optional[str])
 
-slots.assemblySequence__same_as = Slot(uri=DEFAULT_.same_as, name="assemblySequence__same_as", curie=DEFAULT_.curie('same_as'),
-                   model_uri=DEFAULT_.assemblySequence__same_as, domain=None, range=Optional[str])
+slots.assemblySequence__same_as = Slot(uri=OWL.sameAs, name="assemblySequence__same_as", curie=OWL.curie('sameAs'),
+                   model_uri=DEFAULT_.assemblySequence__same_as, domain=AssemblySequence, range=Optional[str])
 
-slots.position__position = Slot(uri=DEFAULT_.position, name="position__position", curie=DEFAULT_.curie('position'),
-                   model_uri=DEFAULT_.position__position, domain=None, range=Optional[str])
+slots.position__position = Slot(uri=FALDO.position, name="position__position", curie=FALDO.curie('position'),
+                   model_uri=DEFAULT_.position__position, domain=Position, range=int)
 
 slots.referenceAllele__value = Slot(uri=SIO['000300'], name="referenceAllele__value", curie=SIO.curie('000300'),
                    model_uri=DEFAULT_.referenceAllele__value, domain=None, range=str)
 
-slots.region__begins_at = Slot(uri=DEFAULT_.begins_at, name="region__begins_at", curie=DEFAULT_.curie('begins_at'),
-                   model_uri=DEFAULT_.region__begins_at, domain=None, range=Optional[str])
+slots.region__begins_at = Slot(uri=FALDO.begin, name="region__begins_at", curie=FALDO.curie('begin'),
+                   model_uri=DEFAULT_.region__begins_at, domain=Region, range=Union[dict, Position])
 
-slots.region__ends_at = Slot(uri=DEFAULT_.ends_at, name="region__ends_at", curie=DEFAULT_.curie('ends_at'),
-                   model_uri=DEFAULT_.region__ends_at, domain=None, range=Optional[str])
+slots.region__ends_at = Slot(uri=FALDO.end, name="region__ends_at", curie=FALDO.curie('end'),
+                   model_uri=DEFAULT_.region__ends_at, domain=Region, range=Union[dict, Position])
 
-slots.region__has_reference = Slot(uri=DEFAULT_.has_reference, name="region__has_reference", curie=DEFAULT_.curie('has_reference'),
-                   model_uri=DEFAULT_.region__has_reference, domain=None, range=Optional[str])
+slots.region__has_reference = Slot(uri=FALDO.reference, name="region__has_reference", curie=FALDO.curie('reference'),
+                   model_uri=DEFAULT_.region__has_reference, domain=Region, range=Union[dict, AssemblySequence])
 
 slots.sequenceAlteration__has_identifier = Slot(uri=DEFAULT_.has_identifier, name="sequenceAlteration__has_identifier", curie=DEFAULT_.curie('has_identifier'),
                    model_uri=DEFAULT_.sequenceAlteration__has_identifier, domain=None, range=Optional[str])
@@ -397,9 +411,9 @@ slots.sequenceAlteration__has_alternate_part = Slot(uri=DEFAULT_.has_alternate_p
 slots.sequenceAlteration__location = Slot(uri=DEFAULT_.location, name="sequenceAlteration__location", curie=DEFAULT_.curie('location'),
                    model_uri=DEFAULT_.sequenceAlteration__location, domain=None, range=Optional[str])
 
-slots.variantIdentifier__has_value = Slot(uri=DEFAULT_.has_value, name="variantIdentifier__has_value", curie=DEFAULT_.curie('has_value'),
-                   model_uri=DEFAULT_.variantIdentifier__has_value, domain=None, range=Optional[str])
+slots.variantIdentifier__has_value = Slot(uri=SIO['000300'], name="variantIdentifier__has_value", curie=SIO.curie('000300'),
+                   model_uri=DEFAULT_.variantIdentifier__has_value, domain=VariantIdentifier, range=str)
 
-slots.variantIdentifier__has_source = Slot(uri=DEFAULT_.has_source, name="variantIdentifier__has_source", curie=DEFAULT_.curie('has_source'),
-                   model_uri=DEFAULT_.variantIdentifier__has_source, domain=None, range=Optional[str])
+slots.variantIdentifier__has_source = Slot(uri=SIO['000253'], name="variantIdentifier__has_source", curie=SIO.curie('000253'),
+                   model_uri=DEFAULT_.variantIdentifier__has_source, domain=VariantIdentifier, range=Union[str, "Nomenclature"])
 

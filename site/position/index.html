@@ -1514,7 +1514,8 @@
 
 
 <h1 id="slot-position">Slot: position</h1>
-<p>URI: <a href="https://w3id.org/neugenfair/schema/position">https://w3id.org/neugenfair/schema/position</a>
+<p><em>Exact (genomic) Position of a SequenceAlteration.</em></p>
+<p>URI: <a href="http://biohackathon.org/resource/faldo#position">faldo:position</a>
 Alias: position</p>
 <!-- no inheritance hierarchy -->
 
@@ -1537,7 +1538,12 @@ Alias: position</p>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: NONE</li>
+<li>
+<p>Range: <a href="../Integer/">Integer</a></p>
+</li>
+<li>
+<p>Required: True</p>
+</li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
@@ -1555,11 +1561,15 @@ Alias: position</p>
 <tbody>
 <tr>
 <td>self</td>
-<td>https://w3id.org/neugenfair/schema/position</td>
+<td>faldo:position</td>
 </tr>
 <tr>
 <td>native</td>
 <td>https://w3id.org/neugenfair/schema/position</td>
+</tr>
+<tr>
+<td>exact</td>
+<td>geno:0000903</td>
 </tr>
 </tbody>
 </table>
@@ -1567,12 +1577,18 @@ Alias: position</p>
 <details>
 
 <pre><code class="language-yaml">name: position
+description: Exact (genomic) Position of a SequenceAlteration.
 from_schema: https://w3id.org/neugenfair/schema
+exact_mappings:
+- geno:0000903
 rank: 1000
+domain: Position
+slot_uri: faldo:position
 alias: position
-owner: Position
 domain_of:
 - Position
+range: integer
+required: true
 
 </code></pre>
 

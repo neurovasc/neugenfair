@@ -46,8 +46,32 @@ classes:
     class_uri: faldo:Region
     description: "(genomic) Region of a SequenceAlteration."
     attributes:
-      - begins_at
-      - ends_at
-      - has_reference
+    
+      begins_at:
+        description: "The beginning of the location of the sequence alteration."
+        required: true
+        range: Position
+        slot_uri: faldo:begin
+        exact_mappings:
+          - faldo:begin
+        domain: Region
+        
+      ends_at:
+        description: "The end of the location of the sequence alteration."
+        required: true
+        range: Position
+        slot_uri: faldo:end
+        exact_mappings:
+          - faldo:end
+        domain: Region
+
+      has_reference:
+        description: "The reference sequence (contig, sequence, chromosome)."
+        required: true
+        range: AssemblySequence
+        slot_uri: faldo:reference
+        exact_mappings:
+          - faldo:reference
+        domain: Region
 
 

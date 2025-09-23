@@ -3,8 +3,13 @@
 # Slot: position 
 
 
+_Exact (genomic) Position of a SequenceAlteration._
 
-URI: [https://w3id.org/neugenfair/schema/position](https://w3id.org/neugenfair/schema/position)
+
+
+
+
+URI: [faldo:position](http://biohackathon.org/resource/faldo#position)
 Alias: position
 
 <!-- no inheritance hierarchy -->
@@ -26,7 +31,9 @@ Alias: position
 
 ## Properties
 
-* Range: NONE
+* Range: [Integer](Integer.md)
+
+* Required: True
 
 
 
@@ -50,8 +57,9 @@ Alias: position
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | https://w3id.org/neugenfair/schema/position |
+| self | faldo:position |
 | native | https://w3id.org/neugenfair/schema/position |
+| exact | geno:0000903 |
 
 
 
@@ -61,12 +69,18 @@ Alias: position
 <details>
 ```yaml
 name: position
+description: Exact (genomic) Position of a SequenceAlteration.
 from_schema: https://w3id.org/neugenfair/schema
+exact_mappings:
+- geno:0000903
 rank: 1000
+domain: Position
+slot_uri: faldo:position
 alias: position
-owner: Position
 domain_of:
 - Position
+range: integer
+required: true
 
 ```
 </details>

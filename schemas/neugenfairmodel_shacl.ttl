@@ -1,33 +1,38 @@
 @prefix faldo: <http://biohackathon.org/resource/faldo#> .
 @prefix geno: <http://purl.obolibrary.org/obo/GENO_> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix sio: <http://semanticscience.org/resource/SIO_> .
 @prefix so: <http://purl.obolibrary.org/obo/SO_> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-faldo:ExactPosition a sh:NodeShape ;
-    sh:closed true ;
-    sh:description "(genomic) Position." ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:maxCount 1 ;
-            sh:order 0 ;
-            sh:path <https://w3id.org/neugenfair/schema/position> ] ;
-    sh:targetClass faldo:ExactPosition .
-
 faldo:Region a sh:NodeShape ;
     sh:closed true ;
     sh:description "(genomic) Region of a SequenceAlteration." ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:maxCount 1 ;
-            sh:order 0 ;
-            sh:path <https://w3id.org/neugenfair/schema/begins_at> ],
-        [ sh:maxCount 1 ;
-            sh:order 1 ;
-            sh:path <https://w3id.org/neugenfair/schema/ends_at> ],
-        [ sh:maxCount 1 ;
+    sh:property [ sh:class so:0000353 ;
+            sh:description "The reference sequence (contig, sequence, chromosome)." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
             sh:order 2 ;
-            sh:path <https://w3id.org/neugenfair/schema/has_reference> ] ;
+            sh:path faldo:reference ],
+        [ sh:class faldo:ExactPosition ;
+            sh:description "The end of the location of the sequence alteration." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 1 ;
+            sh:path faldo:end ],
+        [ sh:class faldo:ExactPosition ;
+            sh:description "The beginning of the location of the sequence alteration." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 0 ;
+            sh:path faldo:begin ] ;
     sh:targetClass faldo:Region .
 
 geno:0000002 a sh:NodeShape ;
@@ -56,34 +61,19 @@ geno:0000036 a sh:NodeShape ;
             sh:path sio:000300 ] ;
     sh:targetClass geno:0000036 .
 
-so:0000353 a sh:NodeShape ;
-    sh:closed true ;
-    sh:description "AssemblySequence is a chromosome or sequence in a reference genome." ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:maxCount 1 ;
-            sh:order 1 ;
-            sh:path <https://w3id.org/neugenfair/schema/label> ],
-        [ sh:maxCount 1 ;
-            sh:order 2 ;
-            sh:path <https://w3id.org/neugenfair/schema/same_as> ],
-        [ sh:maxCount 1 ;
-            sh:order 0 ;
-            sh:path <https://w3id.org/neugenfair/schema/has_value> ] ;
-    sh:targetClass so:0000353 .
-
 so:0001059 a sh:NodeShape ;
     sh:closed true ;
     sh:description "A representation of a SequenceAlteration." ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:property [ sh:maxCount 1 ;
-            sh:order 0 ;
-            sh:path <https://w3id.org/neugenfair/schema/has_identifier> ],
+            sh:order 1 ;
+            sh:path <https://w3id.org/neugenfair/schema/has_reference_part> ],
         [ sh:maxCount 1 ;
             sh:order 3 ;
             sh:path <https://w3id.org/neugenfair/schema/location> ],
         [ sh:maxCount 1 ;
-            sh:order 1 ;
-            sh:path <https://w3id.org/neugenfair/schema/has_reference_part> ],
+            sh:order 0 ;
+            sh:path <https://w3id.org/neugenfair/schema/has_identifier> ],
         [ sh:maxCount 1 ;
             sh:order 2 ;
             sh:path <https://w3id.org/neugenfair/schema/has_alternate_part> ] ;
@@ -93,12 +83,57 @@ sio:000675 a sh:NodeShape ;
     sh:closed true ;
     sh:description "A unique identifier for a sequence alteration within a database or nomenclature." ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:maxCount 1 ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:description "The value of the identifier." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
             sh:order 0 ;
-            sh:path <https://w3id.org/neugenfair/schema/has_value> ],
-        [ sh:maxCount 1 ;
+            sh:path sio:000300 ],
+        [ sh:description "The nomenclature or database of the identifier (e.g. HGVS, dbSNP)." ;
+            sh:in ( "HGVS" "dbSNP" "rsID" "ClinVar" "COSMIC" "Ensembl" "HUGO" "Other" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
             sh:order 1 ;
-            sh:path <https://w3id.org/neugenfair/schema/has_source> ] ;
+            sh:path sio:000253 ] ;
     sh:targetClass sio:000675 .
+
+so:0000353 a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "AssemblySequence is a chromosome or sequence in a reference genome." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:description "Link to an external reference for the sequence (e.g. a URI from a genome browser or database)." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 2 ;
+            sh:path owl:sameAs ],
+        [ sh:datatype xsd:string ;
+            sh:description "A human-readable relatable name for the sequence (e.g. chr1)." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 1 ;
+            sh:path rdfs:label ],
+        [ sh:datatype xsd:string ;
+            sh:description "Sequence name" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path sio:000300 ] ;
+    sh:targetClass so:0000353 .
+
+faldo:ExactPosition a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "(genomic) Position." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:datatype xsd:integer ;
+            sh:description "Exact (genomic) Position of a SequenceAlteration." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path faldo:position ] ;
+    sh:targetClass faldo:ExactPosition .
 
 

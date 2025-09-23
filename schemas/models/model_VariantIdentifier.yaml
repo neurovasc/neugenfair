@@ -39,8 +39,24 @@ classes:
     class_uri: sio:000675
     description: "A unique identifier for a sequence alteration within a database or nomenclature."
     attributes:
-      - has_value
-      - has_source
+    
+      has_value:
+        description: "The value of the identifier."
+        required: true
+        range: string
+        slot_uri: sio:000300
+        mappings:
+          - sio:000300
+        domain: VariantIdentifier
+
+      has_source:
+        description: "The nomenclature or database of the identifier (e.g. HGVS, dbSNP)."
+        required: true
+        range: Nomenclature
+        slot_uri: sio:000253
+        mappings:
+          - sio:000253
+        domain: VariantIdentifier
 
 enums:
   Nomenclature:

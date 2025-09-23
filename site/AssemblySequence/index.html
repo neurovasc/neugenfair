@@ -297,6 +297,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#usages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#identifier-and-mapping-information" class="md-nav__link">
     <span class="md-ellipsis">
       Identifier and Mapping Information
@@ -1462,6 +1471,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#usages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#identifier-and-mapping-information" class="md-nav__link">
     <span class="md-ellipsis">
       Identifier and Mapping Information
@@ -1572,21 +1590,58 @@
 <tbody>
 <tr>
 <td><a href="../has_value/">has_value</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>Sequence name</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../label/">label</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td></td>
+<td>A human-readable relatable name for the sequence (e</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../same_as/">same_as</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td></td>
+<td>Link to an external reference for the sequence (e</td>
 <td>direct</td>
+</tr>
+</tbody>
+</table>
+<h2 id="usages">Usages</h2>
+<table>
+<thead>
+<tr>
+<th>used by</th>
+<th>used in</th>
+<th>type</th>
+<th>used</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="./">AssemblySequence</a></td>
+<td><a href="../has_value/">has_value</a></td>
+<td>domain</td>
+<td><a href="./">AssemblySequence</a></td>
+</tr>
+<tr>
+<td><a href="./">AssemblySequence</a></td>
+<td><a href="../label/">label</a></td>
+<td>domain</td>
+<td><a href="./">AssemblySequence</a></td>
+</tr>
+<tr>
+<td><a href="./">AssemblySequence</a></td>
+<td><a href="../same_as/">same_as</a></td>
+<td>domain</td>
+<td><a href="./">AssemblySequence</a></td>
+</tr>
+<tr>
+<td><a href="../Region/">Region</a></td>
+<td><a href="../has_reference/">has_reference</a></td>
+<td>range</td>
+<td><a href="./">AssemblySequence</a></td>
 </tr>
 </tbody>
 </table>
@@ -1639,20 +1694,40 @@ related_mappings:
 attributes:
   has_value:
     name: has_value
+    description: Sequence name
     from_schema: https://w3id.org/neugenfair/schema
+    exact_mappings:
+    - sio:000300
+    domain: AssemblySequence
+    slot_uri: sio:000300
     domain_of:
     - AssemblySequence
     - VariantIdentifier
+    range: string
+    required: true
   label:
     name: label
+    description: A human-readable relatable name for the sequence (e.g. chr1).
     from_schema: https://w3id.org/neugenfair/schema
+    exact_mappings:
+    - rdfs:label
+    domain: AssemblySequence
+    slot_uri: rdfs:label
     domain_of:
     - AssemblySequence
+    range: string
   same_as:
     name: same_as
+    description: Link to an external reference for the sequence (e.g. a URI from a
+      genome browser or database).
     from_schema: https://w3id.org/neugenfair/schema
+    exact_mappings:
+    - owl:sameAs
+    domain: AssemblySequence
+    slot_uri: owl:sameAs
     domain_of:
     - AssemblySequence
+    range: string
 class_uri: so:0000353
 
 </code></pre>
@@ -1673,26 +1748,46 @@ related_mappings:
 attributes:
   has_value:
     name: has_value
+    description: Sequence name
     from_schema: https://w3id.org/neugenfair/schema
+    exact_mappings:
+    - sio:000300
+    domain: AssemblySequence
+    slot_uri: sio:000300
     alias: has_value
     owner: AssemblySequence
     domain_of:
     - AssemblySequence
     - VariantIdentifier
+    range: string
+    required: true
   label:
     name: label
+    description: A human-readable relatable name for the sequence (e.g. chr1).
     from_schema: https://w3id.org/neugenfair/schema
+    exact_mappings:
+    - rdfs:label
+    domain: AssemblySequence
+    slot_uri: rdfs:label
     alias: label
     owner: AssemblySequence
     domain_of:
     - AssemblySequence
+    range: string
   same_as:
     name: same_as
+    description: Link to an external reference for the sequence (e.g. a URI from a
+      genome browser or database).
     from_schema: https://w3id.org/neugenfair/schema
+    exact_mappings:
+    - owl:sameAs
+    domain: AssemblySequence
+    slot_uri: owl:sameAs
     alias: same_as
     owner: AssemblySequence
     domain_of:
     - AssemblySequence
+    range: string
 class_uri: so:0000353
 
 </code></pre>

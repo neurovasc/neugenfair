@@ -715,6 +715,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#usages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#identifier-and-mapping-information" class="md-nav__link">
     <span class="md-ellipsis">
       Identifier and Mapping Information
@@ -1462,6 +1471,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#usages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#identifier-and-mapping-information" class="md-nav__link">
     <span class="md-ellipsis">
       Identifier and Mapping Information
@@ -1551,9 +1569,36 @@
     click Region href &quot;../Region/&quot;
       Region : begins_at
 
+
+
+
+
+        Region --&gt; &quot;1&quot; Position : begins_at
+        click Position href &quot;../Position/&quot;
+
+
+
       Region : ends_at
 
+
+
+
+
+        Region --&gt; &quot;1&quot; Position : ends_at
+        click Position href &quot;../Position/&quot;
+
+
+
       Region : has_reference
+
+
+
+
+
+        Region --&gt; &quot;1&quot; AssemblySequence : has_reference
+        click AssemblySequence href &quot;../AssemblySequence/&quot;
+
+
 
 
 </code></pre>
@@ -1572,21 +1617,52 @@
 <tbody>
 <tr>
 <td><a href="../begins_at/">begins_at</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td></td>
+<td>1 <br/> <a href="../Position/">Position</a></td>
+<td>The beginning of the location of the sequence alteration</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../ends_at/">ends_at</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td></td>
+<td>1 <br/> <a href="../Position/">Position</a></td>
+<td>The end of the location of the sequence alteration</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../has_reference/">has_reference</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td></td>
+<td>1 <br/> <a href="../AssemblySequence/">AssemblySequence</a></td>
+<td>The reference sequence (contig, sequence, chromosome)</td>
 <td>direct</td>
+</tr>
+</tbody>
+</table>
+<h2 id="usages">Usages</h2>
+<table>
+<thead>
+<tr>
+<th>used by</th>
+<th>used in</th>
+<th>type</th>
+<th>used</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="./">Region</a></td>
+<td><a href="../begins_at/">begins_at</a></td>
+<td>domain</td>
+<td><a href="./">Region</a></td>
+</tr>
+<tr>
+<td><a href="./">Region</a></td>
+<td><a href="../ends_at/">ends_at</a></td>
+<td>domain</td>
+<td><a href="./">Region</a></td>
+</tr>
+<tr>
+<td><a href="./">Region</a></td>
+<td><a href="../has_reference/">has_reference</a></td>
+<td>domain</td>
+<td><a href="./">Region</a></td>
 </tr>
 </tbody>
 </table>
@@ -1626,19 +1702,40 @@ from_schema: https://w3id.org/neugenfair/schema
 attributes:
   begins_at:
     name: begins_at
+    description: The beginning of the location of the sequence alteration.
     from_schema: https://w3id.org/neugenfair/schema
+    exact_mappings:
+    - faldo:begin
+    domain: Region
+    slot_uri: faldo:begin
     domain_of:
     - Region
+    range: Position
+    required: true
   ends_at:
     name: ends_at
+    description: The end of the location of the sequence alteration.
     from_schema: https://w3id.org/neugenfair/schema
+    exact_mappings:
+    - faldo:end
+    domain: Region
+    slot_uri: faldo:end
     domain_of:
     - Region
+    range: Position
+    required: true
   has_reference:
     name: has_reference
+    description: The reference sequence (contig, sequence, chromosome).
     from_schema: https://w3id.org/neugenfair/schema
+    exact_mappings:
+    - faldo:reference
+    domain: Region
+    slot_uri: faldo:reference
     domain_of:
     - Region
+    range: AssemblySequence
+    required: true
 class_uri: faldo:Region
 
 </code></pre>
@@ -1654,25 +1751,46 @@ from_schema: https://w3id.org/neugenfair/schema
 attributes:
   begins_at:
     name: begins_at
+    description: The beginning of the location of the sequence alteration.
     from_schema: https://w3id.org/neugenfair/schema
+    exact_mappings:
+    - faldo:begin
+    domain: Region
+    slot_uri: faldo:begin
     alias: begins_at
     owner: Region
     domain_of:
     - Region
+    range: Position
+    required: true
   ends_at:
     name: ends_at
+    description: The end of the location of the sequence alteration.
     from_schema: https://w3id.org/neugenfair/schema
+    exact_mappings:
+    - faldo:end
+    domain: Region
+    slot_uri: faldo:end
     alias: ends_at
     owner: Region
     domain_of:
     - Region
+    range: Position
+    required: true
   has_reference:
     name: has_reference
+    description: The reference sequence (contig, sequence, chromosome).
     from_schema: https://w3id.org/neugenfair/schema
+    exact_mappings:
+    - faldo:reference
+    domain: Region
+    slot_uri: faldo:reference
     alias: has_reference
     owner: Region
     domain_of:
     - Region
+    range: AssemblySequence
+    required: true
 class_uri: faldo:Region
 
 </code></pre>

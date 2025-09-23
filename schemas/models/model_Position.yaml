@@ -16,7 +16,7 @@ imports:
 
 
 slots:
-  relation_one:
+  position:
     description: "Exact (genomic) Position of a SequenceAlteration."
     range: integer
     required: true
@@ -32,7 +32,15 @@ classes:
     close_mappings:
       - so:0000735
     attributes:
-      - position
+    
+      position: 
+        description: "Exact (genomic) Position of a SequenceAlteration."
+        range: integer
+        required: true
+        slot_uri: faldo:position
+        exact_mappings:
+          - geno:0000903
+        domain: Position
 
 
 

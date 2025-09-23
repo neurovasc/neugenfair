@@ -34,10 +34,19 @@ URI: [faldo:ExactPosition](http://biohackathon.org/resource/faldo#ExactPosition)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [position](position.md) | 0..1 <br/> [String](String.md) |  | direct |
+| [position](position.md) | 1 <br/> [Integer](Integer.md) | Exact (genomic) Position of a SequenceAlteration | direct |
 
 
 
+
+
+## Usages
+
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [Position](Position.md) | [position](position.md) | domain | [Position](Position.md) |
+| [Region](Region.md) | [begins_at](begins_at.md) | range | [Position](Position.md) |
+| [Region](Region.md) | [ends_at](ends_at.md) | range | [Position](Position.md) |
 
 
 
@@ -89,10 +98,16 @@ close_mappings:
 attributes:
   position:
     name: position
+    description: Exact (genomic) Position of a SequenceAlteration.
     from_schema: https://w3id.org/neugenfair/schema
-    rank: 1000
+    exact_mappings:
+    - geno:0000903
+    domain: Position
+    slot_uri: faldo:position
     domain_of:
     - Position
+    range: integer
+    required: true
 class_uri: faldo:ExactPosition
 
 ```
@@ -110,12 +125,18 @@ close_mappings:
 attributes:
   position:
     name: position
+    description: Exact (genomic) Position of a SequenceAlteration.
     from_schema: https://w3id.org/neugenfair/schema
-    rank: 1000
+    exact_mappings:
+    - geno:0000903
+    domain: Position
+    slot_uri: faldo:position
     alias: position
     owner: Position
     domain_of:
     - Position
+    range: integer
+    required: true
 class_uri: faldo:ExactPosition
 
 ```

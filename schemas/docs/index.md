@@ -50,8 +50,7 @@ Name: neugenfairSchema
 | [has_value](has_value.md) | The value of the identifier |
 | [label](label.md) | A human-readable relatable name for the sequence (e |
 | [location](location.md) | Links the SequenceAlteration to its (genomic) Region |
-| [position](position.md) |  |
-| [relation_one](relation_one.md) | Exact (genomic) Position of a SequenceAlteration |
+| [position](position.md) | Exact (genomic) Position of a SequenceAlteration |
 | [same_as](same_as.md) | Link to an external reference for the sequence (e |
 | [value](value.md) | The value of the alternate allele |
 

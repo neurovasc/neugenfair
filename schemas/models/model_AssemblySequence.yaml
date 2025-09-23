@@ -50,9 +50,29 @@ classes:
       - go:0005694
       - sio:000899
     attributes:
-      - has_value
-      - label
-      - same_as
+    
+      has_value:
+        description: "Sequence name"
+        range: string
+        required: true
+        slot_uri: sio:000300
+        exact_mappings:
+          - sio:000300
+        domain: AssemblySequence
+      label:
+        description: "A human-readable relatable name for the sequence (e.g. chr1)."
+        range: string
+        slot_uri: rdfs:label
+        exact_mappings:
+          - rdfs:label
+        domain: AssemblySequence
+      same_as:
+        description: "Link to an external reference for the sequence (e.g. a URI from a genome browser or database)."
+        range: string
+        slot_uri: owl:sameAs
+        exact_mappings:
+          - owl:sameAs
+        domain: AssemblySequence
 
 
 

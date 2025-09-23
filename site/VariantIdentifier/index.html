@@ -869,6 +869,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#usages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#identifier-and-mapping-information" class="md-nav__link">
     <span class="md-ellipsis">
       Identifier and Mapping Information
@@ -1462,6 +1471,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#usages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#identifier-and-mapping-information" class="md-nav__link">
     <span class="md-ellipsis">
       Identifier and Mapping Information
@@ -1551,6 +1569,15 @@
     click VariantIdentifier href &quot;../VariantIdentifier/&quot;
       VariantIdentifier : has_source
 
+
+
+
+
+        VariantIdentifier --&gt; &quot;1&quot; Nomenclature : has_source
+        click Nomenclature href &quot;../Nomenclature/&quot;
+
+
+
       VariantIdentifier : has_value
 
 
@@ -1570,15 +1597,40 @@
 <tbody>
 <tr>
 <td><a href="../has_value/">has_value</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>The value of the identifier</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../has_source/">has_source</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td></td>
+<td>1 <br/> <a href="../Nomenclature/">Nomenclature</a></td>
+<td>The nomenclature or database of the identifier (e</td>
 <td>direct</td>
+</tr>
+</tbody>
+</table>
+<h2 id="usages">Usages</h2>
+<table>
+<thead>
+<tr>
+<th>used by</th>
+<th>used in</th>
+<th>type</th>
+<th>used</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="./">VariantIdentifier</a></td>
+<td><a href="../has_value/">has_value</a></td>
+<td>domain</td>
+<td><a href="./">VariantIdentifier</a></td>
+</tr>
+<tr>
+<td><a href="./">VariantIdentifier</a></td>
+<td><a href="../has_source/">has_source</a></td>
+<td>domain</td>
+<td><a href="./">VariantIdentifier</a></td>
 </tr>
 </tbody>
 </table>
@@ -1618,15 +1670,29 @@ from_schema: https://w3id.org/neugenfair/schema
 attributes:
   has_value:
     name: has_value
+    description: The value of the identifier.
     from_schema: https://w3id.org/neugenfair/schema
+    mappings:
+    - sio:000300
+    domain: VariantIdentifier
+    slot_uri: sio:000300
     domain_of:
     - AssemblySequence
     - VariantIdentifier
+    range: string
+    required: true
   has_source:
     name: has_source
+    description: The nomenclature or database of the identifier (e.g. HGVS, dbSNP).
     from_schema: https://w3id.org/neugenfair/schema
+    mappings:
+    - sio:000253
+    domain: VariantIdentifier
+    slot_uri: sio:000253
     domain_of:
     - VariantIdentifier
+    range: Nomenclature
+    required: true
 class_uri: sio:000675
 
 </code></pre>
@@ -1642,19 +1708,33 @@ from_schema: https://w3id.org/neugenfair/schema
 attributes:
   has_value:
     name: has_value
+    description: The value of the identifier.
     from_schema: https://w3id.org/neugenfair/schema
+    mappings:
+    - sio:000300
+    domain: VariantIdentifier
+    slot_uri: sio:000300
     alias: has_value
     owner: VariantIdentifier
     domain_of:
     - AssemblySequence
     - VariantIdentifier
+    range: string
+    required: true
   has_source:
     name: has_source
+    description: The nomenclature or database of the identifier (e.g. HGVS, dbSNP).
     from_schema: https://w3id.org/neugenfair/schema
+    mappings:
+    - sio:000253
+    domain: VariantIdentifier
+    slot_uri: sio:000253
     alias: has_source
     owner: VariantIdentifier
     domain_of:
     - VariantIdentifier
+    range: Nomenclature
+    required: true
 class_uri: sio:000675
 
 </code></pre>
