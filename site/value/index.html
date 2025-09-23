@@ -1366,6 +1366,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Identifier and Mapping Information">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schema-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schema Source
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1445,6 +1460,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Identifier and Mapping Information">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schema-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schema Source
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1482,7 +1512,8 @@
 
 
 <h1 id="slot-value">Slot: value</h1>
-<p>URI: <a href="https://w3id.org/neugenfair/schema/value">https://w3id.org/neugenfair/schema/value</a>
+<p><em>The nucleic composition of the reference allele.</em></p>
+<p>URI: <a href="http://semanticscience.org/resource/SIO_000300">sio:000300</a>
 Alias: value</p>
 <!-- no inheritance hierarchy -->
 
@@ -1498,21 +1529,30 @@ Alias: value</p>
 <tbody>
 <tr>
 <td><a href="../ReferenceAllele/">ReferenceAllele</a></td>
-<td>Represents the reference allele (geno:0000036)</td>
+<td>Represents the ReferenceAllele, found on the reference sequence when performi...</td>
 <td>no</td>
 </tr>
 <tr>
 <td><a href="../AlternateAllele/">AlternateAllele</a></td>
-<td>Represents the alternate allele (geno:0000002)</td>
+<td>Represents the AlternateAllele, found upon mapping (genome) read sequencing f...</td>
 <td>no</td>
 </tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: NONE</li>
+<li>
+<p>Range: <a href="../String/">String</a></p>
+</li>
+<li>
+<p>Required: True</p>
+</li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
+<h3 id="schema-source">Schema Source</h3>
+<ul>
+<li>from schema: https://w3id.org/neugenfair/schema</li>
+</ul>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -1524,11 +1564,15 @@ Alias: value</p>
 <tbody>
 <tr>
 <td>self</td>
-<td>https://w3id.org/neugenfair/schema/value</td>
+<td>sio:000300</td>
 </tr>
 <tr>
 <td>native</td>
 <td>https://w3id.org/neugenfair/schema/value</td>
+</tr>
+<tr>
+<td>exact</td>
+<td>sio:000300</td>
 </tr>
 </tbody>
 </table>
@@ -1536,10 +1580,18 @@ Alias: value</p>
 <details>
 
 <pre><code class="language-yaml">name: value
+description: The nucleic composition of the reference allele.
+from_schema: https://w3id.org/neugenfair/schema
+exact_mappings:
+- sio:000300
+rank: 1000
+slot_uri: sio:000300
 alias: value
 domain_of:
 - AlternateAllele
 - ReferenceAllele
+range: string
+required: true
 
 </code></pre>
 

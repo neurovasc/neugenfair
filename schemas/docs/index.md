@@ -26,10 +26,10 @@ Name: neugenfairSchema
 
 | Class | Description |
 | --- | --- |
-| [AlternateAllele](AlternateAllele.md) | Represents the alternate allele (geno:0000002) |
+| [AlternateAllele](AlternateAllele.md) | Represents the AlternateAllele, found upon mapping (genome) read sequencing f... |
 | [AssemblySequence](AssemblySequence.md) | AssemblySequence is a chromosome or sequence in a reference genome |
 | [Position](Position.md) | (genomic) Position |
-| [ReferenceAllele](ReferenceAllele.md) | Represents the reference allele (geno:0000036) |
+| [ReferenceAllele](ReferenceAllele.md) | Represents the ReferenceAllele, found on the reference sequence when performi... |
 | [Region](Region.md) | (genomic) Region of a SequenceAlteration |
 | [SequenceAlteration](SequenceAlteration.md) | A representation of a SequenceAlteration |
 | [VariantIdentifier](VariantIdentifier.md) | A unique identifier for a sequence alteration within a database or nomenclatu... |
@@ -52,7 +52,7 @@ Name: neugenfairSchema
 | [location](location.md) | Links the SequenceAlteration to its (genomic) Region |
 | [position](position.md) | Exact (genomic) Position of a SequenceAlteration |
 | [same_as](same_as.md) | Link to an external reference for the sequence (e |
-| [value](value.md) | The value of the alternate allele |
+| [value](value.md) | The nucleic composition of the reference allele |
 
 
 ## Enumerations

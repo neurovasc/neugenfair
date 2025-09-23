@@ -1,5 +1,5 @@
 # Auto generated from neugenfairmodel.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-09-23T13:30:01
+# Generation date: 2025-09-23T13:46:00
 # Schema: neugenfairSchema
 #
 # id: https://w3id.org/neugenfair/schema
@@ -103,7 +103,8 @@ DEFAULT_ = CurieNamespace('', 'https://w3id.org/neugenfair/schema/')
 @dataclass(repr=False)
 class AlternateAllele(YAMLRoot):
     """
-    Represents the alternate allele (geno:0000002).
+    Represents the AlternateAllele, found upon mapping (genome) read sequencing from a sample to the reference
+    sequence.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -180,7 +181,7 @@ class Position(YAMLRoot):
 @dataclass(repr=False)
 class ReferenceAllele(YAMLRoot):
     """
-    Represents the reference allele (geno:0000036).
+    Represents the ReferenceAllele, found on the reference sequence when performing variant calling.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -247,23 +248,29 @@ class SequenceAlteration(YAMLRoot):
     class_name: ClassVar[str] = "SequenceAlteration"
     class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neugenfair/schema/SequenceAlteration")
 
-    has_identifier: Optional[str] = None
-    has_reference_part: Optional[str] = None
-    has_alternate_part: Optional[str] = None
-    location: Optional[str] = None
+    has_identifier: Union[dict, "VariantIdentifier"] = None
+    has_alternate_part: Union[dict, AlternateAllele] = None
+    location: Union[dict, Region] = None
+    has_reference_part: Optional[Union[dict, ReferenceAllele]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
-        if self.has_identifier is not None and not isinstance(self.has_identifier, str):
-            self.has_identifier = str(self.has_identifier)
+        if self._is_empty(self.has_identifier):
+            self.MissingRequiredField("has_identifier")
+        if not isinstance(self.has_identifier, VariantIdentifier):
+            self.has_identifier = VariantIdentifier(**as_dict(self.has_identifier))
 
-        if self.has_reference_part is not None and not isinstance(self.has_reference_part, str):
-            self.has_reference_part = str(self.has_reference_part)
+        if self._is_empty(self.has_alternate_part):
+            self.MissingRequiredField("has_alternate_part")
+        if not isinstance(self.has_alternate_part, AlternateAllele):
+            self.has_alternate_part = AlternateAllele(**as_dict(self.has_alternate_part))
 
-        if self.has_alternate_part is not None and not isinstance(self.has_alternate_part, str):
-            self.has_alternate_part = str(self.has_alternate_part)
+        if self._is_empty(self.location):
+            self.MissingRequiredField("location")
+        if not isinstance(self.location, Region):
+            self.location = Region(**as_dict(self.location))
 
-        if self.location is not None and not isinstance(self.location, str):
-            self.location = str(self.location)
+        if self.has_reference_part is not None and not isinstance(self.has_reference_part, ReferenceAllele):
+            self.has_reference_part = ReferenceAllele(**as_dict(self.has_reference_part))
 
         super().__post_init__(**kwargs)
 
@@ -336,6 +343,9 @@ class Nomenclature(EnumDefinitionImpl):
 class slots:
     pass
 
+slots.value = Slot(uri=SIO['000300'], name="value", curie=SIO.curie('000300'),
+                   model_uri=DEFAULT_.value, domain=None, range=str)
+
 slots.has_value = Slot(uri=SIO['000300'], name="has_value", curie=SIO.curie('000300'),
                    model_uri=DEFAULT_.has_value, domain=VariantIdentifier, range=str)
 
@@ -373,7 +383,7 @@ slots.has_source = Slot(uri=SIO['000253'], name="has_source", curie=SIO.curie('0
                    model_uri=DEFAULT_.has_source, domain=VariantIdentifier, range=Union[str, "Nomenclature"])
 
 slots.alternateAllele__value = Slot(uri=SIO['000300'], name="alternateAllele__value", curie=SIO.curie('000300'),
-                   model_uri=DEFAULT_.alternateAllele__value, domain=None, range=str)
+                   model_uri=DEFAULT_.alternateAllele__value, domain=AlternateAllele, range=str)
 
 slots.assemblySequence__has_value = Slot(uri=SIO['000300'], name="assemblySequence__has_value", curie=SIO.curie('000300'),
                    model_uri=DEFAULT_.assemblySequence__has_value, domain=AssemblySequence, range=str)
@@ -388,7 +398,7 @@ slots.position__position = Slot(uri=FALDO.position, name="position__position", c
                    model_uri=DEFAULT_.position__position, domain=Position, range=int)
 
 slots.referenceAllele__value = Slot(uri=SIO['000300'], name="referenceAllele__value", curie=SIO.curie('000300'),
-                   model_uri=DEFAULT_.referenceAllele__value, domain=None, range=str)
+                   model_uri=DEFAULT_.referenceAllele__value, domain=ReferenceAllele, range=str)
 
 slots.region__begins_at = Slot(uri=FALDO.begin, name="region__begins_at", curie=FALDO.curie('begin'),
                    model_uri=DEFAULT_.region__begins_at, domain=Region, range=Union[dict, Position])
@@ -399,17 +409,17 @@ slots.region__ends_at = Slot(uri=FALDO.end, name="region__ends_at", curie=FALDO.
 slots.region__has_reference = Slot(uri=FALDO.reference, name="region__has_reference", curie=FALDO.curie('reference'),
                    model_uri=DEFAULT_.region__has_reference, domain=Region, range=Union[dict, AssemblySequence])
 
-slots.sequenceAlteration__has_identifier = Slot(uri=DEFAULT_.has_identifier, name="sequenceAlteration__has_identifier", curie=DEFAULT_.curie('has_identifier'),
-                   model_uri=DEFAULT_.sequenceAlteration__has_identifier, domain=None, range=Optional[str])
+slots.sequenceAlteration__has_identifier = Slot(uri=SIO['0000671'], name="sequenceAlteration__has_identifier", curie=SIO.curie('0000671'),
+                   model_uri=DEFAULT_.sequenceAlteration__has_identifier, domain=SequenceAlteration, range=Union[dict, "VariantIdentifier"])
 
-slots.sequenceAlteration__has_reference_part = Slot(uri=DEFAULT_.has_reference_part, name="sequenceAlteration__has_reference_part", curie=DEFAULT_.curie('has_reference_part'),
-                   model_uri=DEFAULT_.sequenceAlteration__has_reference_part, domain=None, range=Optional[str])
+slots.sequenceAlteration__has_reference_part = Slot(uri=GENO['0000385'], name="sequenceAlteration__has_reference_part", curie=GENO.curie('0000385'),
+                   model_uri=DEFAULT_.sequenceAlteration__has_reference_part, domain=SequenceAlteration, range=Optional[Union[dict, ReferenceAllele]])
 
-slots.sequenceAlteration__has_alternate_part = Slot(uri=DEFAULT_.has_alternate_part, name="sequenceAlteration__has_alternate_part", curie=DEFAULT_.curie('has_alternate_part'),
-                   model_uri=DEFAULT_.sequenceAlteration__has_alternate_part, domain=None, range=Optional[str])
+slots.sequenceAlteration__has_alternate_part = Slot(uri=GENO['0000382'], name="sequenceAlteration__has_alternate_part", curie=GENO.curie('0000382'),
+                   model_uri=DEFAULT_.sequenceAlteration__has_alternate_part, domain=SequenceAlteration, range=Union[dict, AlternateAllele])
 
-slots.sequenceAlteration__location = Slot(uri=DEFAULT_.location, name="sequenceAlteration__location", curie=DEFAULT_.curie('location'),
-                   model_uri=DEFAULT_.sequenceAlteration__location, domain=None, range=Optional[str])
+slots.sequenceAlteration__location = Slot(uri=FALDO.location, name="sequenceAlteration__location", curie=FALDO.curie('location'),
+                   model_uri=DEFAULT_.sequenceAlteration__location, domain=SequenceAlteration, range=Union[dict, Region])
 
 slots.variantIdentifier__has_value = Slot(uri=SIO['000300'], name="variantIdentifier__has_value", curie=SIO.curie('000300'),
                    model_uri=DEFAULT_.variantIdentifier__has_value, domain=VariantIdentifier, range=str)

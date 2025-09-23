@@ -3,8 +3,13 @@
 # Slot: value 
 
 
+_The nucleic composition of the reference allele._
 
-URI: [https://w3id.org/neugenfair/schema/value](https://w3id.org/neugenfair/schema/value)
+
+
+
+
+URI: [sio:000300](http://semanticscience.org/resource/SIO_000300)
 Alias: value
 
 <!-- no inheritance hierarchy -->
@@ -17,8 +22,8 @@ Alias: value
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [ReferenceAllele](ReferenceAllele.md) | Represents the reference allele (geno:0000036) |  no  |
-| [AlternateAllele](AlternateAllele.md) | Represents the alternate allele (geno:0000002) |  no  |
+| [ReferenceAllele](ReferenceAllele.md) | Represents the ReferenceAllele, found on the reference sequence when performi... |  no  |
+| [AlternateAllele](AlternateAllele.md) | Represents the AlternateAllele, found upon mapping (genome) read sequencing f... |  no  |
 
 
 
@@ -27,7 +32,9 @@ Alias: value
 
 ## Properties
 
-* Range: NONE
+* Range: [String](String.md)
+
+* Required: True
 
 
 
@@ -39,13 +46,21 @@ Alias: value
 
 
 
+### Schema Source
+
+
+* from schema: https://w3id.org/neugenfair/schema
+
+
+
 
 ## Mappings
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | https://w3id.org/neugenfair/schema/value |
+| self | sio:000300 |
 | native | https://w3id.org/neugenfair/schema/value |
+| exact | sio:000300 |
 
 
 
@@ -55,10 +70,18 @@ Alias: value
 <details>
 ```yaml
 name: value
+description: The nucleic composition of the reference allele.
+from_schema: https://w3id.org/neugenfair/schema
+exact_mappings:
+- sio:000300
+rank: 1000
+slot_uri: sio:000300
 alias: value
 domain_of:
 - AlternateAllele
 - ReferenceAllele
+range: string
+required: true
 
 ```
 </details>

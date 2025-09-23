@@ -7,33 +7,33 @@ description: >
 prefixes:
   ex: http://example.org/
   linkml: https://w3id.org/linkml/
-  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
-  rdfs: http://www.w3.org/2000/01/rdf-schema#
-  skos: http://www.w3.org/2004/02/skos/core#
-  so: http://purl.obolibrary.org/obo/SO_
-  faldo: http://biohackathon.org/resource/faldo#
   geno: http://purl.obolibrary.org/obo/GENO_
   sio: http://semanticscience.org/resource/SIO_
-  owl: http://www.w3.org/2002/07/owl#
-  aic: https://example.org/aiccohortvariants#
-  mondo: http://purl.obolibrary.org/obo/MONDO_
-  hpo: http://purl.obolibrary.org/obo/HP_
-  ncit: http://purl.obolibrary.org/obo/NCIT_
-
 
 imports:
   - linkml:types
 
+slots:
+  value:
+    description: "The nucleic composition of the alternate allele."
+    required: true
+    range: string
+    slot_uri: sio:000300
+    exact_mappings:
+      - sio:000300
+
 classes:
-  # Alleles
   AlternateAllele:
-    class_uri: geno:0000002  # Define a class for the alternate allele
-    description: "Represents the alternate allele (geno:0000002)."
+    class_uri: geno:0000002  
+    description: "Represents the AlternateAllele, found upon mapping (genome) read sequencing from a sample to the reference sequence."
     attributes:
       value:
-        description: "The value of the alternate allele."
+        description: "The nucleic composition of the alternate allele."
         required: true
         range: string
         slot_uri: sio:000300
+        domain: AlternateAllele
+        exact_mappings:
+          - sio:000300
 
 

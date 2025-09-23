@@ -59,7 +59,38 @@ classes:
     exact_mappings:
       - geno:0000660
     attributes:
-      - has_identifier
-      - has_reference_part
-      - has_alternate_part
-      - location
+      has_identifier:
+        description: "Relation between a SequenceAlteration and its VariantIdentifier"
+        range: VariantIdentifier
+        required: true
+        slot_uri: sio:0000671
+        mappings:
+          - sio:0000671
+        domain: SequenceAlteration 
+
+      has_reference_part:
+        description: "Links the SequenceAlteration to its ReferenceAllele."
+        range: ReferenceAllele
+        required: false
+        slot_uri: geno:0000385
+        exact_mappings:
+          - geno:0000385
+        domain: SequenceAlteration 
+
+      has_alternate_part:
+        description: "Links the SequenceAlteration to its AlternateAllele."
+        range: AlternateAllele
+        required: true
+        slot_uri: geno:0000382
+        exact_mappings:
+          - geno:0000382
+        domain: SequenceAlteration 
+
+      location:
+        description: "Links the SequenceAlteration to its (genomic) Region."
+        range: Region
+        required: true
+        slot_uri: faldo:location
+        exact_mappings:
+          - faldo:location
+        domain: SequenceAlteration 

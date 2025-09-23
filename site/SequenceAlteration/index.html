@@ -737,6 +737,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#usages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#identifier-and-mapping-information" class="md-nav__link">
     <span class="md-ellipsis">
       Identifier and Mapping Information
@@ -1462,6 +1471,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#usages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#identifier-and-mapping-information" class="md-nav__link">
     <span class="md-ellipsis">
       Identifier and Mapping Information
@@ -1551,11 +1569,47 @@
     click SequenceAlteration href &quot;../SequenceAlteration/&quot;
       SequenceAlteration : has_alternate_part
 
+
+
+
+
+        SequenceAlteration --&gt; &quot;1&quot; AlternateAllele : has_alternate_part
+        click AlternateAllele href &quot;../AlternateAllele/&quot;
+
+
+
       SequenceAlteration : has_identifier
+
+
+
+
+
+        SequenceAlteration --&gt; &quot;1&quot; VariantIdentifier : has_identifier
+        click VariantIdentifier href &quot;../VariantIdentifier/&quot;
+
+
 
       SequenceAlteration : has_reference_part
 
+
+
+
+
+        SequenceAlteration --&gt; &quot;0..1&quot; ReferenceAllele : has_reference_part
+        click ReferenceAllele href &quot;../ReferenceAllele/&quot;
+
+
+
       SequenceAlteration : location
+
+
+
+
+
+        SequenceAlteration --&gt; &quot;1&quot; Region : location
+        click Region href &quot;../Region/&quot;
+
+
 
 
 </code></pre>
@@ -1574,27 +1628,64 @@
 <tbody>
 <tr>
 <td><a href="../has_identifier/">has_identifier</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td></td>
+<td>1 <br/> <a href="../VariantIdentifier/">VariantIdentifier</a></td>
+<td>Relation between a SequenceAlteration and its VariantIdentifier</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../has_reference_part/">has_reference_part</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td></td>
+<td>0..1 <br/> <a href="../ReferenceAllele/">ReferenceAllele</a></td>
+<td>Links the SequenceAlteration to its ReferenceAllele</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../has_alternate_part/">has_alternate_part</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td></td>
+<td>1 <br/> <a href="../AlternateAllele/">AlternateAllele</a></td>
+<td>Links the SequenceAlteration to its AlternateAllele</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../location/">location</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td></td>
+<td>1 <br/> <a href="../Region/">Region</a></td>
+<td>Links the SequenceAlteration to its (genomic) Region</td>
 <td>direct</td>
+</tr>
+</tbody>
+</table>
+<h2 id="usages">Usages</h2>
+<table>
+<thead>
+<tr>
+<th>used by</th>
+<th>used in</th>
+<th>type</th>
+<th>used</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="./">SequenceAlteration</a></td>
+<td><a href="../has_identifier/">has_identifier</a></td>
+<td>domain</td>
+<td><a href="./">SequenceAlteration</a></td>
+</tr>
+<tr>
+<td><a href="./">SequenceAlteration</a></td>
+<td><a href="../has_reference_part/">has_reference_part</a></td>
+<td>domain</td>
+<td><a href="./">SequenceAlteration</a></td>
+</tr>
+<tr>
+<td><a href="./">SequenceAlteration</a></td>
+<td><a href="../has_alternate_part/">has_alternate_part</a></td>
+<td>domain</td>
+<td><a href="./">SequenceAlteration</a></td>
+</tr>
+<tr>
+<td><a href="./">SequenceAlteration</a></td>
+<td><a href="../location/">location</a></td>
+<td>domain</td>
+<td><a href="./">SequenceAlteration</a></td>
 </tr>
 </tbody>
 </table>
@@ -1640,24 +1731,52 @@ exact_mappings:
 attributes:
   has_identifier:
     name: has_identifier
+    description: Relation between a SequenceAlteration and its VariantIdentifier
     from_schema: https://w3id.org/neugenfair/schema
+    mappings:
+    - sio:0000671
+    domain: SequenceAlteration
+    slot_uri: sio:0000671
     domain_of:
     - SequenceAlteration
+    range: VariantIdentifier
+    required: true
   has_reference_part:
     name: has_reference_part
+    description: Links the SequenceAlteration to its ReferenceAllele.
     from_schema: https://w3id.org/neugenfair/schema
+    exact_mappings:
+    - geno:0000385
+    domain: SequenceAlteration
+    slot_uri: geno:0000385
     domain_of:
     - SequenceAlteration
+    range: ReferenceAllele
+    required: false
   has_alternate_part:
     name: has_alternate_part
+    description: Links the SequenceAlteration to its AlternateAllele.
     from_schema: https://w3id.org/neugenfair/schema
+    exact_mappings:
+    - geno:0000382
+    domain: SequenceAlteration
+    slot_uri: geno:0000382
     domain_of:
     - SequenceAlteration
+    range: AlternateAllele
+    required: true
   location:
     name: location
+    description: Links the SequenceAlteration to its (genomic) Region.
     from_schema: https://w3id.org/neugenfair/schema
+    exact_mappings:
+    - faldo:location
+    domain: SequenceAlteration
+    slot_uri: faldo:location
     domain_of:
     - SequenceAlteration
+    range: Region
+    required: true
 class_uri: so:0001059
 
 </code></pre>
@@ -1675,32 +1794,60 @@ exact_mappings:
 attributes:
   has_identifier:
     name: has_identifier
+    description: Relation between a SequenceAlteration and its VariantIdentifier
     from_schema: https://w3id.org/neugenfair/schema
+    mappings:
+    - sio:0000671
+    domain: SequenceAlteration
+    slot_uri: sio:0000671
     alias: has_identifier
     owner: SequenceAlteration
     domain_of:
     - SequenceAlteration
+    range: VariantIdentifier
+    required: true
   has_reference_part:
     name: has_reference_part
+    description: Links the SequenceAlteration to its ReferenceAllele.
     from_schema: https://w3id.org/neugenfair/schema
+    exact_mappings:
+    - geno:0000385
+    domain: SequenceAlteration
+    slot_uri: geno:0000385
     alias: has_reference_part
     owner: SequenceAlteration
     domain_of:
     - SequenceAlteration
+    range: ReferenceAllele
+    required: false
   has_alternate_part:
     name: has_alternate_part
+    description: Links the SequenceAlteration to its AlternateAllele.
     from_schema: https://w3id.org/neugenfair/schema
+    exact_mappings:
+    - geno:0000382
+    domain: SequenceAlteration
+    slot_uri: geno:0000382
     alias: has_alternate_part
     owner: SequenceAlteration
     domain_of:
     - SequenceAlteration
+    range: AlternateAllele
+    required: true
   location:
     name: location
+    description: Links the SequenceAlteration to its (genomic) Region.
     from_schema: https://w3id.org/neugenfair/schema
+    exact_mappings:
+    - faldo:location
+    domain: SequenceAlteration
+    slot_uri: faldo:location
     alias: location
     owner: SequenceAlteration
     domain_of:
     - SequenceAlteration
+    range: Region
+    required: true
 class_uri: so:0001059
 
 </code></pre>

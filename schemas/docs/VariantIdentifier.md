@@ -56,6 +56,7 @@ URI: [sio:000675](http://semanticscience.org/resource/SIO_000675)
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
+| [SequenceAlteration](SequenceAlteration.md) | [has_identifier](has_identifier.md) | range | [VariantIdentifier](VariantIdentifier.md) |
 | [VariantIdentifier](VariantIdentifier.md) | [has_value](has_value.md) | domain | [VariantIdentifier](VariantIdentifier.md) |
 | [VariantIdentifier](VariantIdentifier.md) | [has_source](has_source.md) | domain | [VariantIdentifier](VariantIdentifier.md) |
 

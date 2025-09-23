@@ -693,6 +693,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#usages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#identifier-and-mapping-information" class="md-nav__link">
     <span class="md-ellipsis">
       Identifier and Mapping Information
@@ -1462,6 +1471,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#usages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#identifier-and-mapping-information" class="md-nav__link">
     <span class="md-ellipsis">
       Identifier and Mapping Information
@@ -1544,7 +1562,7 @@
 
 
 <h1 id="class-referenceallele">Class: ReferenceAllele</h1>
-<p><em>Represents the reference allele (geno:0000036).</em></p>
+<p><em>Represents the ReferenceAllele, found on the reference sequence when performing variant calling.</em></p>
 <p>URI: <a href="http://purl.obolibrary.org/obo/GENO_0000036">geno:0000036</a></p>
 <pre><code class="language-mermaid"> classDiagram
     class ReferenceAllele
@@ -1569,8 +1587,33 @@
 <tr>
 <td><a href="../value/">value</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
-<td>The value of the reference allele</td>
+<td>The nucleic composition of the reference allele</td>
 <td>direct</td>
+</tr>
+</tbody>
+</table>
+<h2 id="usages">Usages</h2>
+<table>
+<thead>
+<tr>
+<th>used by</th>
+<th>used in</th>
+<th>type</th>
+<th>used</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="./">ReferenceAllele</a></td>
+<td><a href="../value/">value</a></td>
+<td>domain</td>
+<td><a href="./">ReferenceAllele</a></td>
+</tr>
+<tr>
+<td><a href="../SequenceAlteration/">SequenceAlteration</a></td>
+<td><a href="../has_reference_part/">has_reference_part</a></td>
+<td>range</td>
+<td><a href="./">ReferenceAllele</a></td>
 </tr>
 </tbody>
 </table>
@@ -1605,13 +1648,17 @@
 <details>
 
 <pre><code class="language-yaml">name: ReferenceAllele
-description: Represents the reference allele (geno:0000036).
+description: Represents the ReferenceAllele, found on the reference sequence when
+  performing variant calling.
 from_schema: https://w3id.org/neugenfair/schema
 attributes:
   value:
     name: value
-    description: The value of the reference allele.
+    description: The nucleic composition of the reference allele.
     from_schema: https://w3id.org/neugenfair/schema
+    exact_mappings:
+    - sio:000300
+    domain: ReferenceAllele
     slot_uri: sio:000300
     domain_of:
     - AlternateAllele
@@ -1628,13 +1675,17 @@ class_uri: geno:0000036
 <details>
 
 <pre><code class="language-yaml">name: ReferenceAllele
-description: Represents the reference allele (geno:0000036).
+description: Represents the ReferenceAllele, found on the reference sequence when
+  performing variant calling.
 from_schema: https://w3id.org/neugenfair/schema
 attributes:
   value:
     name: value
-    description: The value of the reference allele.
+    description: The nucleic composition of the reference allele.
     from_schema: https://w3id.org/neugenfair/schema
+    exact_mappings:
+    - sio:000300
+    domain: ReferenceAllele
     slot_uri: sio:000300
     alias: value
     owner: ReferenceAllele

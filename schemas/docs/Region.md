@@ -80,6 +80,7 @@ URI: [faldo:Region](http://biohackathon.org/resource/faldo#Region)
 | [Region](Region.md) | [begins_at](begins_at.md) | domain | [Region](Region.md) |
 | [Region](Region.md) | [ends_at](ends_at.md) | domain | [Region](Region.md) |
 | [Region](Region.md) | [has_reference](has_reference.md) | domain | [Region](Region.md) |
+| [SequenceAlteration](SequenceAlteration.md) | [location](location.md) | range | [Region](Region.md) |
 
 
 

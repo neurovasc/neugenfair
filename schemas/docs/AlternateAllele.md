@@ -3,7 +3,7 @@
 # Class: AlternateAllele 
 
 
-_Represents the alternate allele (geno:0000002)._
+_Represents the AlternateAllele, found upon mapping (genome) read sequencing from a sample to the reference sequence._
 
 
 
@@ -34,10 +34,18 @@ URI: [geno:0000002](http://purl.obolibrary.org/obo/GENO_0000002)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [value](value.md) | 1 <br/> [String](String.md) | The value of the alternate allele | direct |
+| [value](value.md) | 1 <br/> [String](String.md) | The nucleic composition of the alternate allele | direct |
 
 
 
+
+
+## Usages
+
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [AlternateAllele](AlternateAllele.md) | [value](value.md) | domain | [AlternateAllele](AlternateAllele.md) |
+| [SequenceAlteration](SequenceAlteration.md) | [has_alternate_part](has_alternate_part.md) | range | [AlternateAllele](AlternateAllele.md) |
 
 
 
@@ -81,14 +89,17 @@ URI: [geno:0000002](http://purl.obolibrary.org/obo/GENO_0000002)
 <details>
 ```yaml
 name: AlternateAllele
-description: Represents the alternate allele (geno:0000002).
+description: Represents the AlternateAllele, found upon mapping (genome) read sequencing
+  from a sample to the reference sequence.
 from_schema: https://w3id.org/neugenfair/schema
 attributes:
   value:
     name: value
-    description: The value of the alternate allele.
+    description: The nucleic composition of the alternate allele.
     from_schema: https://w3id.org/neugenfair/schema
-    rank: 1000
+    exact_mappings:
+    - sio:000300
+    domain: AlternateAllele
     slot_uri: sio:000300
     domain_of:
     - AlternateAllele
@@ -105,14 +116,17 @@ class_uri: geno:0000002
 <details>
 ```yaml
 name: AlternateAllele
-description: Represents the alternate allele (geno:0000002).
+description: Represents the AlternateAllele, found upon mapping (genome) read sequencing
+  from a sample to the reference sequence.
 from_schema: https://w3id.org/neugenfair/schema
 attributes:
   value:
     name: value
-    description: The value of the alternate allele.
+    description: The nucleic composition of the alternate allele.
     from_schema: https://w3id.org/neugenfair/schema
-    rank: 1000
+    exact_mappings:
+    - sio:000300
+    domain: AlternateAllele
     slot_uri: sio:000300
     alias: value
     owner: AlternateAllele

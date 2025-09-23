@@ -8,18 +8,44 @@
 @prefix so: <http://purl.obolibrary.org/obo/SO_> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-faldo:Region a sh:NodeShape ;
+so:0001059 a sh:NodeShape ;
     sh:closed true ;
-    sh:description "(genomic) Region of a SequenceAlteration." ;
+    sh:description "A representation of a SequenceAlteration." ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class so:0000353 ;
-            sh:description "The reference sequence (contig, sequence, chromosome)." ;
+    sh:property [ sh:class geno:0000036 ;
+            sh:description "Links the SequenceAlteration to its ReferenceAllele." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 1 ;
+            sh:path geno:0000385 ],
+        [ sh:class faldo:Region ;
+            sh:description "Links the SequenceAlteration to its (genomic) Region." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 3 ;
+            sh:path faldo:location ],
+        [ sh:class sio:000675 ;
+            sh:description "Relation between a SequenceAlteration and its VariantIdentifier" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 0 ;
+            sh:path sio:0000671 ],
+        [ sh:class geno:0000002 ;
+            sh:description "Links the SequenceAlteration to its AlternateAllele." ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:nodeKind sh:BlankNodeOrIRI ;
             sh:order 2 ;
-            sh:path faldo:reference ],
-        [ sh:class faldo:ExactPosition ;
+            sh:path geno:0000382 ] ;
+    sh:targetClass so:0001059 .
+
+faldo:Region a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "(genomic) Region of a SequenceAlteration." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class faldo:ExactPosition ;
             sh:description "The end of the location of the sequence alteration." ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
@@ -32,15 +58,22 @@ faldo:Region a sh:NodeShape ;
             sh:minCount 1 ;
             sh:nodeKind sh:BlankNodeOrIRI ;
             sh:order 0 ;
-            sh:path faldo:begin ] ;
+            sh:path faldo:begin ],
+        [ sh:class so:0000353 ;
+            sh:description "The reference sequence (contig, sequence, chromosome)." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 2 ;
+            sh:path faldo:reference ] ;
     sh:targetClass faldo:Region .
 
 geno:0000002 a sh:NodeShape ;
     sh:closed true ;
-    sh:description "Represents the alternate allele (geno:0000002)." ;
+    sh:description "Represents the AlternateAllele, found upon mapping (genome) read sequencing from a sample to the reference sequence." ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:property [ sh:datatype xsd:string ;
-            sh:description "The value of the alternate allele." ;
+            sh:description "The nucleic composition of the alternate allele." ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:nodeKind sh:Literal ;
@@ -50,10 +83,10 @@ geno:0000002 a sh:NodeShape ;
 
 geno:0000036 a sh:NodeShape ;
     sh:closed true ;
-    sh:description "Represents the reference allele (geno:0000036)." ;
+    sh:description "Represents the ReferenceAllele, found on the reference sequence when performing variant calling." ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:property [ sh:datatype xsd:string ;
-            sh:description "The value of the reference allele." ;
+            sh:description "The nucleic composition of the reference allele." ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:nodeKind sh:Literal ;
@@ -61,48 +94,18 @@ geno:0000036 a sh:NodeShape ;
             sh:path sio:000300 ] ;
     sh:targetClass geno:0000036 .
 
-so:0001059 a sh:NodeShape ;
-    sh:closed true ;
-    sh:description "A representation of a SequenceAlteration." ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:maxCount 1 ;
-            sh:order 1 ;
-            sh:path <https://w3id.org/neugenfair/schema/has_reference_part> ],
-        [ sh:maxCount 1 ;
-            sh:order 3 ;
-            sh:path <https://w3id.org/neugenfair/schema/location> ],
-        [ sh:maxCount 1 ;
-            sh:order 0 ;
-            sh:path <https://w3id.org/neugenfair/schema/has_identifier> ],
-        [ sh:maxCount 1 ;
-            sh:order 2 ;
-            sh:path <https://w3id.org/neugenfair/schema/has_alternate_part> ] ;
-    sh:targetClass so:0001059 .
-
-sio:000675 a sh:NodeShape ;
-    sh:closed true ;
-    sh:description "A unique identifier for a sequence alteration within a database or nomenclature." ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:datatype xsd:string ;
-            sh:description "The value of the identifier." ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 0 ;
-            sh:path sio:000300 ],
-        [ sh:description "The nomenclature or database of the identifier (e.g. HGVS, dbSNP)." ;
-            sh:in ( "HGVS" "dbSNP" "rsID" "ClinVar" "COSMIC" "Ensembl" "HUGO" "Other" ) ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:order 1 ;
-            sh:path sio:000253 ] ;
-    sh:targetClass sio:000675 .
-
 so:0000353 a sh:NodeShape ;
     sh:closed true ;
     sh:description "AssemblySequence is a chromosome or sequence in a reference genome." ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:property [ sh:datatype xsd:string ;
+            sh:description "Sequence name" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path sio:000300 ],
+        [ sh:datatype xsd:string ;
             sh:description "Link to an external reference for the sequence (e.g. a URI from a genome browser or database)." ;
             sh:maxCount 1 ;
             sh:nodeKind sh:Literal ;
@@ -113,15 +116,27 @@ so:0000353 a sh:NodeShape ;
             sh:maxCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:order 1 ;
-            sh:path rdfs:label ],
+            sh:path rdfs:label ] ;
+    sh:targetClass so:0000353 .
+
+sio:000675 a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "A unique identifier for a sequence alteration within a database or nomenclature." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:description "The nomenclature or database of the identifier (e.g. HGVS, dbSNP)." ;
+            sh:in ( "HGVS" "dbSNP" "rsID" "ClinVar" "COSMIC" "Ensembl" "HUGO" "Other" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 1 ;
+            sh:path sio:000253 ],
         [ sh:datatype xsd:string ;
-            sh:description "Sequence name" ;
+            sh:description "The value of the identifier." ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:order 0 ;
             sh:path sio:000300 ] ;
-    sh:targetClass so:0000353 .
+    sh:targetClass sio:000675 .
 
 faldo:ExactPosition a sh:NodeShape ;
     sh:closed true ;

@@ -42,27 +42,27 @@ prefixes:
   linkml:
     prefix_prefix: linkml
     prefix_reference: https://w3id.org/linkml/
-  rdf:
-    prefix_prefix: rdf
-    prefix_reference: http://www.w3.org/1999/02/22-rdf-syntax-ns#
-  rdfs:
-    prefix_prefix: rdfs
-    prefix_reference: http://www.w3.org/2000/01/rdf-schema#
-  skos:
-    prefix_prefix: skos
-    prefix_reference: http://www.w3.org/2004/02/skos/core#
-  so:
-    prefix_prefix: so
-    prefix_reference: http://purl.obolibrary.org/obo/SO_
-  faldo:
-    prefix_prefix: faldo
-    prefix_reference: http://biohackathon.org/resource/faldo#
   geno:
     prefix_prefix: geno
     prefix_reference: http://purl.obolibrary.org/obo/GENO_
   sio:
     prefix_prefix: sio
     prefix_reference: http://semanticscience.org/resource/SIO_
+  rdfs:
+    prefix_prefix: rdfs
+    prefix_reference: http://www.w3.org/2000/01/rdf-schema#
+  faldo:
+    prefix_prefix: faldo
+    prefix_reference: http://biohackathon.org/resource/faldo#
+  so:
+    prefix_prefix: so
+    prefix_reference: http://purl.obolibrary.org/obo/SO_
+  rdf:
+    prefix_prefix: rdf
+    prefix_reference: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  skos:
+    prefix_prefix: skos
+    prefix_reference: http://www.w3.org/2004/02/skos/core#
   owl:
     prefix_prefix: owl
     prefix_reference: http://www.w3.org/2002/07/owl#
@@ -110,6 +110,14 @@ enums:
         text: Other
         description: Other nomenclature or database not listed.
 slots:
+  value:
+    name: value
+    description: The nucleic composition of the reference allele.
+    exact_mappings:
+    - sio:000300
+    slot_uri: sio:000300
+    range: string
+    required: true
   has_value:
     name: has_value
     description: The value of the identifier.
@@ -220,11 +228,15 @@ slots:
 classes:
   AlternateAllele:
     name: AlternateAllele
-    description: Represents the alternate allele (geno:0000002).
+    description: Represents the AlternateAllele, found upon mapping (genome) read
+      sequencing from a sample to the reference sequence.
     attributes:
       value:
         name: value
-        description: The value of the alternate allele.
+        description: The nucleic composition of the alternate allele.
+        exact_mappings:
+        - sio:000300
+        domain: AlternateAllele
         slot_uri: sio:000300
         range: string
         required: true
@@ -283,11 +295,15 @@ classes:
     class_uri: faldo:ExactPosition
   ReferenceAllele:
     name: ReferenceAllele
-    description: Represents the reference allele (geno:0000036).
+    description: Represents the ReferenceAllele, found on the reference sequence when
+      performing variant calling.
     attributes:
       value:
         name: value
-        description: The value of the reference allele.
+        description: The nucleic composition of the reference allele.
+        exact_mappings:
+        - sio:000300
+        domain: ReferenceAllele
         slot_uri: sio:000300
         range: string
         required: true
@@ -332,12 +348,40 @@ classes:
     attributes:
       has_identifier:
         name: has_identifier
+        description: Relation between a SequenceAlteration and its VariantIdentifier
+        mappings:
+        - sio:0000671
+        domain: SequenceAlteration
+        slot_uri: sio:0000671
+        range: VariantIdentifier
+        required: true
       has_reference_part:
         name: has_reference_part
+        description: Links the SequenceAlteration to its ReferenceAllele.
+        exact_mappings:
+        - geno:0000385
+        domain: SequenceAlteration
+        slot_uri: geno:0000385
+        range: ReferenceAllele
+        required: false
       has_alternate_part:
         name: has_alternate_part
+        description: Links the SequenceAlteration to its AlternateAllele.
+        exact_mappings:
+        - geno:0000382
+        domain: SequenceAlteration
+        slot_uri: geno:0000382
+        range: AlternateAllele
+        required: true
       location:
         name: location
+        description: Links the SequenceAlteration to its (genomic) Region.
+        exact_mappings:
+        - faldo:location
+        domain: SequenceAlteration
+        slot_uri: faldo:location
+        range: Region
+        required: true
     class_uri: so:0001059
   VariantIdentifier:
     name: VariantIdentifier
