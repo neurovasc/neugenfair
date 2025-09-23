@@ -1,0 +1,79 @@
+id: https://w3id.org/neugenfair/schema
+name: neugenfairschema
+description: >
+  Schema for the Cohort class, describing the context in which the ICAN dataset was collected.
+
+prefixes:
+  ex: http://example.org/
+  linkml: https://w3id.org/linkml/
+  obi: http://purl.obolibrary.org/obo/OBI_
+  ncit: http://purl.obolibrary.org/obo/NCIT_
+
+
+imports:
+  - linkml:types
+
+slots:
+  is_described_by:
+    description: "Is described by (e.g. publication, report)."
+    range: string
+    required: false
+    slot_uri: sio:000557
+    exact_mappings:
+      - sio:000557
+    domain: Cohort
+
+  is_source_of:
+    description: "Is source of (e.g. dataset, biobank, variant)."
+    range: SequenceAlteration
+    required: false
+    slot_uri: sio:000219
+    exact_mappings:
+      - sio:000219
+    domain: Cohort
+  
+  has_identifier:
+    description: "Relation between Cohort and its identifier"
+    range: string
+    required: true
+    slot_uri: sio:0000671
+    mappings:
+      - sio:0000671
+    domain: Cohort 
+
+
+classes:
+  Cohort:
+    description: "Cohort role."
+    class_uri: obi:0000252
+    exact_mappings:
+      - ncit:C61512
+    attributes:
+      is_described_by:
+        description: "Is described by (e.g. publication, report)."
+        range: string
+        required: false
+        slot_uri: sio:000557
+        exact_mappings:
+          - sio:000557
+        domain: Cohort
+
+      is_source_of:
+        description: "Is source of (e.g. dataset, biobank, variant)."
+        range: SequenceAlteration
+        required: false
+        slot_uri: sio:000219
+        exact_mappings:
+          - sio:000219
+        domain: Cohort
+
+      has_identifier:
+        description: "Relation between Cohort and its identifier"
+        range: string
+        required: true
+        slot_uri: sio:0000671
+        mappings:
+          - sio:0000671
+        domain: Cohort 
+
+

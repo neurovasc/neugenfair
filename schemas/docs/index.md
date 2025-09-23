@@ -5,6 +5,8 @@ Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR 
 
 Schema for the AssemblySequence describing the chromosome or sequence that is the reference for the Region of the SequenceAlteration.
 
+Schema for the Cohort class, describing the context in which the ICAN dataset was collected.
+
 Schema for the (genomic) Position describing the start or the end of the Region where the SequenceAlteration is located.
 
 Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR transformation of genomic and clinical data into Linked Data.
@@ -28,6 +30,7 @@ Name: neugenfairSchema
 | --- | --- |
 | [AlternateAllele](AlternateAllele.md) | Represents the AlternateAllele, found upon mapping (genome) read sequencing f... |
 | [AssemblySequence](AssemblySequence.md) | AssemblySequence is a chromosome or sequence in a reference genome |
+| [Cohort](Cohort.md) | Cohort role |
 | [Position](Position.md) | (genomic) Position |
 | [ReferenceAllele](ReferenceAllele.md) | Represents the ReferenceAllele, found on the reference sequence when performi... |
 | [Region](Region.md) | (genomic) Region of a SequenceAlteration |
@@ -48,6 +51,8 @@ Name: neugenfairSchema
 | [has_reference_part](has_reference_part.md) | Links the SequenceAlteration to its ReferenceAllele |
 | [has_source](has_source.md) | The nomenclature or database of the identifier (e |
 | [has_value](has_value.md) | The value of the identifier |
+| [is_described_by](is_described_by.md) | Is described by (e |
+| [is_source_of](is_source_of.md) | Is source of (e |
 | [label](label.md) | A human-readable relatable name for the sequence (e |
 | [location](location.md) | Links the SequenceAlteration to its (genomic) Region |
 | [position](position.md) | Exact (genomic) Position of a SequenceAlteration |

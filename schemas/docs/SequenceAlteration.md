@@ -89,6 +89,7 @@ URI: [so:0001059](http://purl.obolibrary.org/obo/SO_0001059)
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
+| [Cohort](Cohort.md) | [is_source_of](is_source_of.md) | range | [SequenceAlteration](SequenceAlteration.md) |
 | [SequenceAlteration](SequenceAlteration.md) | [has_identifier](has_identifier.md) | domain | [SequenceAlteration](SequenceAlteration.md) |
 | [SequenceAlteration](SequenceAlteration.md) | [has_reference_part](has_reference_part.md) | domain | [SequenceAlteration](SequenceAlteration.md) |
 | [SequenceAlteration](SequenceAlteration.md) | [has_alternate_part](has_alternate_part.md) | domain | [SequenceAlteration](SequenceAlteration.md) |
@@ -151,6 +152,7 @@ attributes:
     domain: SequenceAlteration
     slot_uri: sio:0000671
     domain_of:
+    - Cohort
     - SequenceAlteration
     range: VariantIdentifier
     required: true
@@ -216,6 +218,7 @@ attributes:
     alias: has_identifier
     owner: SequenceAlteration
     domain_of:
+    - Cohort
     - SequenceAlteration
     range: VariantIdentifier
     required: true

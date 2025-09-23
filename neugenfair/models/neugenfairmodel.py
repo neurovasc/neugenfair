@@ -1,5 +1,5 @@
 # Auto generated from neugenfairmodel.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-09-23T13:46:00
+# Generation date: 2025-09-23T16:58:29
 # Schema: neugenfairSchema
 #
 # id: https://w3id.org/neugenfair/schema
@@ -7,6 +7,8 @@
 #   Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR transformation of genomic and clinical data into Linked Data.
 #
 #   Schema for the AssemblySequence describing the chromosome or sequence that is the reference for the Region of the SequenceAlteration.
+#
+#   Schema for the Cohort class, describing the context in which the ICAN dataset was collected.
 #
 #   Schema for the (genomic) Position describing the start or the end of the Region where the SequenceAlteration is located.
 #
@@ -80,11 +82,12 @@ AIC = CurieNamespace('aic', 'https://example.org/aiccohortvariants#')
 EX = CurieNamespace('ex', 'http://example.org/')
 FALDO = CurieNamespace('faldo', 'http://biohackathon.org/resource/faldo#')
 GENO = CurieNamespace('geno', 'http://purl.obolibrary.org/obo/GENO_')
-GO = CurieNamespace('go', 'http://example.org/UNKNOWN/go/')
+GO = CurieNamespace('go', 'http://semanticscience.org/resource/SIO_')
 HPO = CurieNamespace('hpo', 'http://purl.obolibrary.org/obo/HP_')
 LINKML = CurieNamespace('linkml', 'https://w3id.org/linkml/')
 MONDO = CurieNamespace('mondo', 'http://purl.obolibrary.org/obo/MONDO_')
 NCIT = CurieNamespace('ncit', 'http://purl.obolibrary.org/obo/NCIT_')
+OBI = CurieNamespace('obi', 'http://purl.obolibrary.org/obo/OBI_')
 OWL = CurieNamespace('owl', 'http://www.w3.org/2002/07/owl#')
 RDF = CurieNamespace('rdf', 'http://www.w3.org/1999/02/22-rdf-syntax-ns#')
 RDFS = CurieNamespace('rdfs', 'http://www.w3.org/2000/01/rdf-schema#')
@@ -151,6 +154,37 @@ class AssemblySequence(YAMLRoot):
 
         if self.same_as is not None and not isinstance(self.same_as, str):
             self.same_as = str(self.same_as)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class Cohort(YAMLRoot):
+    """
+    Cohort role.
+    """
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = OBI["0000252"]
+    class_class_curie: ClassVar[str] = "obi:0000252"
+    class_name: ClassVar[str] = "Cohort"
+    class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neugenfair/schema/Cohort")
+
+    has_identifier: str = None
+    is_described_by: Optional[str] = None
+    is_source_of: Optional[Union[dict, "SequenceAlteration"]] = None
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.has_identifier):
+            self.MissingRequiredField("has_identifier")
+        if not isinstance(self.has_identifier, str):
+            self.has_identifier = str(self.has_identifier)
+
+        if self.is_described_by is not None and not isinstance(self.is_described_by, str):
+            self.is_described_by = str(self.is_described_by)
+
+        if self.is_source_of is not None and not isinstance(self.is_source_of, SequenceAlteration):
+            self.is_source_of = SequenceAlteration(**as_dict(self.is_source_of))
 
         super().__post_init__(**kwargs)
 
@@ -355,6 +389,15 @@ slots.label = Slot(uri=RDFS.label, name="label", curie=RDFS.curie('label'),
 slots.same_as = Slot(uri=OWL.sameAs, name="same_as", curie=OWL.curie('sameAs'),
                    model_uri=DEFAULT_.same_as, domain=AssemblySequence, range=Optional[str])
 
+slots.is_described_by = Slot(uri=SIO['000557'], name="is_described_by", curie=SIO.curie('000557'),
+                   model_uri=DEFAULT_.is_described_by, domain=Cohort, range=Optional[str])
+
+slots.is_source_of = Slot(uri=SIO['000219'], name="is_source_of", curie=SIO.curie('000219'),
+                   model_uri=DEFAULT_.is_source_of, domain=Cohort, range=Optional[Union[dict, "SequenceAlteration"]])
+
+slots.has_identifier = Slot(uri=SIO['0000671'], name="has_identifier", curie=SIO.curie('0000671'),
+                   model_uri=DEFAULT_.has_identifier, domain=SequenceAlteration, range=Union[dict, "VariantIdentifier"])
+
 slots.position = Slot(uri=FALDO.position, name="position", curie=FALDO.curie('position'),
                    model_uri=DEFAULT_.position, domain=Position, range=int)
 
@@ -366,9 +409,6 @@ slots.ends_at = Slot(uri=FALDO.end, name="ends_at", curie=FALDO.curie('end'),
 
 slots.has_reference = Slot(uri=FALDO.reference, name="has_reference", curie=FALDO.curie('reference'),
                    model_uri=DEFAULT_.has_reference, domain=Region, range=Union[dict, AssemblySequence])
-
-slots.has_identifier = Slot(uri=SIO['0000671'], name="has_identifier", curie=SIO.curie('0000671'),
-                   model_uri=DEFAULT_.has_identifier, domain=SequenceAlteration, range=Union[dict, "VariantIdentifier"])
 
 slots.has_reference_part = Slot(uri=GENO['0000385'], name="has_reference_part", curie=GENO.curie('0000385'),
                    model_uri=DEFAULT_.has_reference_part, domain=SequenceAlteration, range=Optional[Union[dict, ReferenceAllele]])
@@ -393,6 +433,15 @@ slots.assemblySequence__label = Slot(uri=RDFS.label, name="assemblySequence__lab
 
 slots.assemblySequence__same_as = Slot(uri=OWL.sameAs, name="assemblySequence__same_as", curie=OWL.curie('sameAs'),
                    model_uri=DEFAULT_.assemblySequence__same_as, domain=AssemblySequence, range=Optional[str])
+
+slots.cohort__is_described_by = Slot(uri=SIO['000557'], name="cohort__is_described_by", curie=SIO.curie('000557'),
+                   model_uri=DEFAULT_.cohort__is_described_by, domain=Cohort, range=Optional[str])
+
+slots.cohort__is_source_of = Slot(uri=SIO['000219'], name="cohort__is_source_of", curie=SIO.curie('000219'),
+                   model_uri=DEFAULT_.cohort__is_source_of, domain=Cohort, range=Optional[Union[dict, "SequenceAlteration"]])
+
+slots.cohort__has_identifier = Slot(uri=SIO['0000671'], name="cohort__has_identifier", curie=SIO.curie('0000671'),
+                   model_uri=DEFAULT_.cohort__has_identifier, domain=Cohort, range=str)
 
 slots.position__position = Slot(uri=FALDO.position, name="position__position", curie=FALDO.curie('position'),
                    model_uri=DEFAULT_.position__position, domain=Position, range=int)

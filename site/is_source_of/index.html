@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../is_source_of/">
+        <link rel="prev" href="../is_described_by/">
       
       
-        <link rel="next" href="../location/">
+        <link rel="next" href="../label/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Slot: label - neugenfair Documentation</title>
+        <title>Slot: is_source_of - neugenfair Documentation</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-label" class="md-skip">
+        <a href="#slot-is_source_of" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: label
+              Slot: is_source_of
             
           </span>
         </div>
@@ -1159,28 +1159,6 @@
       
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../is_source_of/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Slot: is_source_of
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
     
   
   
@@ -1198,7 +1176,7 @@
   
   
   <span class="md-ellipsis">
-    Slot: label
+    Slot: is_source_of
     
   </span>
   
@@ -1211,7 +1189,7 @@
   
   
   <span class="md-ellipsis">
-    Slot: label
+    Slot: is_source_of
     
   </span>
   
@@ -1297,6 +1275,28 @@
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../label/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slot: label
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1579,10 +1579,10 @@
 
 
 
-<h1 id="slot-label">Slot: label</h1>
-<p><em>A human-readable relatable name for the sequence (e.g. chr1).</em></p>
-<p>URI: <a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a>
-Alias: label</p>
+<h1 id="slot-is_source_of">Slot: is_source_of</h1>
+<p><em>Is source of (e.g. dataset, biobank, variant).</em></p>
+<p>URI: <a href="http://semanticscience.org/resource/SIO_000219">sio:000219</a>
+Alias: is_source_of</p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="applicable-classes">Applicable Classes</h2>
@@ -1596,15 +1596,15 @@ Alias: label</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../AssemblySequence/">AssemblySequence</a></td>
-<td>AssemblySequence is a chromosome or sequence in a reference genome</td>
+<td><a href="../Cohort/">Cohort</a></td>
+<td>Cohort role</td>
 <td>no</td>
 </tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../String/">String</a></li>
+<li>Range: <a href="../SequenceAlteration/">SequenceAlteration</a></li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
@@ -1622,33 +1622,34 @@ Alias: label</p>
 <tbody>
 <tr>
 <td>self</td>
-<td>rdfs:label</td>
+<td>sio:000219</td>
 </tr>
 <tr>
 <td>native</td>
-<td>https://w3id.org/neugenfair/schema/label</td>
+<td>https://w3id.org/neugenfair/schema/is_source_of</td>
 </tr>
 <tr>
 <td>exact</td>
-<td>rdfs:label</td>
+<td>sio:000219</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: label
-description: A human-readable relatable name for the sequence (e.g. chr1).
+<pre><code class="language-yaml">name: is_source_of
+description: Is source of (e.g. dataset, biobank, variant).
 from_schema: https://w3id.org/neugenfair/schema
 exact_mappings:
-- rdfs:label
+- sio:000219
 rank: 1000
-domain: AssemblySequence
-slot_uri: rdfs:label
-alias: label
+domain: Cohort
+slot_uri: sio:000219
+alias: is_source_of
 domain_of:
-- AssemblySequence
-range: string
+- Cohort
+range: SequenceAlteration
+required: false
 
 </code></pre>
 

@@ -93,4 +93,13 @@ classes:
         slot_uri: faldo:location
         exact_mappings:
           - faldo:location
-        domain: SequenceAlteration 
+        domain: SequenceAlteration
+
+      #is_associated_with:
+      #  description: "Links the SequenceAlteration to the Cohort or Biocollection it was identified in."
+      #  range: Cohort
+      #  required: false
+      #  slot_uri: sio:001403
+      #  exact_mappings:
+      #    - sio:001403
+      #  domain: SequenceAlteration 

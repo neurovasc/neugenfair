@@ -5,6 +5,8 @@ Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR 
 
 Schema for the AssemblySequence describing the chromosome or sequence that is the reference for the Region of the SequenceAlteration.
 
+Schema for the Cohort class, describing the context in which the ICAN dataset was collected.
+
 Schema for the (genomic) Position describing the start or the end of the Region where the SequenceAlteration is located.
 
 Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR transformation of genomic and clinical data into Linked Data.

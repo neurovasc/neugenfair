@@ -22,8 +22,8 @@ Alias: has_value
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [VariantIdentifier](VariantIdentifier.md) | A unique identifier for a sequence alteration within a database or nomenclatu... |  no  |
 | [AssemblySequence](AssemblySequence.md) | AssemblySequence is a chromosome or sequence in a reference genome |  no  |
+| [VariantIdentifier](VariantIdentifier.md) | A unique identifier for a sequence alteration within a database or nomenclatu... |  no  |
 
 
 

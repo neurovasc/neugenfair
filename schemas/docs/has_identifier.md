@@ -23,6 +23,7 @@ Alias: has_identifier
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [SequenceAlteration](SequenceAlteration.md) | A representation of a SequenceAlteration |  no  |
+| [Cohort](Cohort.md) | Cohort role |  no  |
 
 
 
@@ -78,6 +79,7 @@ domain: SequenceAlteration
 slot_uri: sio:0000671
 alias: has_identifier
 domain_of:
+- Cohort
 - SequenceAlteration
 range: VariantIdentifier
 required: true

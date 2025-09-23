@@ -1,10 +1,12 @@
 @prefix faldo: <http://biohackathon.org/resource/faldo#> .
 @prefix geno: <http://purl.obolibrary.org/obo/GENO_> .
+@prefix go: <http://semanticscience.org/resource/SIO_> .
 @prefix linkml: <https://w3id.org/linkml/> .
+@prefix ncit: <http://purl.obolibrary.org/obo/NCIT_> .
+@prefix obi: <http://purl.obolibrary.org/obo/OBI_> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix sio: <http://semanticscience.org/resource/SIO_> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix so: <http://purl.obolibrary.org/obo/SO_> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -15,6 +17,8 @@
 Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR transformation of genomic and clinical data into Linked Data.
 
 Schema for the AssemblySequence describing the chromosome or sequence that is the reference for the Region of the SequenceAlteration.
+
+Schema for the Cohort class, describing the context in which the ICAN dataset was collected.
 
 Schema for the (genomic) Position describing the start or the end of the Region where the SequenceAlteration is located.
 
@@ -62,25 +66,59 @@ VariantIdentifier class. The identifiers can following several nomenclatures or 
 <https://w3id.org/neugenfair/schema/AlternateAllele> a owl:Class ;
     rdfs:label "AlternateAllele" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/value> ],
+        [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty <https://w3id.org/neugenfair/schema/value> ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty <https://w3id.org/neugenfair/schema/value> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty <https://w3id.org/neugenfair/schema/value> ] ;
     skos:definition "Represents the AlternateAllele, found upon mapping (genome) read sequencing from a sample to the reference sequence." ;
     skos:exactMatch geno:0000002 ;
     skos:inScheme <https://w3id.org/neugenfair/schema> .
 
+<https://w3id.org/neugenfair/schema/Cohort> a owl:Class ;
+    rdfs:label "Cohort" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/is_described_by> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/neugenfair/schema/SequenceAlteration> ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/is_source_of> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/has_identifier> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/has_identifier> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/is_described_by> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/has_identifier> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/is_source_of> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/is_source_of> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/is_described_by> ] ;
+    skos:definition "Cohort role." ;
+    skos:exactMatch ncit:C61512,
+        obi:0000252 ;
+    skos:inScheme <https://w3id.org/neugenfair/schema> .
+
 <https://w3id.org/neugenfair/schema/ReferenceAllele> a owl:Class ;
     rdfs:label "ReferenceAllele" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 1 ;
             owl:onProperty <https://w3id.org/neugenfair/schema/value> ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
+            owl:maxCardinality 1 ;
             owl:onProperty <https://w3id.org/neugenfair/schema/value> ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
@@ -113,14 +151,6 @@ VariantIdentifier class. The identifiers can following several nomenclatures or 
     skos:exactMatch geno:0000382 ;
     skos:inScheme <https://w3id.org/neugenfair/schema> .
 
-<https://w3id.org/neugenfair/schema/has_identifier> a owl:ObjectProperty ;
-    rdfs:label "has_identifier" ;
-    rdfs:domain <https://w3id.org/neugenfair/schema/SequenceAlteration> ;
-    rdfs:range <https://w3id.org/neugenfair/schema/VariantIdentifier> ;
-    skos:definition "Relation between a SequenceAlteration and its VariantIdentifier" ;
-    skos:inScheme <https://w3id.org/neugenfair/schema> ;
-    skos:mappingRelation sio:0000671 .
-
 <https://w3id.org/neugenfair/schema/has_reference> a owl:ObjectProperty ;
     rdfs:label "has_reference" ;
     rdfs:domain <https://w3id.org/neugenfair/schema/Region> ;
@@ -143,7 +173,23 @@ VariantIdentifier class. The identifiers can following several nomenclatures or 
     rdfs:range <https://w3id.org/neugenfair/schema/:Nomenclature> ;
     skos:definition "The nomenclature or database of the identifier (e.g. HGVS, dbSNP)." ;
     skos:inScheme <https://w3id.org/neugenfair/schema> ;
-    skos:mappingRelation sio:000253 .
+    skos:mappingRelation go:000253 .
+
+<https://w3id.org/neugenfair/schema/is_described_by> a owl:DatatypeProperty ;
+    rdfs:label "is_described_by" ;
+    rdfs:domain <https://w3id.org/neugenfair/schema/Cohort> ;
+    rdfs:range xsd:string ;
+    skos:definition "Is described by (e.g. publication, report)." ;
+    skos:exactMatch go:000557 ;
+    skos:inScheme <https://w3id.org/neugenfair/schema> .
+
+<https://w3id.org/neugenfair/schema/is_source_of> a owl:ObjectProperty ;
+    rdfs:label "is_source_of" ;
+    rdfs:domain <https://w3id.org/neugenfair/schema/Cohort> ;
+    rdfs:range <https://w3id.org/neugenfair/schema/SequenceAlteration> ;
+    skos:definition "Is source of (e.g. dataset, biobank, variant)." ;
+    skos:exactMatch go:000219 ;
+    skos:inScheme <https://w3id.org/neugenfair/schema> .
 
 <https://w3id.org/neugenfair/schema/label> a owl:DatatypeProperty ;
     rdfs:label "label" ;
@@ -181,115 +227,72 @@ VariantIdentifier class. The identifiers can following several nomenclatures or 
     rdfs:label "AssemblySequence" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty <https://w3id.org/neugenfair/schema/label> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/neugenfair/schema/same_as> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty <https://w3id.org/neugenfair/schema/same_as> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/neugenfair/schema/has_value> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
             owl:onProperty <https://w3id.org/neugenfair/schema/has_value> ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty <https://w3id.org/neugenfair/schema/has_value> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/has_value> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty <https://w3id.org/neugenfair/schema/label> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <https://w3id.org/neugenfair/schema/label> ],
         [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/same_as> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/same_as> ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/neugenfair/schema/same_as> ] ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/same_as> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/label> ] ;
     skos:definition "AssemblySequence is a chromosome or sequence in a reference genome." ;
     skos:exactMatch geno:0000960,
         so:0000353 ;
     skos:inScheme <https://w3id.org/neugenfair/schema> ;
-    skos:relatedMatch <go:0005694>,
-        sio:000899 .
-
-<https://w3id.org/neugenfair/schema/SequenceAlteration> a owl:Class ;
-    rdfs:label "SequenceAlteration" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty <https://w3id.org/neugenfair/schema/has_alternate_part> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/neugenfair/schema/Region> ;
-            owl:onProperty <https://w3id.org/neugenfair/schema/location> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/neugenfair/schema/has_alternate_part> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/neugenfair/schema/AlternateAllele> ;
-            owl:onProperty <https://w3id.org/neugenfair/schema/has_alternate_part> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/neugenfair/schema/has_reference_part> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/neugenfair/schema/VariantIdentifier> ;
-            owl:onProperty <https://w3id.org/neugenfair/schema/has_identifier> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty <https://w3id.org/neugenfair/schema/location> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/neugenfair/schema/location> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/neugenfair/schema/has_identifier> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/neugenfair/schema/ReferenceAllele> ;
-            owl:onProperty <https://w3id.org/neugenfair/schema/has_reference_part> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty <https://w3id.org/neugenfair/schema/has_identifier> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/neugenfair/schema/has_reference_part> ] ;
-    skos:definition "A representation of a SequenceAlteration." ;
-    skos:exactMatch geno:0000660,
-        so:0001059 ;
-    skos:inScheme <https://w3id.org/neugenfair/schema> .
+    skos:relatedMatch go:0005694,
+        go:000899 .
 
 <https://w3id.org/neugenfair/schema/VariantIdentifier> a owl:Class ;
     rdfs:label "VariantIdentifier" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/has_value> ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://w3id.org/neugenfair/schema/has_value> ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/has_source> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
             owl:onProperty <https://w3id.org/neugenfair/schema/has_value> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/has_source> ],
         [ a owl:Restriction ;
             owl:allValuesFrom <https://w3id.org/neugenfair/schema/:Nomenclature> ;
-            owl:onProperty <https://w3id.org/neugenfair/schema/has_source> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty <https://w3id.org/neugenfair/schema/has_source> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/neugenfair/schema/has_source> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty <https://w3id.org/neugenfair/schema/has_value> ] ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/has_source> ] ;
     skos:definition "A unique identifier for a sequence alteration within a database or nomenclature." ;
-    skos:exactMatch sio:000675 ;
+    skos:exactMatch go:000675 ;
     skos:inScheme <https://w3id.org/neugenfair/schema> .
 
 <https://w3id.org/neugenfair/schema/Position> a owl:Class ;
     rdfs:label "Position" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/position> ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://w3id.org/neugenfair/schema/position> ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:integer ;
-            owl:onProperty <https://w3id.org/neugenfair/schema/position> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
             owl:onProperty <https://w3id.org/neugenfair/schema/position> ] ;
     skos:closeMatch so:0000735 ;
     skos:definition "(genomic) Position." ;
@@ -299,35 +302,88 @@ VariantIdentifier class. The identifiers can following several nomenclatures or 
 <https://w3id.org/neugenfair/schema/Region> a owl:Class ;
     rdfs:label "Region" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/ends_at> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/begins_at> ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://w3id.org/neugenfair/schema/ends_at> ],
         [ a owl:Restriction ;
             owl:allValuesFrom <https://w3id.org/neugenfair/schema/Position> ;
-            owl:onProperty <https://w3id.org/neugenfair/schema/begins_at> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
             owl:onProperty <https://w3id.org/neugenfair/schema/ends_at> ],
         [ a owl:Restriction ;
             owl:allValuesFrom <https://w3id.org/neugenfair/schema/AssemblySequence> ;
             owl:onProperty <https://w3id.org/neugenfair/schema/has_reference> ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty <https://w3id.org/neugenfair/schema/has_reference> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/neugenfair/schema/has_reference> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/neugenfair/schema/begins_at> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty <https://w3id.org/neugenfair/schema/begins_at> ],
-        [ a owl:Restriction ;
             owl:allValuesFrom <https://w3id.org/neugenfair/schema/Position> ;
-            owl:onProperty <https://w3id.org/neugenfair/schema/ends_at> ] ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/begins_at> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/has_reference> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/begins_at> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/has_reference> ] ;
     skos:definition "(genomic) Region of a SequenceAlteration." ;
     skos:exactMatch faldo:Region ;
     skos:inScheme <https://w3id.org/neugenfair/schema> .
+
+<https://w3id.org/neugenfair/schema/SequenceAlteration> a owl:Class ;
+    rdfs:label "SequenceAlteration" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/has_reference_part> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/neugenfair/schema/AlternateAllele> ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/has_alternate_part> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/neugenfair/schema/VariantIdentifier> ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/has_identifier> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/neugenfair/schema/ReferenceAllele> ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/has_reference_part> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/has_identifier> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/location> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/has_alternate_part> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/has_reference_part> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/location> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/neugenfair/schema/Region> ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/location> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/has_alternate_part> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/neugenfair/schema/has_identifier> ] ;
+    skos:definition "A representation of a SequenceAlteration." ;
+    skos:exactMatch geno:0000660,
+        so:0001059 ;
+    skos:inScheme <https://w3id.org/neugenfair/schema> .
+
+<https://w3id.org/neugenfair/schema/has_identifier> a owl:DatatypeProperty,
+        owl:ObjectProperty ;
+    rdfs:label "has_identifier" ;
+    rdfs:domain <https://w3id.org/neugenfair/schema/SequenceAlteration> ;
+    rdfs:range <https://w3id.org/neugenfair/schema/VariantIdentifier> ;
+    skos:definition "Relation between Cohort and its identifier",
+        "Relation between a SequenceAlteration and its VariantIdentifier" ;
+    skos:inScheme <https://w3id.org/neugenfair/schema> ;
+    skos:mappingRelation go:0000671 .
 
 <https://w3id.org/neugenfair/schema/has_value> a owl:DatatypeProperty ;
     rdfs:label "has_value" ;
@@ -335,16 +391,16 @@ VariantIdentifier class. The identifiers can following several nomenclatures or 
     rdfs:range xsd:string ;
     skos:definition "Sequence name",
         "The value of the identifier." ;
-    skos:exactMatch sio:000300 ;
+    skos:exactMatch go:000300 ;
     skos:inScheme <https://w3id.org/neugenfair/schema> ;
-    skos:mappingRelation sio:000300 .
+    skos:mappingRelation go:000300 .
 
 <https://w3id.org/neugenfair/schema/value> a owl:DatatypeProperty ;
     rdfs:label "value" ;
     rdfs:range xsd:string ;
     skos:definition "The nucleic composition of the alternate allele.",
         "The nucleic composition of the reference allele." ;
-    skos:exactMatch sio:000300 ;
+    skos:exactMatch go:000300 ;
     skos:inScheme <https://w3id.org/neugenfair/schema> .
 
 <https://w3id.org/neugenfair/schema/:Nomenclature> a owl:Class ;

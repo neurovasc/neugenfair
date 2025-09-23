@@ -10,6 +10,10 @@ description: 'neugenfair schema data model for representing phenoclinical genomi
   reference for the Region of the SequenceAlteration.
 
 
+  Schema for the Cohort class, describing the context in which the ICAN dataset was
+  collected.
+
+
   Schema for the (genomic) Position describing the start or the end of the Region
   where the SequenceAlteration is located.
 
@@ -51,6 +55,15 @@ prefixes:
   rdfs:
     prefix_prefix: rdfs
     prefix_reference: http://www.w3.org/2000/01/rdf-schema#
+  go:
+    prefix_prefix: go
+    prefix_reference: http://semanticscience.org/resource/SIO_
+  obi:
+    prefix_prefix: obi
+    prefix_reference: http://purl.obolibrary.org/obo/OBI_
+  ncit:
+    prefix_prefix: ncit
+    prefix_reference: http://purl.obolibrary.org/obo/NCIT_
   faldo:
     prefix_prefix: faldo
     prefix_reference: http://biohackathon.org/resource/faldo#
@@ -75,9 +88,6 @@ prefixes:
   hpo:
     prefix_prefix: hpo
     prefix_reference: http://purl.obolibrary.org/obo/HP_
-  ncit:
-    prefix_prefix: ncit
-    prefix_reference: http://purl.obolibrary.org/obo/NCIT_
 default_prefix: https://w3id.org/neugenfair/schema/
 enums:
   Nomenclature:
@@ -144,6 +154,33 @@ slots:
     domain: AssemblySequence
     slot_uri: owl:sameAs
     range: string
+  is_described_by:
+    name: is_described_by
+    description: Is described by (e.g. publication, report).
+    exact_mappings:
+    - sio:000557
+    domain: Cohort
+    slot_uri: sio:000557
+    range: string
+    required: false
+  is_source_of:
+    name: is_source_of
+    description: Is source of (e.g. dataset, biobank, variant).
+    exact_mappings:
+    - sio:000219
+    domain: Cohort
+    slot_uri: sio:000219
+    range: SequenceAlteration
+    required: false
+  has_identifier:
+    name: has_identifier
+    description: Relation between a SequenceAlteration and its VariantIdentifier
+    mappings:
+    - sio:0000671
+    domain: SequenceAlteration
+    slot_uri: sio:0000671
+    range: VariantIdentifier
+    required: true
   position:
     name: position
     description: Exact (genomic) Position of a SequenceAlteration.
@@ -179,15 +216,6 @@ slots:
     domain: Region
     slot_uri: faldo:reference
     range: AssemblySequence
-    required: true
-  has_identifier:
-    name: has_identifier
-    description: Relation between a SequenceAlteration and its VariantIdentifier
-    mappings:
-    - sio:0000671
-    domain: SequenceAlteration
-    slot_uri: sio:0000671
-    range: VariantIdentifier
     required: true
   has_reference_part:
     name: has_reference_part
@@ -277,6 +305,40 @@ classes:
         slot_uri: owl:sameAs
         range: string
     class_uri: so:0000353
+  Cohort:
+    name: Cohort
+    description: Cohort role.
+    exact_mappings:
+    - ncit:C61512
+    attributes:
+      is_described_by:
+        name: is_described_by
+        description: Is described by (e.g. publication, report).
+        exact_mappings:
+        - sio:000557
+        domain: Cohort
+        slot_uri: sio:000557
+        range: string
+        required: false
+      is_source_of:
+        name: is_source_of
+        description: Is source of (e.g. dataset, biobank, variant).
+        exact_mappings:
+        - sio:000219
+        domain: Cohort
+        slot_uri: sio:000219
+        range: SequenceAlteration
+        required: false
+      has_identifier:
+        name: has_identifier
+        description: Relation between Cohort and its identifier
+        mappings:
+        - sio:0000671
+        domain: Cohort
+        slot_uri: sio:0000671
+        range: string
+        required: true
+    class_uri: obi:0000252
   Position:
     name: Position
     description: (genomic) Position.

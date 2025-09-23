@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../is_source_of/">
+        <link rel="prev" href="../hgvsid/">
       
       
-        <link rel="next" href="../location/">
+        <link rel="next" href="../is_source_of/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Slot: label - neugenfair Documentation</title>
+        <title>Slot: is_described_by - neugenfair Documentation</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-label" class="md-skip">
+        <a href="#slot-is_described_by" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: label
+              Slot: is_described_by
             
           </span>
         </div>
@@ -1137,50 +1137,6 @@
       
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../is_described_by/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Slot: is_described_by
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../is_source_of/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Slot: is_source_of
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
     
   
   
@@ -1198,7 +1154,7 @@
   
   
   <span class="md-ellipsis">
-    Slot: label
+    Slot: is_described_by
     
   </span>
   
@@ -1211,7 +1167,7 @@
   
   
   <span class="md-ellipsis">
-    Slot: label
+    Slot: is_described_by
     
   </span>
   
@@ -1297,6 +1253,50 @@
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../is_source_of/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slot: is_source_of
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../label/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slot: label
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1579,10 +1579,10 @@
 
 
 
-<h1 id="slot-label">Slot: label</h1>
-<p><em>A human-readable relatable name for the sequence (e.g. chr1).</em></p>
-<p>URI: <a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a>
-Alias: label</p>
+<h1 id="slot-is_described_by">Slot: is_described_by</h1>
+<p><em>Is described by (e.g. publication, report).</em></p>
+<p>URI: <a href="http://semanticscience.org/resource/SIO_000557">sio:000557</a>
+Alias: is_described_by</p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="applicable-classes">Applicable Classes</h2>
@@ -1596,8 +1596,8 @@ Alias: label</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../AssemblySequence/">AssemblySequence</a></td>
-<td>AssemblySequence is a chromosome or sequence in a reference genome</td>
+<td><a href="../Cohort/">Cohort</a></td>
+<td>Cohort role</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -1622,33 +1622,34 @@ Alias: label</p>
 <tbody>
 <tr>
 <td>self</td>
-<td>rdfs:label</td>
+<td>sio:000557</td>
 </tr>
 <tr>
 <td>native</td>
-<td>https://w3id.org/neugenfair/schema/label</td>
+<td>https://w3id.org/neugenfair/schema/is_described_by</td>
 </tr>
 <tr>
 <td>exact</td>
-<td>rdfs:label</td>
+<td>sio:000557</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: label
-description: A human-readable relatable name for the sequence (e.g. chr1).
+<pre><code class="language-yaml">name: is_described_by
+description: Is described by (e.g. publication, report).
 from_schema: https://w3id.org/neugenfair/schema
 exact_mappings:
-- rdfs:label
+- sio:000557
 rank: 1000
-domain: AssemblySequence
-slot_uri: rdfs:label
-alias: label
+domain: Cohort
+slot_uri: sio:000557
+alias: is_described_by
 domain_of:
-- AssemblySequence
+- Cohort
 range: string
+required: false
 
 </code></pre>
 

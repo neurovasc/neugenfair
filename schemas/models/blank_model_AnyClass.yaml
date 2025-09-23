@@ -18,6 +18,7 @@ prefixes:
   mondo: http://purl.obolibrary.org/obo/MONDO_
   hpo: http://purl.obolibrary.org/obo/HP_
   ncit: http://purl.obolibrary.org/obo/NCIT_
+  obi: http://purl.obolibrary.org/obo/OBI_
 
 
 imports:
