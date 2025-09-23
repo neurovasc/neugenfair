@@ -6,6 +6,7 @@ description: >
 
 prefixes:
   ex: http://example.org/
+  linkml: https://w3id.org/linkml/
   so: http://purl.obolibrary.org/obo/SO_
   geno: http://purl.obolibrary.org/obo/GENO_
   sio: http://semanticscience.org/resource/SIO_

@@ -31,7 +31,7 @@ Alias: begins_at
 
 ## Properties
 
-* Range: [Integer](Integer.md)
+* Range: [Position](Position.md)
 
 * Required: True
 
@@ -59,7 +59,7 @@ Alias: begins_at
 | ---  | ---  |
 | self | faldo:begin |
 | native | https://w3id.org/neugenfair/schema/begins_at |
-| undefined | faldo:begin |
+| exact | faldo:begin |
 
 
 
@@ -71,7 +71,7 @@ Alias: begins_at
 name: begins_at
 description: The beginning of the location of the sequence alteration.
 from_schema: https://w3id.org/neugenfair/schema
-mappings:
+exact_mappings:
 - faldo:begin
 rank: 1000
 domain: Region
@@ -79,7 +79,7 @@ slot_uri: faldo:begin
 alias: begins_at
 domain_of:
 - Region
-range: integer
+range: Position
 required: true
 
 ```

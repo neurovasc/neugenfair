@@ -23,6 +23,7 @@ Alias: has_value
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [VariantIdentifier](VariantIdentifier.md) | A unique identifier for a sequence alteration within a database or nomenclatu... |  no  |
+| [AssemblySequence](AssemblySequence.md) | AssemblySequence is a chromosome or sequence in a reference genome |  no  |
 
 
 
@@ -78,6 +79,7 @@ domain: VariantIdentifier
 slot_uri: sio:000300
 alias: has_value
 domain_of:
+- AssemblySequence
 - VariantIdentifier
 range: string
 required: true

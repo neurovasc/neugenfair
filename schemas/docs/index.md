@@ -3,6 +3,10 @@
 neugenfair schema data model for representing phenoclinical genomic data in the ICAN dataset
 Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR transformation of genomic and clinical data into Linked Data.
 
+Schema for the AssemblySequence describing the chromosome or sequence that is the reference for the Region of the SequenceAlteration.
+
+Schema for the (genomic) Position describing the start or the end of the Region where the SequenceAlteration is located.
+
 Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR transformation of genomic and clinical data into Linked Data.
 
 Region class schema for the neugenfair tool. Defines Region where the SeqeunceAlteration occured as defined in FALDO ontology.
@@ -23,6 +27,8 @@ Name: neugenfairSchema
 | Class | Description |
 | --- | --- |
 | [AlternateAllele](AlternateAllele.md) | Represents the alternate allele (geno:0000002) |
+| [AssemblySequence](AssemblySequence.md) | AssemblySequence is a chromosome or sequence in a reference genome |
+| [Position](Position.md) | (genomic) Position |
 | [ReferenceAllele](ReferenceAllele.md) | Represents the reference allele (geno:0000036) |
 | [Region](Region.md) | (genomic) Region of a SequenceAlteration |
 | [SequenceAlteration](SequenceAlteration.md) | A representation of a SequenceAlteration |
@@ -42,7 +48,11 @@ Name: neugenfairSchema
 | [has_reference_part](has_reference_part.md) | Links the SequenceAlteration to its ReferenceAllele |
 | [has_source](has_source.md) | The nomenclature or database of the identifier (e |
 | [has_value](has_value.md) | The value of the identifier |
+| [label](label.md) | A human-readable relatable name for the sequence (e |
 | [location](location.md) | Links the SequenceAlteration to its (genomic) Region |
+| [position](position.md) |  |
+| [relation_one](relation_one.md) | Exact (genomic) Position of a SequenceAlteration |
+| [same_as](same_as.md) | Link to an external reference for the sequence (e |
 | [value](value.md) | The value of the alternate allele |
 
 

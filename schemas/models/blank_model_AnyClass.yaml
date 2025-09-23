@@ -23,8 +23,6 @@ prefixes:
 imports:
   - linkml:types
 
-imports:
-  - linkml:types
 
 slots:
   relation_one:
@@ -36,18 +34,19 @@ slots:
       - sio:0000000
     domain: DomainClass
 
-  has_reference_part:
-    description: "Links the SequenceAlteration to its ReferenceAllele."
-    range: ReferenceAllele
-    required: false
-    slot_uri: geno:0000385
-    exact_mappings:
-      - geno:0000385
+  relation_two:
+    description: "<relation description>"
+    range: RangeClass
+    required: true
+    slot_uri: sio:0000000
+    mappings:
+      - sio:0000000
+    domain: DomainClass
 
 
 classes:
   AnyClass:
-    description: "<description."
+    description: "<description>."
     class_uri: so:0000000
     exact_mappings:
       - geno:0000000

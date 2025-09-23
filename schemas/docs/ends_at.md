@@ -31,7 +31,7 @@ Alias: ends_at
 
 ## Properties
 
-* Range: [Integer](Integer.md)
+* Range: [Position](Position.md)
 
 * Required: True
 
@@ -59,7 +59,7 @@ Alias: ends_at
 | ---  | ---  |
 | self | faldo:end |
 | native | https://w3id.org/neugenfair/schema/ends_at |
-| undefined | faldo:end |
+| exact | faldo:end |
 
 
 
@@ -71,7 +71,7 @@ Alias: ends_at
 name: ends_at
 description: The end of the location of the sequence alteration.
 from_schema: https://w3id.org/neugenfair/schema
-mappings:
+exact_mappings:
 - faldo:end
 rank: 1000
 domain: Region
@@ -79,7 +79,7 @@ slot_uri: faldo:end
 alias: ends_at
 domain_of:
 - Region
-range: integer
+range: Position
 required: true
 
 ```

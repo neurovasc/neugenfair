@@ -1,0 +1,58 @@
+id: https://w3id.org/neugenfair/schema
+name: neugenfairschema
+description: >
+  Schema for the AssemblySequence describing the chromosome or sequence that is
+  the reference for the Region of the SequenceAlteration.
+
+prefixes:
+  ex: http://example.org/
+  linkml: https://w3id.org/linkml/
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  sio: http://semanticscience.org/resource/SIO_
+
+
+imports:
+  - linkml:types
+
+slots:
+  has_value:
+    description: "Sequence name"
+    range: string
+    required: true
+    slot_uri: sio:000300
+    exact_mappings:
+      - sio:000300
+    domain: AssemblySequence
+
+  label:
+    description: "A human-readable relatable name for the sequence (e.g. chr1)."
+    range: string
+    slot_uri: rdfs:label
+    exact_mappings:
+      - rdfs:label
+    domain: AssemblySequence
+  
+  same_as:
+    description: "Link to an external reference for the sequence (e.g. a URI from a genome browser or database)."
+    range: string
+    slot_uri: owl:sameAs
+    exact_mappings:
+      - owl:sameAs
+    domain: AssemblySequence
+
+classes:
+  AssemblySequence:
+    description: "AssemblySequence is a chromosome or sequence in a reference genome."
+    class_uri: so:0000353
+    exact_mappings:
+      - geno:0000960
+    related_mappings:
+      - go:0005694
+      - sio:000899
+    attributes:
+      - has_value
+      - label
+      - same_as
+
+
+

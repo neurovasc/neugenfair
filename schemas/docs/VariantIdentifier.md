@@ -91,6 +91,7 @@ attributes:
     name: has_value
     from_schema: https://w3id.org/neugenfair/schema
     domain_of:
+    - AssemblySequence
     - VariantIdentifier
   has_source:
     name: has_source
@@ -116,6 +117,7 @@ attributes:
     alias: has_value
     owner: VariantIdentifier
     domain_of:
+    - AssemblySequence
     - VariantIdentifier
   has_source:
     name: has_source

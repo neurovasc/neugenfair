@@ -323,6 +323,28 @@
   
   
     <li class="md-nav__item">
+      <a href="AssemblySequence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Class: AssemblySequence
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="Boolean/" class="md-nav__link">
         
   
@@ -659,6 +681,28 @@
   
   <span class="md-ellipsis">
     Type: Objectidentifier
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Position/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Class: Position
     
   </span>
   
@@ -1159,6 +1203,28 @@
   
   
     <li class="md-nav__item">
+      <a href="label/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slot: label
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="location/" class="md-nav__link">
         
   
@@ -1225,12 +1291,78 @@
   
   
     <li class="md-nav__item">
+      <a href="position/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slot: position
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="relation_one/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slot: relation_one
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="rsid/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     Slot: rsid
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="same_as/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slot: same_as
     
   </span>
   
@@ -1352,6 +1484,8 @@
 <h1 id="neugenfairschema">neugenfairSchema</h1>
 <p>neugenfair schema data model for representing phenoclinical genomic data in the ICAN dataset
 Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR transformation of genomic and clinical data into Linked Data.</p>
+<p>Schema for the AssemblySequence describing the chromosome or sequence that is the reference for the Region of the SequenceAlteration.</p>
+<p>Schema for the (genomic) Position describing the start or the end of the Region where the SequenceAlteration is located.</p>
 <p>Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR transformation of genomic and clinical data into Linked Data.</p>
 <p>Region class schema for the neugenfair tool. Defines Region where the SeqeunceAlteration occured as defined in FALDO ontology.</p>
 <p>SequenceAlteration class schema for the neugenfair tool. Defines SequenceAlteration and the relations to other adjacent concepts.</p>
@@ -1370,6 +1504,14 @@ Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR 
 <tr>
 <td><a href="AlternateAllele/">AlternateAllele</a></td>
 <td>Represents the alternate allele (geno:0000002)</td>
+</tr>
+<tr>
+<td><a href="AssemblySequence/">AssemblySequence</a></td>
+<td>AssemblySequence is a chromosome or sequence in a reference genome</td>
+</tr>
+<tr>
+<td><a href="Position/">Position</a></td>
+<td>(genomic) Position</td>
 </tr>
 <tr>
 <td><a href="ReferenceAllele/">ReferenceAllele</a></td>
@@ -1431,8 +1573,24 @@ Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR 
 <td>The value of the identifier</td>
 </tr>
 <tr>
+<td><a href="label/">label</a></td>
+<td>A human-readable relatable name for the sequence (e</td>
+</tr>
+<tr>
 <td><a href="location/">location</a></td>
 <td>Links the SequenceAlteration to its (genomic) Region</td>
+</tr>
+<tr>
+<td><a href="position/">position</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="relation_one/">relation_one</a></td>
+<td>Exact (genomic) Position of a SequenceAlteration</td>
+</tr>
+<tr>
+<td><a href="same_as/">same_as</a></td>
+<td>Link to an external reference for the sequence (e</td>
 </tr>
 <tr>
 <td><a href="value/">value</a></td>

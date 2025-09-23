@@ -31,7 +31,7 @@ Alias: has_reference
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [AssemblySequence](AssemblySequence.md)
 
 * Required: True
 
@@ -59,7 +59,7 @@ Alias: has_reference
 | ---  | ---  |
 | self | faldo:reference |
 | native | https://w3id.org/neugenfair/schema/has_reference |
-| undefined | faldo:reference |
+| exact | faldo:reference |
 
 
 
@@ -71,7 +71,7 @@ Alias: has_reference
 name: has_reference
 description: The reference sequence (contig, sequence, chromosome).
 from_schema: https://w3id.org/neugenfair/schema
-mappings:
+exact_mappings:
 - faldo:reference
 rank: 1000
 domain: Region
@@ -79,7 +79,7 @@ slot_uri: faldo:reference
 alias: has_reference
 domain_of:
 - Region
-range: string
+range: AssemblySequence
 required: true
 
 ```

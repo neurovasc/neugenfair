@@ -1,0 +1,38 @@
+id: https://w3id.org/neugenfair/schema
+name: neugenfairschema
+description: >
+  Schema for the (genomic) Position describing the start or the end of
+  the Region where the SequenceAlteration is located.
+
+prefixes:
+  ex: http://example.org/
+  linkml: https://w3id.org/linkml/
+  faldo: http://biohackathon.org/resource/faldo#
+  so: http://purl.obolibrary.org/obo/SO_
+  geno: http://purl.obolibrary.org/obo/GENO_
+
+imports:
+  - linkml:types
+
+
+slots:
+  relation_one:
+    description: "Exact (genomic) Position of a SequenceAlteration."
+    range: integer
+    required: true
+    slot_uri: faldo:position
+    exact_mappings:
+      - geno:0000903
+    domain: Position
+
+classes:
+  Position:
+    description: "(genomic) Position."
+    class_uri: faldo:ExactPosition
+    close_mappings:
+      - so:0000735
+    attributes:
+      - position
+
+
+

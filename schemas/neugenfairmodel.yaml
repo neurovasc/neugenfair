@@ -6,6 +6,14 @@ description: 'neugenfair schema data model for representing phenoclinical genomi
   transformation of genomic and clinical data into Linked Data.
 
 
+  Schema for the AssemblySequence describing the chromosome or sequence that is the
+  reference for the Region of the SequenceAlteration.
+
+
+  Schema for the (genomic) Position describing the start or the end of the Region
+  where the SequenceAlteration is located.
+
+
   Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR
   transformation of genomic and clinical data into Linked Data.
 
@@ -78,47 +86,91 @@ enums:
     permissible_values:
       HGVS:
         text: HGVS
+        description: Human Genome Variation Society nomenclature.
       dbSNP:
         text: dbSNP
+        description: Database of Single Nucleotide Polymorphisms.
       rsID:
         text: rsID
+        description: Reference SNP cluster ID from dbSNP.
       ClinVar:
         text: ClinVar
+        description: Clinical significance database for variants.
       COSMIC:
         text: COSMIC
+        description: Catalogue Of Somatic Mutations In Cancer.
       Ensembl:
         text: Ensembl
+        description: Ensembl database identifier.
       HUGO:
         text: HUGO
+        description: Human Genome Organization (HUGO) Gene Nomenclature Committee
+          (HGNC)-approved gene nomenclature.
       Other:
         text: Other
+        description: Other nomenclature or database not listed.
 slots:
+  has_value:
+    name: has_value
+    description: The value of the identifier.
+    mappings:
+    - sio:000300
+    domain: VariantIdentifier
+    slot_uri: sio:000300
+    range: string
+    required: true
+  label:
+    name: label
+    description: A human-readable relatable name for the sequence (e.g. chr1).
+    exact_mappings:
+    - rdfs:label
+    domain: AssemblySequence
+    slot_uri: rdfs:label
+    range: string
+  same_as:
+    name: same_as
+    description: Link to an external reference for the sequence (e.g. a URI from a
+      genome browser or database).
+    exact_mappings:
+    - owl:sameAs
+    domain: AssemblySequence
+    slot_uri: owl:sameAs
+    range: string
+  relation_one:
+    name: relation_one
+    description: Exact (genomic) Position of a SequenceAlteration.
+    exact_mappings:
+    - geno:0000903
+    domain: Position
+    slot_uri: faldo:position
+    range: integer
+    required: true
   begins_at:
     name: begins_at
     description: The beginning of the location of the sequence alteration.
-    mappings:
+    exact_mappings:
     - faldo:begin
     domain: Region
     slot_uri: faldo:begin
-    range: integer
+    range: Position
     required: true
   ends_at:
     name: ends_at
     description: The end of the location of the sequence alteration.
-    mappings:
+    exact_mappings:
     - faldo:end
     domain: Region
     slot_uri: faldo:end
-    range: integer
+    range: Position
     required: true
   has_reference:
     name: has_reference
     description: The reference sequence (contig, sequence, chromosome).
-    mappings:
+    exact_mappings:
     - faldo:reference
     domain: Region
     slot_uri: faldo:reference
-    range: string
+    range: AssemblySequence
     required: true
   has_identifier:
     name: has_identifier
@@ -156,15 +208,6 @@ slots:
     slot_uri: faldo:location
     range: Region
     required: false
-  has_value:
-    name: has_value
-    description: The value of the identifier.
-    mappings:
-    - sio:000300
-    domain: VariantIdentifier
-    slot_uri: sio:000300
-    range: string
-    required: true
   has_source:
     name: has_source
     description: The nomenclature or database of the identifier (e.g. HGVS, dbSNP).
@@ -186,6 +229,31 @@ classes:
         range: string
         required: true
     class_uri: geno:0000002
+  AssemblySequence:
+    name: AssemblySequence
+    description: AssemblySequence is a chromosome or sequence in a reference genome.
+    exact_mappings:
+    - geno:0000960
+    related_mappings:
+    - go:0005694
+    - sio:000899
+    attributes:
+      has_value:
+        name: has_value
+      label:
+        name: label
+      same_as:
+        name: same_as
+    class_uri: so:0000353
+  Position:
+    name: Position
+    description: (genomic) Position.
+    close_mappings:
+    - so:0000735
+    attributes:
+      position:
+        name: position
+    class_uri: faldo:ExactPosition
   ReferenceAllele:
     name: ReferenceAllele
     description: Represents the reference allele (geno:0000036).

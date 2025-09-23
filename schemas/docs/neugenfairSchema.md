@@ -3,6 +3,10 @@
 neugenfair schema data model for representing phenoclinical genomic data in the ICAN dataset
 Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR transformation of genomic and clinical data into Linked Data.
 
+Schema for the AssemblySequence describing the chromosome or sequence that is the reference for the Region of the SequenceAlteration.
+
+Schema for the (genomic) Position describing the start or the end of the Region where the SequenceAlteration is located.
+
 Schema for the neugenfair tool. Defines classes and attributes, supporting FAIR transformation of genomic and clinical data into Linked Data.
 
 Region class schema for the neugenfair tool. Defines Region where the SeqeunceAlteration occured as defined in FALDO ontology.

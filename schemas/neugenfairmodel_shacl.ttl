@@ -6,19 +6,28 @@
 @prefix so: <http://purl.obolibrary.org/obo/SO_> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+faldo:ExactPosition a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "(genomic) Position." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path <https://w3id.org/neugenfair/schema/position> ] ;
+    sh:targetClass faldo:ExactPosition .
+
 faldo:Region a sh:NodeShape ;
     sh:closed true ;
     sh:description "(genomic) Region of a SequenceAlteration." ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:property [ sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path <https://w3id.org/neugenfair/schema/begins_at> ],
+        [ sh:maxCount 1 ;
             sh:order 1 ;
             sh:path <https://w3id.org/neugenfair/schema/ends_at> ],
         [ sh:maxCount 1 ;
             sh:order 2 ;
-            sh:path <https://w3id.org/neugenfair/schema/has_reference> ],
-        [ sh:maxCount 1 ;
-            sh:order 0 ;
-            sh:path <https://w3id.org/neugenfair/schema/begins_at> ] ;
+            sh:path <https://w3id.org/neugenfair/schema/has_reference> ] ;
     sh:targetClass faldo:Region .
 
 geno:0000002 a sh:NodeShape ;
@@ -47,22 +56,37 @@ geno:0000036 a sh:NodeShape ;
             sh:path sio:000300 ] ;
     sh:targetClass geno:0000036 .
 
+so:0000353 a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "AssemblySequence is a chromosome or sequence in a reference genome." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path <https://w3id.org/neugenfair/schema/label> ],
+        [ sh:maxCount 1 ;
+            sh:order 2 ;
+            sh:path <https://w3id.org/neugenfair/schema/same_as> ],
+        [ sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path <https://w3id.org/neugenfair/schema/has_value> ] ;
+    sh:targetClass so:0000353 .
+
 so:0001059 a sh:NodeShape ;
     sh:closed true ;
     sh:description "A representation of a SequenceAlteration." ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:property [ sh:maxCount 1 ;
-            sh:order 2 ;
-            sh:path <https://w3id.org/neugenfair/schema/has_alternate_part> ],
-        [ sh:maxCount 1 ;
-            sh:order 1 ;
-            sh:path <https://w3id.org/neugenfair/schema/has_reference_part> ],
-        [ sh:maxCount 1 ;
             sh:order 0 ;
             sh:path <https://w3id.org/neugenfair/schema/has_identifier> ],
         [ sh:maxCount 1 ;
             sh:order 3 ;
-            sh:path <https://w3id.org/neugenfair/schema/location> ] ;
+            sh:path <https://w3id.org/neugenfair/schema/location> ],
+        [ sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path <https://w3id.org/neugenfair/schema/has_reference_part> ],
+        [ sh:maxCount 1 ;
+            sh:order 2 ;
+            sh:path <https://w3id.org/neugenfair/schema/has_alternate_part> ] ;
     sh:targetClass so:0001059 .
 
 sio:000675 a sh:NodeShape ;
@@ -70,11 +94,11 @@ sio:000675 a sh:NodeShape ;
     sh:description "A unique identifier for a sequence alteration within a database or nomenclature." ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:property [ sh:maxCount 1 ;
-            sh:order 1 ;
-            sh:path <https://w3id.org/neugenfair/schema/has_source> ],
-        [ sh:maxCount 1 ;
             sh:order 0 ;
-            sh:path <https://w3id.org/neugenfair/schema/has_value> ] ;
+            sh:path <https://w3id.org/neugenfair/schema/has_value> ],
+        [ sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path <https://w3id.org/neugenfair/schema/has_source> ] ;
     sh:targetClass sio:000675 .
 
 

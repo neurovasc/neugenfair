@@ -238,6 +238,28 @@
   
   
     <li class="md-nav__item">
+      <a href="../AssemblySequence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Class: AssemblySequence
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Boolean/" class="md-nav__link">
         
   
@@ -574,6 +596,28 @@
   
   <span class="md-ellipsis">
     Type: Objectidentifier
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Position/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Class: Position
     
   </span>
   
@@ -1176,6 +1220,28 @@
   
   
     <li class="md-nav__item">
+      <a href="../label/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slot: label
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../location/" class="md-nav__link">
         
   
@@ -1242,12 +1308,78 @@
   
   
     <li class="md-nav__item">
+      <a href="../position/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slot: position
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../relation_one/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slot: relation_one
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../rsid/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     Slot: rsid
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../same_as/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slot: same_as
     
   </span>
   
@@ -1407,7 +1539,7 @@ Alias: ends_at</p>
 <h2 id="properties">Properties</h2>
 <ul>
 <li>
-<p>Range: <a href="../Integer/">Integer</a></p>
+<p>Range: <a href="../Position/">Position</a></p>
 </li>
 <li>
 <p>Required: True</p>
@@ -1436,7 +1568,7 @@ Alias: ends_at</p>
 <td>https://w3id.org/neugenfair/schema/ends_at</td>
 </tr>
 <tr>
-<td>undefined</td>
+<td>exact</td>
 <td>faldo:end</td>
 </tr>
 </tbody>
@@ -1447,7 +1579,7 @@ Alias: ends_at</p>
 <pre><code class="language-yaml">name: ends_at
 description: The end of the location of the sequence alteration.
 from_schema: https://w3id.org/neugenfair/schema
-mappings:
+exact_mappings:
 - faldo:end
 rank: 1000
 domain: Region
@@ -1455,7 +1587,7 @@ slot_uri: faldo:end
 alias: ends_at
 domain_of:
 - Region
-range: integer
+range: Position
 required: true
 
 </code></pre>

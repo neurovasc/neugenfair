@@ -24,7 +24,7 @@ slots:
     mappings:
       - sio:000300
     domain: VariantIdentifier
-    
+
   has_source:
     description: "The nomenclature or database of the identifier (e.g. HGVS, dbSNP)."
     required: true
@@ -46,14 +46,23 @@ enums:
   Nomenclature:
     description: "The nomenclature or database system used for the identifier."
     permissible_values:
-      - HGVS
-      - dbSNP
-      - rsID
-      - ClinVar
-      - COSMIC
-      - Ensembl
-      - HUGO
-      - Other
+      HGVS:
+        description: "Human Genome Variation Society nomenclature."
+      dbSNP:
+        description: "Database of Single Nucleotide Polymorphisms."
+      rsID:
+        description: "Reference SNP cluster ID from dbSNP."
+      ClinVar:
+        description: "Clinical significance database for variants."
+      COSMIC:
+        description: "Catalogue Of Somatic Mutations In Cancer."
+      Ensembl:
+        description: "Ensembl database identifier."
+      HUGO:
+        description: "Human Genome Organization (HUGO) Gene Nomenclature Committee (HGNC)-approved gene nomenclature."
+      Other:
+        description: "Other nomenclature or database not listed."
+
 
 
 
