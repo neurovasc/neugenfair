@@ -40,54 +40,22 @@ id: https://w3id.org/neugenfair/schema
 imports:
 - linkml:types
 prefixes:
-  ex:
-    prefix_prefix: ex
-    prefix_reference: http://example.org/
-  linkml:
-    prefix_prefix: linkml
-    prefix_reference: https://w3id.org/linkml/
-  geno:
-    prefix_prefix: geno
-    prefix_reference: http://purl.obolibrary.org/obo/GENO_
-  sio:
-    prefix_prefix: sio
-    prefix_reference: http://semanticscience.org/resource/SIO_
-  rdfs:
-    prefix_prefix: rdfs
-    prefix_reference: http://www.w3.org/2000/01/rdf-schema#
-  go:
-    prefix_prefix: go
-    prefix_reference: http://semanticscience.org/resource/SIO_
-  obi:
-    prefix_prefix: obi
-    prefix_reference: http://purl.obolibrary.org/obo/OBI_
-  ncit:
-    prefix_prefix: ncit
-    prefix_reference: http://purl.obolibrary.org/obo/NCIT_
-  faldo:
-    prefix_prefix: faldo
-    prefix_reference: http://biohackathon.org/resource/faldo#
-  so:
-    prefix_prefix: so
-    prefix_reference: http://purl.obolibrary.org/obo/SO_
-  rdf:
-    prefix_prefix: rdf
-    prefix_reference: http://www.w3.org/1999/02/22-rdf-syntax-ns#
-  skos:
-    prefix_prefix: skos
-    prefix_reference: http://www.w3.org/2004/02/skos/core#
-  owl:
-    prefix_prefix: owl
-    prefix_reference: http://www.w3.org/2002/07/owl#
-  aic:
-    prefix_prefix: aic
-    prefix_reference: https://example.org/aiccohortvariants#
-  mondo:
-    prefix_prefix: mondo
-    prefix_reference: http://purl.obolibrary.org/obo/MONDO_
-  hpo:
-    prefix_prefix: hpo
-    prefix_reference: http://purl.obolibrary.org/obo/HP_
+  ex: http://example.org/
+  linkml: https://w3id.org/linkml/
+  geno: http://purl.obolibrary.org/obo/GENO_
+  sio: http://semanticscience.org/resource/SIO_
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  go: http://semanticscience.org/resource/SIO_
+  obi: http://purl.obolibrary.org/obo/OBI_
+  ncit: http://purl.obolibrary.org/obo/NCIT_
+  faldo: http://biohackathon.org/resource/faldo#
+  so: http://purl.obolibrary.org/obo/SO_
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  skos: http://www.w3.org/2004/02/skos/core#
+  owl: http://www.w3.org/2002/07/owl#
+  aic: https://example.org/aiccohortvariants#
+  mondo: http://purl.obolibrary.org/obo/MONDO_
+  hpo: http://purl.obolibrary.org/obo/HP_
 default_prefix: https://w3id.org/neugenfair/schema/
 enums:
   Nomenclature:

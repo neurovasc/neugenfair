@@ -1,0 +1,585 @@
+[
+  {
+    "@id": "https://w3id.org/neugenfair/instance/seqalt/1-69428-G-T",
+    "@type": [
+      "http://purl.obolibrary.org/obo/SO_0001059"
+    ],
+    "http://biohackathon.org/resource/faldo#location": [
+      {
+        "@id": "https://w3id.org/neugenfair/instance/region/1-69428"
+      }
+    ],
+    "http://purl.obolibrary.org/obo/GENO_0000382": [
+      {
+        "@id": "https://w3id.org/neugenfair/instance/altallele/1-69428-T"
+      }
+    ],
+    "http://purl.obolibrary.org/obo/GENO_0000385": [
+      {
+        "@id": "https://w3id.org/neugenfair/instance/refallele/1-69428-G"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "1:69428 G>T"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/neugenfair/instance/region/1-69428",
+    "@type": [
+      "http://biohackathon.org/resource/faldo#Region"
+    ],
+    "http://biohackathon.org/resource/faldo#begin": [
+      {
+        "@id": "https://w3id.org/neugenfair/instance/position/1-69428"
+      }
+    ],
+    "http://biohackathon.org/resource/faldo#end": [
+      {
+        "@id": "https://w3id.org/neugenfair/instance/position/1-69428"
+      }
+    ],
+    "http://biohackathon.org/resource/faldo#reference": [
+      {
+        "@id": "https://w3id.org/neugenfair/instance/assembly/1"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/neugenfair/instance/region/1-69761",
+    "@type": [
+      "http://biohackathon.org/resource/faldo#Region"
+    ],
+    "http://biohackathon.org/resource/faldo#begin": [
+      {
+        "@id": "https://w3id.org/neugenfair/instance/position/1-69761"
+      }
+    ],
+    "http://biohackathon.org/resource/faldo#end": [
+      {
+        "@id": "https://w3id.org/neugenfair/instance/position/1-69761"
+      }
+    ],
+    "http://biohackathon.org/resource/faldo#reference": [
+      {
+        "@id": "https://w3id.org/neugenfair/instance/assembly/1"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/neugenfair/instance/position/1-69081",
+    "@type": [
+      "http://biohackathon.org/resource/faldo#ExactPosition"
+    ],
+    "http://biohackathon.org/resource/faldo#position": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 69081
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/neugenfair/instance/region/1-69270",
+    "@type": [
+      "http://biohackathon.org/resource/faldo#Region"
+    ],
+    "http://biohackathon.org/resource/faldo#begin": [
+      {
+        "@id": "https://w3id.org/neugenfair/instance/position/1-69270"
+      }
+    ],
+    "http://biohackathon.org/resource/faldo#end": [
+      {
+        "@id": "https://w3id.org/neugenfair/instance/position/1-69270"
+      }
+    ],
+    "http://biohackathon.org/resource/faldo#reference": [
+      {
+        "@id": "https://w3id.org/neugenfair/instance/assembly/1"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/neugenfair/instance/position/1-69428",
+    "@type": [
+      "http://biohackathon.org/resource/faldo#ExactPosition"
+    ],
+    "http://biohackathon.org/resource/faldo#position": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 69428
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/neugenfair/instance/refallele/1-69511-G",
+    "@type": [
+      "http://purl.obolibrary.org/obo/GENO_0000036"
+    ],
+    "http://semanticscience.org/resource/SIO_000300": [
+      {
+        "@value": "G"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/neugenfair/instance/assembly/1",
+    "@type": [
+      "http://purl.obolibrary.org/obo/SO_0000353"
+    ],
+    "http://semanticscience.org/resource/SIO_000300": [
+      {
+        "@value": "1"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "1"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/neugenfair/instance/altallele/1-69081-G",
+    "@type": [
+      "http://purl.obolibrary.org/obo/GENO_0000002"
+    ],
+    "http://semanticscience.org/resource/SIO_000300": [
+      {
+        "@value": "G"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/neugenfair/instance/refallele/1-69063-C",
+    "@type": [
+      "http://purl.obolibrary.org/obo/GENO_0000036"
+    ],
+    "http://semanticscience.org/resource/SIO_000300": [
+      {
+        "@value": "C"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/neugenfair/instance/altallele/1-69063-T",
+    "@type": [
+      "http://purl.obolibrary.org/obo/GENO_0000002"
+    ],
+    "http://semanticscience.org/resource/SIO_000300": [
+      {
+        "@value": "T"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/neugenfair/instance/seqalt/1-69270-G-A",
+    "@type": [
+      "http://purl.obolibrary.org/obo/SO_0001059"
+    ],
+    "http://biohackathon.org/resource/faldo#location": [
+      {
+        "@id": "https://w3id.org/neugenfair/instance/region/1-69270"
+      }
+    ],
+    "http://purl.obolibrary.org/obo/GENO_0000382": [
+      {
+        "@id": "https://w3id.org/neugenfair/instance/altallele/1-69270-A"
+      }
+    ],
+    "http://purl.obolibrary.org/obo/GENO_0000385": [
+      {
+        "@id": "https://w3id.org/neugenfair/instance/refallele/1-69270-G"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "1:69270 G>A"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/neugenfair/instance/region/1-69063",
+    "@type": [
+      "http://biohackathon.org/resource/faldo#Region"
+    ],
+    "http://biohackathon.org/resource/faldo#begin": [
+      {
+        "@id": "https://w3id.org/neugenfair/instance/position/1-69063"
+      }
+    ],
+    "http://biohackathon.org/resource/faldo#end": [
+      {
+        "@id": "https://w3id.org/neugenfair/instance/position/1-69063"
+      }
+    ],
+    "http://biohackathon.org/resource/faldo#reference": [
+      {
+        "@id": "https://w3id.org/neugenfair/instance/assembly/1"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/neugenfair/instance/altallele/1-69428-T",
+    "@type": [
+      "http://purl.obolibrary.org/obo/GENO_0000002"
+    ],
+    "http://semanticscience.org/resource/SIO_000300": [
+      {
+        "@value": "T"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/neugenfair/instance/altallele/1-69270-A",
+    "@type": [
+      "http://purl.obolibrary.org/obo/GENO_0000002"
+    ],
+    "http://semanticscience.org/resource/SIO_000300": [
+      {
+        "@value": "A"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/neugenfair/instance/altallele/1-69849-G",
+    "@type": [
+      "http://purl.obolibrary.org/obo/GENO_0000002"
+    ],
+    "http://semanticscience.org/resource/SIO_000300": [
+      {
+        "@value": "G"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/neugenfair/instance/refallele/1-69849-A",
+    "@type": [
+      "http://purl.obolibrary.org/obo/GENO_0000036"
+    ],
+    "http://semanticscience.org/resource/SIO_000300": [
+      {
+        "@value": "A"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/neugenfair/instance/region/1-69849",
+    "@type": [
+      "http://biohackathon.org/resource/faldo#Region"
+    ],
+    "http://biohackathon.org/resource/faldo#begin": [
+      {
+        "@id": "https://w3id.org/neugenfair/instance/position/1-69849"
+      }
+    ],
+    "http://biohackathon.org/resource/faldo#end": [
+      {
+        "@id": "https://w3id.org/neugenfair/instance/position/1-69849"
+      }
+    ],
+    "http://biohackathon.org/resource/faldo#reference": [
+      {
+        "@id": "https://w3id.org/neugenfair/instance/assembly/1"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/neugenfair/instance/seqalt/1-69063-C-T",
+    "@type": [
+      "http://purl.obolibrary.org/obo/SO_0001059"
+    ],
+    "http://biohackathon.org/resource/faldo#location": [
+      {
+        "@id": "https://w3id.org/neugenfair/instance/region/1-69063"
+      }
+    ],
+    "http://purl.obolibrary.org/obo/GENO_0000382": [
+      {
+        "@id": "https://w3id.org/neugenfair/instance/altallele/1-69063-T"
+      }
+    ],
+    "http://purl.obolibrary.org/obo/GENO_0000385": [
+      {
+        "@id": "https://w3id.org/neugenfair/instance/refallele/1-69063-C"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "1:69063 C>T"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/neugenfair/instance/refallele/1-69428-G",
+    "@type": [
+      "http://purl.obolibrary.org/obo/GENO_0000036"
+    ],
+    "http://semanticscience.org/resource/SIO_000300": [
+      {
+        "@value": "G"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/neugenfair/instance/position/1-69063",
+    "@type": [
+      "http://biohackathon.org/resource/faldo#ExactPosition"
+    ],
+    "http://biohackathon.org/resource/faldo#position": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 69063
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/neugenfair/instance/position/1-69761",
+    "@type": [
+      "http://biohackathon.org/resource/faldo#ExactPosition"
+    ],
+    "http://biohackathon.org/resource/faldo#position": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 69761
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/neugenfair/instance/region/1-69511",
+    "@type": [
+      "http://biohackathon.org/resource/faldo#Region"
+    ],
+    "http://biohackathon.org/resource/faldo#begin": [
+      {
+        "@id": "https://w3id.org/neugenfair/instance/position/1-69511"
+      }
+    ],
+    "http://biohackathon.org/resource/faldo#end": [
+      {
+        "@id": "https://w3id.org/neugenfair/instance/position/1-69511"
+      }
+    ],
+    "http://biohackathon.org/resource/faldo#reference": [
+      {
+        "@id": "https://w3id.org/neugenfair/instance/assembly/1"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/neugenfair/instance/position/1-69511",
+    "@type": [
+      "http://biohackathon.org/resource/faldo#ExactPosition"
+    ],
+    "http://biohackathon.org/resource/faldo#position": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 69511
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/neugenfair/instance/seqalt/1-69849-A-G",
+    "@type": [
+      "http://purl.obolibrary.org/obo/SO_0001059"
+    ],
+    "http://biohackathon.org/resource/faldo#location": [
+      {
+        "@id": "https://w3id.org/neugenfair/instance/region/1-69849"
+      }
+    ],
+    "http://purl.obolibrary.org/obo/GENO_0000382": [
+      {
+        "@id": "https://w3id.org/neugenfair/instance/altallele/1-69849-G"
+      }
+    ],
+    "http://purl.obolibrary.org/obo/GENO_0000385": [
+      {
+        "@id": "https://w3id.org/neugenfair/instance/refallele/1-69849-A"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "1:69849 A>G"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/neugenfair/instance/seqalt/1-69511-G-A",
+    "@type": [
+      "http://purl.obolibrary.org/obo/SO_0001059"
+    ],
+    "http://biohackathon.org/resource/faldo#location": [
+      {
+        "@id": "https://w3id.org/neugenfair/instance/region/1-69511"
+      }
+    ],
+    "http://purl.obolibrary.org/obo/GENO_0000382": [
+      {
+        "@id": "https://w3id.org/neugenfair/instance/altallele/1-69511-A"
+      }
+    ],
+    "http://purl.obolibrary.org/obo/GENO_0000385": [
+      {
+        "@id": "https://w3id.org/neugenfair/instance/refallele/1-69511-G"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "1:69511 G>A"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/neugenfair/instance/refallele/1-69761-T",
+    "@type": [
+      "http://purl.obolibrary.org/obo/GENO_0000036"
+    ],
+    "http://semanticscience.org/resource/SIO_000300": [
+      {
+        "@value": "T"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/neugenfair/instance/position/1-69849",
+    "@type": [
+      "http://biohackathon.org/resource/faldo#ExactPosition"
+    ],
+    "http://biohackathon.org/resource/faldo#position": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 69849
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/neugenfair/instance/seqalt/1-69081-C-G",
+    "@type": [
+      "http://purl.obolibrary.org/obo/SO_0001059"
+    ],
+    "http://biohackathon.org/resource/faldo#location": [
+      {
+        "@id": "https://w3id.org/neugenfair/instance/region/1-69081"
+      }
+    ],
+    "http://purl.obolibrary.org/obo/GENO_0000382": [
+      {
+        "@id": "https://w3id.org/neugenfair/instance/altallele/1-69081-G"
+      }
+    ],
+    "http://purl.obolibrary.org/obo/GENO_0000385": [
+      {
+        "@id": "https://w3id.org/neugenfair/instance/refallele/1-69081-C"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "1:69081 C>G"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/neugenfair/instance/region/1-69081",
+    "@type": [
+      "http://biohackathon.org/resource/faldo#Region"
+    ],
+    "http://biohackathon.org/resource/faldo#begin": [
+      {
+        "@id": "https://w3id.org/neugenfair/instance/position/1-69081"
+      }
+    ],
+    "http://biohackathon.org/resource/faldo#end": [
+      {
+        "@id": "https://w3id.org/neugenfair/instance/position/1-69081"
+      }
+    ],
+    "http://biohackathon.org/resource/faldo#reference": [
+      {
+        "@id": "https://w3id.org/neugenfair/instance/assembly/1"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/neugenfair/instance/refallele/1-69270-G",
+    "@type": [
+      "http://purl.obolibrary.org/obo/GENO_0000036"
+    ],
+    "http://semanticscience.org/resource/SIO_000300": [
+      {
+        "@value": "G"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/neugenfair/instance/altallele/1-69511-A",
+    "@type": [
+      "http://purl.obolibrary.org/obo/GENO_0000002"
+    ],
+    "http://semanticscience.org/resource/SIO_000300": [
+      {
+        "@value": "A"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/neugenfair/instance/position/1-69270",
+    "@type": [
+      "http://biohackathon.org/resource/faldo#ExactPosition"
+    ],
+    "http://biohackathon.org/resource/faldo#position": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 69270
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/neugenfair/instance/refallele/1-69081-C",
+    "@type": [
+      "http://purl.obolibrary.org/obo/GENO_0000036"
+    ],
+    "http://semanticscience.org/resource/SIO_000300": [
+      {
+        "@value": "C"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/neugenfair/instance/altallele/1-69761-A",
+    "@type": [
+      "http://purl.obolibrary.org/obo/GENO_0000002"
+    ],
+    "http://semanticscience.org/resource/SIO_000300": [
+      {
+        "@value": "A"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/neugenfair/instance/seqalt/1-69761-T-A",
+    "@type": [
+      "http://purl.obolibrary.org/obo/SO_0001059"
+    ],
+    "http://biohackathon.org/resource/faldo#location": [
+      {
+        "@id": "https://w3id.org/neugenfair/instance/region/1-69761"
+      }
+    ],
+    "http://purl.obolibrary.org/obo/GENO_0000382": [
+      {
+        "@id": "https://w3id.org/neugenfair/instance/altallele/1-69761-A"
+      }
+    ],
+    "http://purl.obolibrary.org/obo/GENO_0000385": [
+      {
+        "@id": "https://w3id.org/neugenfair/instance/refallele/1-69761-T"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "1:69761 T>A"
+      }
+    ]
+  }
+]

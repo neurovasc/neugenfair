@@ -13,12 +13,12 @@ obi:0000252 a sh:NodeShape ;
     sh:closed true ;
     sh:description "Cohort role." ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class so:0001059 ;
-            sh:description "Is source of (e.g. dataset, biobank, variant)." ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:description "Is described by (e.g. publication, report)." ;
             sh:maxCount 1 ;
-            sh:nodeKind sh:BlankNodeOrIRI ;
-            sh:order 1 ;
-            sh:path go:000219 ],
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path go:000557 ],
         [ sh:datatype xsd:string ;
             sh:description "Relation between Cohort and its identifier" ;
             sh:maxCount 1 ;
@@ -26,32 +26,32 @@ obi:0000252 a sh:NodeShape ;
             sh:nodeKind sh:Literal ;
             sh:order 2 ;
             sh:path go:0000671 ],
-        [ sh:datatype xsd:string ;
-            sh:description "Is described by (e.g. publication, report)." ;
+        [ sh:class so:0001059 ;
+            sh:description "Is source of (e.g. dataset, biobank, variant)." ;
             sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 0 ;
-            sh:path go:000557 ] ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 1 ;
+            sh:path go:000219 ] ;
     sh:targetClass obi:0000252 .
 
 faldo:Region a sh:NodeShape ;
     sh:closed true ;
     sh:description "(genomic) Region of a SequenceAlteration." ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class faldo:ExactPosition ;
-            sh:description "The beginning of the location of the sequence alteration." ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:BlankNodeOrIRI ;
-            sh:order 0 ;
-            sh:path faldo:begin ],
-        [ sh:class so:0000353 ;
+    sh:property [ sh:class so:0000353 ;
             sh:description "The reference sequence (contig, sequence, chromosome)." ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:nodeKind sh:BlankNodeOrIRI ;
             sh:order 2 ;
             sh:path faldo:reference ],
+        [ sh:class faldo:ExactPosition ;
+            sh:description "The beginning of the location of the sequence alteration." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 0 ;
+            sh:path faldo:begin ],
         [ sh:class faldo:ExactPosition ;
             sh:description "The end of the location of the sequence alteration." ;
             sh:maxCount 1 ;
@@ -99,29 +99,30 @@ so:0000353 a sh:NodeShape ;
             sh:order 0 ;
             sh:path go:000300 ],
         [ sh:datatype xsd:string ;
-            sh:description "A human-readable relatable name for the sequence (e.g. chr1)." ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 1 ;
-            sh:path rdfs:label ],
-        [ sh:datatype xsd:string ;
             sh:description "Link to an external reference for the sequence (e.g. a URI from a genome browser or database)." ;
             sh:maxCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:order 2 ;
-            sh:path owl:sameAs ] ;
+            sh:path owl:sameAs ],
+        [ sh:datatype xsd:string ;
+            sh:description "A human-readable relatable name for the sequence (e.g. chr1)." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 1 ;
+            sh:path rdfs:label ] ;
     sh:targetClass so:0000353 .
 
 so:0001059 a sh:NodeShape ;
     sh:closed true ;
     sh:description "A representation of a SequenceAlteration." ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class geno:0000036 ;
-            sh:description "Links the SequenceAlteration to its ReferenceAllele." ;
+    sh:property [ sh:class faldo:Region ;
+            sh:description "Links the SequenceAlteration to its (genomic) Region." ;
             sh:maxCount 1 ;
+            sh:minCount 1 ;
             sh:nodeKind sh:BlankNodeOrIRI ;
-            sh:order 1 ;
-            sh:path geno:0000385 ],
+            sh:order 3 ;
+            sh:path faldo:location ],
         [ sh:class geno:0000002 ;
             sh:description "Links the SequenceAlteration to its AlternateAllele." ;
             sh:maxCount 1 ;
@@ -129,13 +130,12 @@ so:0001059 a sh:NodeShape ;
             sh:nodeKind sh:BlankNodeOrIRI ;
             sh:order 2 ;
             sh:path geno:0000382 ],
-        [ sh:class faldo:Region ;
-            sh:description "Links the SequenceAlteration to its (genomic) Region." ;
+        [ sh:class geno:0000036 ;
+            sh:description "Links the SequenceAlteration to its ReferenceAllele." ;
             sh:maxCount 1 ;
-            sh:minCount 1 ;
             sh:nodeKind sh:BlankNodeOrIRI ;
-            sh:order 3 ;
-            sh:path faldo:location ],
+            sh:order 1 ;
+            sh:path geno:0000385 ],
         [ sh:class go:000675 ;
             sh:description "Relation between a SequenceAlteration and its VariantIdentifier" ;
             sh:maxCount 1 ;

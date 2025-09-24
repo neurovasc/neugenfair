@@ -1,6 +1,6 @@
 import sys
 from linkml_runtime.loaders import yaml_loader
-from linkml_runtime.linkml_model.meta import SchemaDefinition
+from linkml_runtime.linkml_model.meta import SchemaDefinition, Prefix
 from linkml_runtime.dumpers import yaml_dumper
 
 if len(sys.argv) < 3:
@@ -40,7 +40,11 @@ for f in schemas:
         if not merged_schema.prefixes:
             merged_schema.prefixes = {}
         for k, v in s.prefixes.items():
-            merged_schema.prefixes[k] = v
+            # If v is a Prefix object, take its .prefix_reference
+            if isinstance(v, Prefix):
+                merged_schema.prefixes[k] = v.prefix_reference
+            else:
+                merged_schema.prefixes[k] = v
 
     # Merge other metadata if needed
     if hasattr(s, "description") and s.description:
@@ -48,6 +52,15 @@ for f in schemas:
             merged_schema.description += "\n" + s.description
         else:
             merged_schema.description = s.description
+
+# Normalize prefixes so they dump cleanly
+normalized_prefixes = {}
+for k, v in merged_schema.prefixes._items():
+    if isinstance(v, Prefix):
+        normalized_prefixes[k] = v.prefix_reference
+    else:
+        normalized_prefixes[k] = v
+merged_schema.prefixes = normalized_prefixes
 
 # Save merged schema
 yaml_dumper.dump(merged_schema, outyaml)

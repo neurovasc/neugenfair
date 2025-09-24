@@ -22,8 +22,8 @@ Alias: value
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [ReferenceAllele](ReferenceAllele.md) | Represents the ReferenceAllele, found on the reference sequence when performi... |  no  |
 | [AlternateAllele](AlternateAllele.md) | Represents the AlternateAllele, found upon mapping (genome) read sequencing f... |  no  |
+| [ReferenceAllele](ReferenceAllele.md) | Represents the ReferenceAllele, found on the reference sequence when performi... |  no  |
 
 
 
