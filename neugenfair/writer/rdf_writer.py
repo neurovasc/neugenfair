@@ -17,7 +17,7 @@ def expand_uri_like(value, prefix_map):
 
 def make_seqalt_iri(base_ns, chrom, pos, ref, alt):
     slug = f"{chrom}-{pos}-{ref}-{alt}"
-    return URIRef(base_ns + "seqalt/" + quote(slug, safe=""))
+    return URIRef(base_ns + "SequenceAlteration/" + quote(slug, safe=""))
 
 
 def make_node(base_ns, kind, slug):
@@ -75,23 +75,23 @@ def generate_graph_from_variants(df: pd.DataFrame, schema, prefix_map: dict,
             g.add((sa, has_identifier, ident))
 
         # ReferenceAllele
-        ref_node = make_node(base_ns, "refallele", f"{v['chrom']}-{v['pos']}-{v['ref']}")
+        ref_node = make_node(base_ns, "ReferenceAllele", f"{v['chrom']}-{v['pos']}-{v['ref']}")
         g.add((ref_node, RDF.type, refallele_uri))
         g.add((ref_node, value_prop, Literal(v["ref"])))
         g.add((sa, has_reference_part, ref_node))
 
         # AlternateAllele
-        alt_node = make_node(base_ns, "altallele", f"{v['chrom']}-{v['pos']}-{v['alt']}")
+        alt_node = make_node(base_ns, "AlternateAllele", f"{v['chrom']}-{v['pos']}-{v['alt']}")
         g.add((alt_node, RDF.type, altallele_uri))
         g.add((alt_node, value_prop, Literal(v["alt"])))
         g.add((sa, has_alternate_part, alt_node))
 
         # Position
-        pos_node = make_node(base_ns, "position", f"{v['chrom']}-{v['pos']}")
+        pos_node = make_node(base_ns, "Position", f"{v['chrom']}-{v['pos']}")
         g.add((pos_node, RDF.type, pos_uri))
         g.add((pos_node, position_prop, Literal(int(v["pos"]))))
         # Region
-        reg_node = make_node(base_ns, "region", f"{v['chrom']}-{v['pos']}")
+        reg_node = make_node(base_ns, "Region", f"{v['chrom']}-{v['pos']}")
         g.add((reg_node, RDF.type, region_uri))
         g.add((reg_node, begins_at, pos_node))
         g.add((reg_node, ends_at, pos_node))

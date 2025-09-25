@@ -5,144 +5,144 @@
 @prefix so: <http://purl.obolibrary.org/obo/SO_> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://w3id.org/neugenfair/instance/seqalt/1-69063-C-T> a so:0001059 ;
+<https://w3id.org/neugenfair/instance/SequenceAlteration/1-69063-C-T> a so:0001059 ;
     rdfs:label "1:69063 C>T" ;
-    faldo:location <https://w3id.org/neugenfair/instance/region/1-69063> ;
-    geno:0000382 <https://w3id.org/neugenfair/instance/altallele/1-69063-T> ;
-    geno:0000385 <https://w3id.org/neugenfair/instance/refallele/1-69063-C> .
+    faldo:location <https://w3id.org/neugenfair/instance/Region/1-69063> ;
+    geno:0000382 <https://w3id.org/neugenfair/instance/AlternateAllele/1-69063-T> ;
+    geno:0000385 <https://w3id.org/neugenfair/instance/ReferenceAllele/1-69063-C> .
 
-<https://w3id.org/neugenfair/instance/seqalt/1-69081-C-G> a so:0001059 ;
+<https://w3id.org/neugenfair/instance/SequenceAlteration/1-69081-C-G> a so:0001059 ;
     rdfs:label "1:69081 C>G" ;
-    faldo:location <https://w3id.org/neugenfair/instance/region/1-69081> ;
-    geno:0000382 <https://w3id.org/neugenfair/instance/altallele/1-69081-G> ;
-    geno:0000385 <https://w3id.org/neugenfair/instance/refallele/1-69081-C> .
+    faldo:location <https://w3id.org/neugenfair/instance/Region/1-69081> ;
+    geno:0000382 <https://w3id.org/neugenfair/instance/AlternateAllele/1-69081-G> ;
+    geno:0000385 <https://w3id.org/neugenfair/instance/ReferenceAllele/1-69081-C> .
 
-<https://w3id.org/neugenfair/instance/seqalt/1-69270-G-A> a so:0001059 ;
+<https://w3id.org/neugenfair/instance/SequenceAlteration/1-69270-G-A> a so:0001059 ;
     rdfs:label "1:69270 G>A" ;
-    faldo:location <https://w3id.org/neugenfair/instance/region/1-69270> ;
-    geno:0000382 <https://w3id.org/neugenfair/instance/altallele/1-69270-A> ;
-    geno:0000385 <https://w3id.org/neugenfair/instance/refallele/1-69270-G> .
+    faldo:location <https://w3id.org/neugenfair/instance/Region/1-69270> ;
+    geno:0000382 <https://w3id.org/neugenfair/instance/AlternateAllele/1-69270-A> ;
+    geno:0000385 <https://w3id.org/neugenfair/instance/ReferenceAllele/1-69270-G> .
 
-<https://w3id.org/neugenfair/instance/seqalt/1-69428-G-T> a so:0001059 ;
+<https://w3id.org/neugenfair/instance/SequenceAlteration/1-69428-G-T> a so:0001059 ;
     rdfs:label "1:69428 G>T" ;
-    faldo:location <https://w3id.org/neugenfair/instance/region/1-69428> ;
-    geno:0000382 <https://w3id.org/neugenfair/instance/altallele/1-69428-T> ;
-    geno:0000385 <https://w3id.org/neugenfair/instance/refallele/1-69428-G> .
+    faldo:location <https://w3id.org/neugenfair/instance/Region/1-69428> ;
+    geno:0000382 <https://w3id.org/neugenfair/instance/AlternateAllele/1-69428-T> ;
+    geno:0000385 <https://w3id.org/neugenfair/instance/ReferenceAllele/1-69428-G> .
 
-<https://w3id.org/neugenfair/instance/seqalt/1-69511-G-A> a so:0001059 ;
+<https://w3id.org/neugenfair/instance/SequenceAlteration/1-69511-G-A> a so:0001059 ;
     rdfs:label "1:69511 G>A" ;
-    faldo:location <https://w3id.org/neugenfair/instance/region/1-69511> ;
-    geno:0000382 <https://w3id.org/neugenfair/instance/altallele/1-69511-A> ;
-    geno:0000385 <https://w3id.org/neugenfair/instance/refallele/1-69511-G> .
+    faldo:location <https://w3id.org/neugenfair/instance/Region/1-69511> ;
+    geno:0000382 <https://w3id.org/neugenfair/instance/AlternateAllele/1-69511-A> ;
+    geno:0000385 <https://w3id.org/neugenfair/instance/ReferenceAllele/1-69511-G> .
 
-<https://w3id.org/neugenfair/instance/seqalt/1-69761-T-A> a so:0001059 ;
+<https://w3id.org/neugenfair/instance/SequenceAlteration/1-69761-T-A> a so:0001059 ;
     rdfs:label "1:69761 T>A" ;
-    faldo:location <https://w3id.org/neugenfair/instance/region/1-69761> ;
-    geno:0000382 <https://w3id.org/neugenfair/instance/altallele/1-69761-A> ;
-    geno:0000385 <https://w3id.org/neugenfair/instance/refallele/1-69761-T> .
+    faldo:location <https://w3id.org/neugenfair/instance/Region/1-69761> ;
+    geno:0000382 <https://w3id.org/neugenfair/instance/AlternateAllele/1-69761-A> ;
+    geno:0000385 <https://w3id.org/neugenfair/instance/ReferenceAllele/1-69761-T> .
 
-<https://w3id.org/neugenfair/instance/seqalt/1-69849-A-G> a so:0001059 ;
+<https://w3id.org/neugenfair/instance/SequenceAlteration/1-69849-A-G> a so:0001059 ;
     rdfs:label "1:69849 A>G" ;
-    faldo:location <https://w3id.org/neugenfair/instance/region/1-69849> ;
-    geno:0000382 <https://w3id.org/neugenfair/instance/altallele/1-69849-G> ;
-    geno:0000385 <https://w3id.org/neugenfair/instance/refallele/1-69849-A> .
+    faldo:location <https://w3id.org/neugenfair/instance/Region/1-69849> ;
+    geno:0000382 <https://w3id.org/neugenfair/instance/AlternateAllele/1-69849-G> ;
+    geno:0000385 <https://w3id.org/neugenfair/instance/ReferenceAllele/1-69849-A> .
 
-<https://w3id.org/neugenfair/instance/altallele/1-69063-T> a geno:0000002 ;
+<https://w3id.org/neugenfair/instance/AlternateAllele/1-69063-T> a geno:0000002 ;
     go:000300 "T" .
 
-<https://w3id.org/neugenfair/instance/altallele/1-69081-G> a geno:0000002 ;
+<https://w3id.org/neugenfair/instance/AlternateAllele/1-69081-G> a geno:0000002 ;
     go:000300 "G" .
 
-<https://w3id.org/neugenfair/instance/altallele/1-69270-A> a geno:0000002 ;
+<https://w3id.org/neugenfair/instance/AlternateAllele/1-69270-A> a geno:0000002 ;
     go:000300 "A" .
 
-<https://w3id.org/neugenfair/instance/altallele/1-69428-T> a geno:0000002 ;
+<https://w3id.org/neugenfair/instance/AlternateAllele/1-69428-T> a geno:0000002 ;
     go:000300 "T" .
 
-<https://w3id.org/neugenfair/instance/altallele/1-69511-A> a geno:0000002 ;
+<https://w3id.org/neugenfair/instance/AlternateAllele/1-69511-A> a geno:0000002 ;
     go:000300 "A" .
 
-<https://w3id.org/neugenfair/instance/altallele/1-69761-A> a geno:0000002 ;
+<https://w3id.org/neugenfair/instance/AlternateAllele/1-69761-A> a geno:0000002 ;
     go:000300 "A" .
 
-<https://w3id.org/neugenfair/instance/altallele/1-69849-G> a geno:0000002 ;
+<https://w3id.org/neugenfair/instance/AlternateAllele/1-69849-G> a geno:0000002 ;
     go:000300 "G" .
 
-<https://w3id.org/neugenfair/instance/refallele/1-69063-C> a geno:0000036 ;
+<https://w3id.org/neugenfair/instance/ReferenceAllele/1-69063-C> a geno:0000036 ;
     go:000300 "C" .
 
-<https://w3id.org/neugenfair/instance/refallele/1-69081-C> a geno:0000036 ;
+<https://w3id.org/neugenfair/instance/ReferenceAllele/1-69081-C> a geno:0000036 ;
     go:000300 "C" .
 
-<https://w3id.org/neugenfair/instance/refallele/1-69270-G> a geno:0000036 ;
+<https://w3id.org/neugenfair/instance/ReferenceAllele/1-69270-G> a geno:0000036 ;
     go:000300 "G" .
 
-<https://w3id.org/neugenfair/instance/refallele/1-69428-G> a geno:0000036 ;
+<https://w3id.org/neugenfair/instance/ReferenceAllele/1-69428-G> a geno:0000036 ;
     go:000300 "G" .
 
-<https://w3id.org/neugenfair/instance/refallele/1-69511-G> a geno:0000036 ;
+<https://w3id.org/neugenfair/instance/ReferenceAllele/1-69511-G> a geno:0000036 ;
     go:000300 "G" .
 
-<https://w3id.org/neugenfair/instance/refallele/1-69761-T> a geno:0000036 ;
+<https://w3id.org/neugenfair/instance/ReferenceAllele/1-69761-T> a geno:0000036 ;
     go:000300 "T" .
 
-<https://w3id.org/neugenfair/instance/refallele/1-69849-A> a geno:0000036 ;
+<https://w3id.org/neugenfair/instance/ReferenceAllele/1-69849-A> a geno:0000036 ;
     go:000300 "A" .
 
-<https://w3id.org/neugenfair/instance/region/1-69063> a faldo:Region ;
-    faldo:begin <https://w3id.org/neugenfair/instance/position/1-69063> ;
-    faldo:end <https://w3id.org/neugenfair/instance/position/1-69063> ;
+<https://w3id.org/neugenfair/instance/Region/1-69063> a faldo:Region ;
+    faldo:begin <https://w3id.org/neugenfair/instance/Position/1-69063> ;
+    faldo:end <https://w3id.org/neugenfair/instance/Position/1-69063> ;
     faldo:reference <https://w3id.org/neugenfair/instance/assembly/1> .
 
-<https://w3id.org/neugenfair/instance/region/1-69081> a faldo:Region ;
-    faldo:begin <https://w3id.org/neugenfair/instance/position/1-69081> ;
-    faldo:end <https://w3id.org/neugenfair/instance/position/1-69081> ;
+<https://w3id.org/neugenfair/instance/Region/1-69081> a faldo:Region ;
+    faldo:begin <https://w3id.org/neugenfair/instance/Position/1-69081> ;
+    faldo:end <https://w3id.org/neugenfair/instance/Position/1-69081> ;
     faldo:reference <https://w3id.org/neugenfair/instance/assembly/1> .
 
-<https://w3id.org/neugenfair/instance/region/1-69270> a faldo:Region ;
-    faldo:begin <https://w3id.org/neugenfair/instance/position/1-69270> ;
-    faldo:end <https://w3id.org/neugenfair/instance/position/1-69270> ;
+<https://w3id.org/neugenfair/instance/Region/1-69270> a faldo:Region ;
+    faldo:begin <https://w3id.org/neugenfair/instance/Position/1-69270> ;
+    faldo:end <https://w3id.org/neugenfair/instance/Position/1-69270> ;
     faldo:reference <https://w3id.org/neugenfair/instance/assembly/1> .
 
-<https://w3id.org/neugenfair/instance/region/1-69428> a faldo:Region ;
-    faldo:begin <https://w3id.org/neugenfair/instance/position/1-69428> ;
-    faldo:end <https://w3id.org/neugenfair/instance/position/1-69428> ;
+<https://w3id.org/neugenfair/instance/Region/1-69428> a faldo:Region ;
+    faldo:begin <https://w3id.org/neugenfair/instance/Position/1-69428> ;
+    faldo:end <https://w3id.org/neugenfair/instance/Position/1-69428> ;
     faldo:reference <https://w3id.org/neugenfair/instance/assembly/1> .
 
-<https://w3id.org/neugenfair/instance/region/1-69511> a faldo:Region ;
-    faldo:begin <https://w3id.org/neugenfair/instance/position/1-69511> ;
-    faldo:end <https://w3id.org/neugenfair/instance/position/1-69511> ;
+<https://w3id.org/neugenfair/instance/Region/1-69511> a faldo:Region ;
+    faldo:begin <https://w3id.org/neugenfair/instance/Position/1-69511> ;
+    faldo:end <https://w3id.org/neugenfair/instance/Position/1-69511> ;
     faldo:reference <https://w3id.org/neugenfair/instance/assembly/1> .
 
-<https://w3id.org/neugenfair/instance/region/1-69761> a faldo:Region ;
-    faldo:begin <https://w3id.org/neugenfair/instance/position/1-69761> ;
-    faldo:end <https://w3id.org/neugenfair/instance/position/1-69761> ;
+<https://w3id.org/neugenfair/instance/Region/1-69761> a faldo:Region ;
+    faldo:begin <https://w3id.org/neugenfair/instance/Position/1-69761> ;
+    faldo:end <https://w3id.org/neugenfair/instance/Position/1-69761> ;
     faldo:reference <https://w3id.org/neugenfair/instance/assembly/1> .
 
-<https://w3id.org/neugenfair/instance/region/1-69849> a faldo:Region ;
-    faldo:begin <https://w3id.org/neugenfair/instance/position/1-69849> ;
-    faldo:end <https://w3id.org/neugenfair/instance/position/1-69849> ;
+<https://w3id.org/neugenfair/instance/Region/1-69849> a faldo:Region ;
+    faldo:begin <https://w3id.org/neugenfair/instance/Position/1-69849> ;
+    faldo:end <https://w3id.org/neugenfair/instance/Position/1-69849> ;
     faldo:reference <https://w3id.org/neugenfair/instance/assembly/1> .
 
-<https://w3id.org/neugenfair/instance/position/1-69063> a faldo:ExactPosition ;
+<https://w3id.org/neugenfair/instance/Position/1-69063> a faldo:ExactPosition ;
     faldo:position 69063 .
 
-<https://w3id.org/neugenfair/instance/position/1-69081> a faldo:ExactPosition ;
+<https://w3id.org/neugenfair/instance/Position/1-69081> a faldo:ExactPosition ;
     faldo:position 69081 .
 
-<https://w3id.org/neugenfair/instance/position/1-69270> a faldo:ExactPosition ;
+<https://w3id.org/neugenfair/instance/Position/1-69270> a faldo:ExactPosition ;
     faldo:position 69270 .
 
-<https://w3id.org/neugenfair/instance/position/1-69428> a faldo:ExactPosition ;
+<https://w3id.org/neugenfair/instance/Position/1-69428> a faldo:ExactPosition ;
     faldo:position 69428 .
 
-<https://w3id.org/neugenfair/instance/position/1-69511> a faldo:ExactPosition ;
+<https://w3id.org/neugenfair/instance/Position/1-69511> a faldo:ExactPosition ;
     faldo:position 69511 .
 
-<https://w3id.org/neugenfair/instance/position/1-69761> a faldo:ExactPosition ;
+<https://w3id.org/neugenfair/instance/Position/1-69761> a faldo:ExactPosition ;
     faldo:position 69761 .
 
-<https://w3id.org/neugenfair/instance/position/1-69849> a faldo:ExactPosition ;
+<https://w3id.org/neugenfair/instance/Position/1-69849> a faldo:ExactPosition ;
     faldo:position 69849 .
 
 <https://w3id.org/neugenfair/instance/assembly/1> a so:0000353 ;
