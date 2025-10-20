@@ -9,7 +9,7 @@ test:
   stage: test
   script:
   - pip install mkdocs
-  - pip install mkdocs-mermaid2
+  - pip install mkdocs-mermaid2-plugin
   - mkdocs build --site-dir test
   artifacts:
     paths:
