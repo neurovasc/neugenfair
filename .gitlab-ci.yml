@@ -2,7 +2,7 @@ image: python:3.12
 
 before_script:
   # install dependencies
-  - pip install poetry mkdocs mkdocs-material pylode linkml mkdocs-mermaid2
+  - pip install poetry mkdocs mkdocs-material pylode linkml mkdocs-mermaid2-plugin
   - poetry install
 
 test:
