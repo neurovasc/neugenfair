@@ -1,16 +1,27 @@
 image: python:3.12
 
+before script:
+  # install dependencies
+  - pip install poetry mkdocs mkdocs-material pylode linkml mkdocs-mermaid2
+  - poetry install
+
+test:
+  stage: test
+  script:
+  - pip install mkdocs
+  - pip install mkdocs-mermaid2
+  - mkdocs build --site-dir test
+  artifacts:
+    paths:
+    - test
+  rules:
+    - if: $CI_COMMIT_REF_NAME != $CI_DEFAULT_BRANCH
+
 pages:
   stage: deploy
   script:
-    # install dependencies
-    - pip install poetry mkdocs mkdocs-material pylode linkml
-    - poetry install
-
     # generate LinkML docs + pyLODE HTML
     - make docs pylode
-
-    # build mkdocs into site/
     - mkdocs build -d site
 
     # organize outputs into public/
@@ -19,10 +30,11 @@ pages:
     - mkdir -p public/pylode
     - cp -r site/* public/mkdocs/
     - cp -r schemas/pylode/* public/pylode/
-    - ls -R public   # debug: list what will be published
+    # - ls -R public   # debug: list what will be published
 
   artifacts:
     paths:
-      - public
-  only:
-    - main
+    - public
+  publish: public
+  rules:
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
